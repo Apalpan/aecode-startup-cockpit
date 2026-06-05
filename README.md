@@ -1,27 +1,41 @@
-# AECODE · Startup Intelligence Cockpit
+# AECODE · Startup Metrics OS
 
-Versión interactiva y didáctica del dashboard de inteligencia de negocio de **AECODE** — el *Learning OS* para talento AEC (Arquitectura, Ingeniería y Construcción) en Latinoamérica.
+Sistema operativo de **métricas de negocio** de **AECODE** — el *Learning OS* para talento AEC (Arquitectura, Ingeniería y Construcción) en Latinoamérica.
 
-> Clon optimizado de [`startup-aecode-web`](https://github.com/Apalpan/startup-aecode-web): mismo contenido, ~5x más interactividad, usabilidad y profundidad explicativa.
+> Dos modelos, una sola fuente de verdad: **Live Training** (cohortes) + **Microlearning Platform OS** (SaaS recurrente), con finanzas, márgenes, unit economics, growth, escalabilidad y proyección del pasado al futuro.
 
 **🚀 Demo:** https://apalpan.github.io/aecode-startup-cockpit/
 
-## Qué incluye
+## Secciones
 
-- **Simulador de escenarios** — 5 sliders en vivo (Evidence Rate, Verification Rate, MAU, conversión a pago, precio) que recalculan NSM, MRR de plataforma, LTV/CAC, runway y el veredicto de fundabilidad en tiempo real. Presets: *Hoy / Meta Beta / Escala 12m*.
-- **Capa didáctica** — cada métrica trae un popover ⓘ que explica qué es, su umbral y por qué importa.
-- **Métricas editables y persistentes** — North Star, 8 KPIs de fundabilidad y el funnel completo se editan con un click y se guardan en `localStorage`.
-- **Funnel con detección automática de cuello de botella** y acción prescriptiva.
-- **Mix de ingresos** actual vs objetivo (MRR real vs caja de cohortes).
-- **Agenda de readiness** de 10 puntos + quick wins con barras de progreso.
-- **Tour guiado**, guía "cómo interpretar", export/import JSON y reset.
-- Fondo de partículas, anillo orbital del North Star y animaciones (anime.js). Sistema de diseño AECODE.
+| Sección | Qué muestra |
+|---|---|
+| **Resumen** | 6 KPIs clave: caja/mes, MRR recurrente, NSM, margen combinado, runway, proyección 12m. |
+| **Modelos** | Live Training vs Microlearning Platform OS lado a lado: revenue, margen, ARPU, CAC, LTV/CAC, escalabilidad, churn. |
+| **Finanzas** | Ingresos por modelo (12 meses atrás → 12 adelante), margen bruto combinado y P&L mensual estimado. Histórico sólido + proyección punteada. |
+| **Cohortes** | Analítica de cada cohorte Live: alumnos, precio, ingreso, completación, NPS y % de migración a la plataforma. |
+| **Unit Economics** | Economía por usuario de cada modelo, comparada y editable. |
+| **Growth** | Canales de adquisición y CAC, comunidad (65k), y el loop de crecimiento. |
+| **Escalabilidad** | Crecimiento lineal (Live) vs exponencial (plataforma) + motor de migración. |
+| **Proyección** | Simulador con sliders en vivo (Evidence/Verification Rate, MAU, conversión, precio) → NSM, MRR, LTV/CAC, runway y veredicto. Ruta a $30k MRR. |
+| **Fundabilidad** | Las 8 métricas que mira un inversionista, con semáforo. |
+| **Foco** | Tesis del negocio + agenda de readiness de 10 puntos + quick wins. |
+
+## Interactividad
+
+- **Edita cualquier número** (NSM, KPIs) — se guarda en `localStorage`.
+- **Simulador** de escenarios con presets *Hoy / Meta Beta / Escala 12m*.
+- **Popovers didácticos** (ⓘ) que explican cada métrica.
+- **Tour guiado**, export/import JSON, reset.
+- Gráficos SVG nativos (líneas con zona de proyección, sparklines), fondo de partículas, animaciones.
+
+> ⚠️ Varios valores (cohortes, canales, series históricas, proyecciones) son **supuestos realistas** marcados para iterar con la data real de AECODE.
 
 ## Estructura
 
 | Archivo | Descripción |
 |---|---|
-| `index.html` | App completa de un solo archivo (HTML + CSS + JS). |
+| `index.html` | App completa de un solo archivo (HTML + CSS + JS, sin dependencias salvo anime.js por CDN). |
 | `build.py` | Generador en Python que produce `index.html` (fuente de verdad). |
 | `aecodito.png`, `aecode-logo.svg` | Branding. |
 
@@ -31,7 +45,7 @@ Versión interactiva y didáctica del dashboard de inteligencia de negocio de **
 python build.py   # regenera index.html
 ```
 
-No requiere dependencias ni build step: abrir `index.html` en el navegador funciona.
+Abrir `index.html` en el navegador funciona directamente.
 
 ---
 
