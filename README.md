@@ -1,41 +1,42 @@
 # AECODE · Startup Metrics OS
 
-Sistema operativo de **métricas de negocio** de **AECODE** — el *Learning OS* para talento AEC (Arquitectura, Ingeniería y Construcción) en Latinoamérica.
+Sistema operativo de **métricas de negocio** de **AECODE** — el *Skill Operating System* vertical para talento AEC (Arquitectura, Ingeniería y Construcción) en Latinoamérica.
 
-> Dos modelos, una sola fuente de verdad: **Live Training** (cohortes) + **Microlearning Platform OS** (SaaS recurrente), con finanzas, márgenes, unit economics, growth, escalabilidad y proyección del pasado al futuro.
+> Modelo **híbrido**: **Live Training** (cohortes/eventos) financia y siembra; **Microlearning Platform OS** (SaaS recurrente) escala. Todo conectado: investigación → producto → growth → finanzas → fundraising → North Star.
 
 **🚀 Demo:** https://apalpan.github.io/aecode-startup-cockpit/
 
-## Secciones
+## Qué incluye
 
 | Sección | Qué muestra |
 |---|---|
 | **Resumen** | 6 KPIs clave: caja/mes, MRR recurrente, NSM, margen combinado, runway, proyección 12m. |
-| **Modelos** | Live Training vs Microlearning Platform OS lado a lado: revenue, margen, ARPU, CAC, LTV/CAC, escalabilidad, churn. |
-| **Finanzas** | Ingresos por modelo (12 meses atrás → 12 adelante), margen bruto combinado y P&L mensual estimado. Histórico sólido + proyección punteada. |
-| **Cohortes** | Analítica de cada cohorte Live: alumnos, precio, ingreso, completación, NPS y % de migración a la plataforma. |
-| **Unit Economics** | Economía por usuario de cada modelo, comparada y editable. |
-| **Growth** | Canales de adquisición y CAC, comunidad (65k), y el loop de crecimiento. |
-| **Escalabilidad** | Crecimiento lineal (Live) vs exponencial (plataforma) + motor de migración. |
-| **Proyección** | Simulador con sliders en vivo (Evidence/Verification Rate, MAU, conversión, precio) → NSM, MRR, LTV/CAC, runway y veredicto. Ruta a $30k MRR. |
-| **Fundabilidad** | Las 8 métricas que mira un inversionista, con semáforo. |
+| **Tesis & Mercado** | Por qué ahora, con benchmarks reales: VC EdTech $2.4B, escasez BIM ~85M 2030, post-content age, completion con cohorte >70%. |
+| **Modelo Híbrido** | Un solo gráfico que muestra la migración del mix **80/20 → 50/50** (jun→dic), con toggle Absoluto $ / Mix %. Cards por modelo + programas Live (AI Construction Summit, AI Talent, BIM…). |
+| **Mapa de Métricas** | Diagrama **interactivo** de interrelación: investigación → producto → growth → finanzas → fundraising → North Star, con loops de moat. Click en cualquier nodo. |
+| **Finanzas** | Ingresos por modelo (12m atrás → 12 adelante), margen bruto combinado y P&L mensual. |
+| **Cohortes** | Analítica por programa: alumnos, ingreso, completación, NPS y % de migración a la plataforma. |
+| **Growth** | Canales de adquisición + CAC, comunidad (moat #1) y el loop compuesto. |
+| **Proyección** | Simulador con sliders en vivo (Evidence/Verification Rate, MAU, conversión, precio) → NSM, MRR, LTV/CAC, runway, veredicto. Ruta a $30k. |
+| **Fundabilidad** | Las 8 métricas que mira un inversionista, con benchmarks de la investigación. |
 | **Foco** | Tesis del negocio + agenda de readiness de 10 puntos + quick wins. |
 
 ## Interactividad
 
 - **Edita cualquier número** (NSM, KPIs) — se guarda en `localStorage`.
+- **Mapa de métricas interactivo** (click en nodos → resalta conexiones + detalle).
+- **Gráfico híbrido** con toggle Absoluto/Mix.
 - **Simulador** de escenarios con presets *Hoy / Meta Beta / Escala 12m*.
-- **Popovers didácticos** (ⓘ) que explican cada métrica.
-- **Tour guiado**, export/import JSON, reset.
-- Gráficos SVG nativos (líneas con zona de proyección, sparklines), fondo de partículas, animaciones.
+- **Popovers didácticos** (ⓘ) en cada métrica, **tour guiado**, export/import JSON, reset.
+- Gráficos SVG nativos, fondo de partículas, animaciones (anime.js).
 
-> ⚠️ Varios valores (cohortes, canales, series históricas, proyecciones) son **supuestos realistas** marcados para iterar con la data real de AECODE.
+> ⚠️ Varios valores (series históricas, cohortes, canales, mix, proyecciones) son **supuestos realistas** marcados para iterar con la data real de AECODE. Benchmarks de mercado provienen de la investigación EdTech LATAM+USA (HolonIQ, Grand View, Coursera/Udemy, Duolingo, Maven, Guild, etc.).
 
 ## Estructura
 
 | Archivo | Descripción |
 |---|---|
-| `index.html` | App completa de un solo archivo (HTML + CSS + JS, sin dependencias salvo anime.js por CDN). |
+| `index.html` | App completa de un solo archivo (HTML + CSS + JS; solo anime.js por CDN). |
 | `build.py` | Generador en Python que produce `index.html` (fuente de verdad). |
 | `aecodito.png`, `aecode-logo.svg` | Branding. |
 
