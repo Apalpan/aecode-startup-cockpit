@@ -1,0 +1,47 @@
+/* ============================================================
+   AECODE · Masterclass BIM + Lean + BI — Design tokens
+   Paleta: fondo grafito premium, dorado/cobre AECODE, acentos tech
+   ============================================================ */
+:root{
+  /* Fondos */
+  --bg:        #0A0D18;
+  --bg-2:      #0E1121;
+  --panel:     #121729;
+  --panel-2:   #171D33;
+  --panel-3:   #1D2440;
+  --line:      rgba(255,255,255,.09);
+  --line-soft: rgba(255,255,255,.05);
+
+  /* Tinta */
+  --ink:       #F4F6FB;
+  --ink-2:     #C9D0E4;
+  --mut:       #939CB8;
+  --faint:     #5E6883;
+
+  /* Marca: dorado / cobre */
+  --gold:      #D9A45B;
+  --gold-2:    #F0C987;
+  --copper:    #B8763A;
+
+  /* Acentos tecnológicos (familia AECODE) */
+  --indigo:    #5B4AE0;
+  --violet:    #7C7EDF;
+  --cyan:      #54C8E8;
+  --green:     #47CF78;
+  --amber:     #F0A030;
+  --risk:      #F2617A;
+
+  /* Tipografía */
+  --f-sans: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-disp: "Space Grotesk", var(--f-sans);
+  --f-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+
+  /* Geometría */
+  --r-s: 10px;
+  --r-m: 14px;
+  --r-l: 20px;
+  --shadow: 0 18px 50px rgba(0,0,0,.45);
+
+  /* Glass */
+  --glass: linear-gradient(160deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BIM, Lean y BI aplicado al Seguimiento y Control de Obra — Clase magistral · AECODE</title>
+  <meta name="description" content="Presentación interactiva de la clase magistral introductoria del Diplomado Internacional BIM, Lean y BI aplicado al Seguimiento y Control de Obra — AECODE.">
+
+  <!-- Tipografías AECODE -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/deck.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="icon" type="image/png" href="assets/brand/aecode-isotipo.png">
+</head>
+<body>
+  <!-- Chrome del deck -->
+  <div id="progress"></div>
+  <div id="brandmark"><img src="assets/brand/aecode-logo.svg" alt="AECODE"></div>
+
+  <div id="viewport"><div id="stage"></div></div>
+
+  <div id="hud">
+    <div class="hud-l"><span class="blockname"></span></div>
+    <div class="hud-r">
+      <span class="count"></span>
+      <button id="b-menu" title="Índice (M)">☰ Índice</button>
+      <button id="b-grid" title="Vista general (O)">⊞</button>
+      <button id="b-notes" title="Notas del expositor (N)">📝</button>
+      <button id="b-pdf" title="Exportar PDF (E)">⤓ PDF</button>
+      <button id="b-help" title="Ayuda (?)">?</button>
+    </div>
+  </div>
+
+  <aside id="menu">
+    <header>
+      <h3>Índice de la sesión</h3>
+      <p>60 slides · 8 bloques · 90-120 min</p>
+    </header>
+    <div class="mlist"></div>
+    <footer>
+      <button onclick="window.print()">Exportar PDF</button>
+      <button onclick="document.getElementById('menu').classList.remove('open')">Cerrar</button>
+    </footer>
+  </aside>
+
+  <div id="notes"><h4></h4><div class="ntext"></div></div>
+  <div id="grid"></div>
+
+  <div id="help">
+    <div class="card">
+      <h3>Atajos de teclado</h3>
+      <table>
+        <tr><td><kbd>→</kbd> <kbd>Espacio</kbd></td><td>Siguiente slide</td></tr>
+        <tr><td><kbd>←</kbd></td><td>Slide anterior</td></tr>
+        <tr><td><kbd>O</kbd> / <kbd>Esc</kbd></td><td>Vista general (overview)</td></tr>
+        <tr><td><kbd>M</kbd></td><td>Índice de secciones</td></tr>
+        <tr><td><kbd>N</kbd> / <kbd>S</kbd></td><td>Notas del expositor</td></tr>
+        <tr><td><kbd>E</kbd> / <kbd>P</kbd></td><td>Exportar a PDF (imprimir)</td></tr>
+        <tr><td><kbd>Inicio</kbd> / <kbd>Fin</kbd></td><td>Primera / última slide</td></tr>
+        <tr><td><kbd>?</kbd></td><td>Esta ayuda</td></tr>
+      </table>
+      <p>En tablet: desliza horizontalmente para navegar. La URL guarda la slide actual (#/n) — puedes compartir el enlace a una slide específica.</p>
+    </div>
+  </div>
+
+  <!-- Núcleo -->
+  <script src="src/core/components.js"></script>
+  <script src="src/core/charts.js"></script>
+  <script src="src/data/program.js"></script>
+  <script src="src/core/engine.js"></script>
+
+  <!-- Slides (el orden define la numeración) -->
+  <script src="src/slides/block1.js"></script>
+  <script src="src/slides/block2.js"></script>
+  <script src="src/slides/block3.js"></script>
+  <script src="src/slides/block4.js"></script>
+  <script src="src/slides/block5.js"></script>
+  <script src="src/slides/block6.js"></script>
+  <script src="src/slides/block7.js"></script>
+  <script src="src/slides/block8.js"></script>
+</body>
+</html>
