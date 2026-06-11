@@ -13,13 +13,13 @@
       ${head("Bloque 6 · Business Intelligence", "Excel no muere. Pero <em>dejó de ser suficiente</em>")}
       <div class="s-body">
         <div class="grid g2">
-          ${fr(`<div class="card" style="border-color:rgba(71,207,120,.4)"><span class="tag t-green">Donde Excel brilla</span>
+          ${fr(`<div class="card" style="border-color:rgba(23,122,69,.35)"><span class="tag t-green">Donde Excel brilla</span>
             <ul class="klist check mt-m" style="gap:10px">
               <li>Análisis rápidos y cálculos ad-hoc</li>
               <li>Prototipos de reportes y plantillas</li>
               <li>Lo conoce todo el equipo: cero curva de adopción</li>
             </ul></div>`, 1)}
-          ${fr(`<div class="card" style="border-color:rgba(242,97,122,.4)"><span class="tag t-risk">Donde se rompe</span>
+          ${fr(`<div class="card" style="border-color:rgba(192,40,90,.35)"><span class="tag t-risk">Donde se rompe</span>
             <ul class="klist mt-m" style="gap:10px">
               <li>Como <b>base de datos</b>: versiones infinitas, fórmulas rotas, sin permisos ni historial</li>
               <li>Como <b>reporte recurrente</b>: horas de copy-paste cada semana</li>
@@ -27,12 +27,41 @@
               <li>Como <b>integrador</b>: no escala conectando modelo, campo, costos y cronograma</li>
             </ul></div>`, 2)}
         </div>
-        ${fr(`<div class="card accent"><h4>El diagnóstico justo</h4>
-          <p>El problema no es Excel: es pedirle que sea base de datos, reporte, control documental y fuente de verdad
-          <b>al mismo tiempo</b>. BI no reemplaza a Excel — lo libera para lo que hace bien.</p></div>`, 4)}
+        ${fr(`<div class="card accent">
+          <div class="calc">
+            <div class="ctrls">
+              <h4 style="margin-bottom:4px">El costo del reporte manual — calcúlalo para tu obra</h4>
+              <div class="ctl"><label>Personas que arman reportes <output id="c-p">4</output></label>
+                <input type="range" id="r-p" min="1" max="20" value="4" aria-label="Personas que arman reportes"></div>
+              <div class="ctl"><label>Horas por persona a la semana <output id="c-h">6 h</output></label>
+                <input type="range" id="r-h" min="1" max="20" value="6" aria-label="Horas por persona a la semana"></div>
+              <div class="ctl"><label>Costo hora-hombre <output id="c-c">S/ 45</output></label>
+                <input type="range" id="r-c" min="20" max="200" step="5" value="45" aria-label="Costo de hora hombre"></div>
+            </div>
+            <div class="result">
+              <div class="rv" id="c-total">S/ 56.160</div>
+              <div class="rl">al año en armar informes que <b>nacen vencidos</b></div>
+              <div class="rs" id="c-days">≈ 156 días-hombre/año de integración manual</div>
+            </div>
+          </div></div>`, 4)}
       </div>
-      ${foot("Bloque 6 · BI y dashboards")}`,
-    notes: `**Idea central:** respetar a Excel (la audiencia lo ama) pero delimitar su rol: análisis sí, columna vertebral del control no. **Cómo explicarlo:** dos paneles — dónde brilla y dónde se rompe — y el diagnóstico justo: el problema es el multipropósito. **Ejemplo:** la "sábana" de control de obra de 40 pestañas que solo entiende su creador y que se corrompe cada fin de mes. **Transición:** "lo que necesitamos es una arquitectura donde cada pieza haga su trabajo: eso es Business Intelligence".`,
+      ${foot("Bloque 6 · BI y dashboards", "Calculadora ilustrativa — parámetros editables en vivo")}`,
+    init(el) {
+      const $ = (id) => el.querySelector(id);
+      const rp = $("#r-p"), rh = $("#r-h"), rc = $("#r-c");
+      const f = (n) => n.toLocaleString("es-PE", { maximumFractionDigits: 0 });
+      const calc = () => {
+        const p = +rp.value, h = +rh.value, c = +rc.value;
+        $("#c-p").textContent = p;
+        $("#c-h").textContent = h + " h";
+        $("#c-c").textContent = "S/ " + c;
+        $("#c-total").textContent = "S/ " + f(p * h * 52 * c);
+        $("#c-days").textContent = "≈ " + f((p * h * 52) / 8) + " días-hombre/año de integración manual";
+      };
+      [rp, rh, rc].forEach((r) => r.addEventListener("input", calc));
+      calc();
+    },
+    notes: `**Idea central:** respetar a Excel (la audiencia lo ama) pero delimitar su rol: análisis sí, columna vertebral del control no — y ponerle precio al statu quo con la calculadora en vivo. **Cómo explicarlo:** dos paneles (dónde brilla / dónde se rompe) y luego la calculadora: pedir a alguien de la audiencia sus números reales (¿cuántas personas arman informes?, ¿cuántas horas?) y mover los sliders en vivo — el costo anual del reporte manual aparece al instante. El diagnóstico justo: el problema no es Excel, es pedirle que sea base de datos, reporte y fuente de verdad al mismo tiempo. **Ejemplo:** la "sábana" de control de obra de 40 pestañas que solo entiende su creador y que se corrompe cada fin de mes. **Transición:** "lo que necesitamos es una arquitectura donde cada pieza haga su trabajo: eso es Business Intelligence".`,
   });
 
   /* ---------- 43 · BI en construcción ---------- */
@@ -108,7 +137,7 @@
             ["Submittals", "Aprobaciones", "Pendientes de aprobación y su antigüedad: el predictor silencioso de esperas de material."],
             ["Incidencias", "Calidad/Seg.", "No conformidades y observaciones por estado, frente y responsable."],
             ["Productividad", "Rendimiento", "HH por unidad producida vs presupuesto: rendimiento real de cuadrillas."],
-            ["Cumplimiento semanal", "Plan", "Actividades completadas vs planificadas en la semana, por frente."],
+            ["CPI · SPI", "Valor ganado", "Earned Value Management: eficiencia de costo (CPI = EV/AC) y de plazo (SPI = EV/PV). Bajo 1,0 = sobrecosto o atraso. El estándar PMI para reportar salud del proyecto."],
             ["Causas de NC", "Mejora", "Pareto de causas de no cumplimiento: dónde atacar primero para subir el PPC."],
           ].map((k, i) => fr(`
             <div class="card" data-tip="${k[2]}" style="padding:14px 13px;text-align:center">
@@ -120,7 +149,7 @@
           <p>Un KPI se gana su lugar en el tablero si alguien lo mira cada semana <b>y actúa distinto por lo que ve</b>. Si nadie cambia una decisión por él, es decoración.</p></div>`, 11)}
       </div>
       ${foot("Bloque 6 · BI y dashboards")}`,
-    notes: `**Idea central:** un buen tablero de obra cabe en ~10 indicadores con dueño y acción asociada. **Cómo explicarlo:** sobrevolar los KPIs en 3 familias: producción (avance, productividad, PPC), información (RFIs, submittals) y mejora (causas de NC). Cerrar con el criterio: si nadie actúa distinto por verlo, sobra. **Ejemplo:** el tiempo medio de respuesta de RFIs como predictor temprano: cuando sube, las esperas de campo llegan 3 semanas después. **Transición:** "estos KPIs se organizan en tableros distintos según la audiencia. Veamos los cuatro clásicos".`,
+    notes: `**Idea central:** un buen tablero de obra cabe en ~10 indicadores con dueño y acción asociada. **Cómo explicarlo:** sobrevolar los KPIs en 4 familias: producción (avance, productividad, PPC), información (RFIs, submittals), salud económica (valor ganado: CPI = EV/AC y SPI = EV/PV, el estándar PMI) y mejora (causas de NC). Cerrar con el criterio: si nadie actúa distinto por verlo, sobra. **Ejemplo:** el tiempo medio de respuesta de RFIs como predictor temprano: cuando sube, las esperas de campo llegan 3 semanas después. **Transición:** "estos KPIs se organizan en tableros distintos según la audiencia. Veamos los cuatro clásicos".`,
   });
 
   /* ---------- 46 · Dashboard gerencial ---------- */
@@ -144,7 +173,7 @@
             ${klist([
               "<b>Audiencia:</b> gerencia y cliente. Frecuencia: semanal.",
               "<b>Pregunta que responde:</b> ¿el proyecto está sano y hacia dónde va?",
-              "<b>Diseño:</b> pocos números, comparados contra plan, con tendencia y proyección — no fotos sueltas.",
+              "<b>Diseño:</b> pocos números, comparados contra plan, con tendencia y proyección — no fotos sueltas. La curva S y el valor ganado (CPI/SPI) son su columna vertebral.",
               "<b>Cada cifra tiene dueño:</b> al lado del desvío, un responsable y una acción.",
             ])}
           </div>

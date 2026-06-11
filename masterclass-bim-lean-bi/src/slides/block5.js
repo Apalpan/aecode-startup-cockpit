@@ -47,7 +47,7 @@
             <svg viewBox="0 0 420 240" style="width:100%">
               ${[0,1,2,3,4,5].map((i) => {
                 const x = 30 + (i % 3) * 125, y = i < 3 ? 30 : 125;
-                const states = ["var(--green)", "var(--green)", "var(--amber)", "var(--green)", "var(--risk)", "rgba(255,255,255,.12)"];
+                const states = ["var(--green)", "var(--green)", "var(--amber)", "var(--green)", "var(--risk)", "rgba(24,26,32,.10)"];
                 const labels = ["S1 ✓ al día", "S2 ✓ al día", "S3 ⚠ riesgo", "S4 ✓ al día", "S5 ✕ atrasado", "S6 · futuro"];
                 return `<rect x="${x}" y="${y}" width="110" height="78" rx="9" fill="${states[i]}" opacity="${i === 5 ? 1 : 0.18}" stroke="${states[i]}" stroke-width="1.6"/>
                   <text x="${x + 55}" y="${y + 44}" text-anchor="middle" fill="var(--ink-2)" font-size="11" font-family="var(--f-mono)">${labels[i]}</text>`;
@@ -133,8 +133,8 @@
                 <svg viewBox="0 0 130 86" style="width:100%">
                   ${[0,1,2,3].map((f) => `<g>
                     <polygon points="${20},${70 - f * 16} ${65},${58 - f * 16} ${110},${70 - f * 16} ${65},${82 - f * 16}"
-                      fill="${f < 2 ? "rgba(71,207,120,.4)" : f === 2 ? "rgba(240,160,48,.4)" : "rgba(255,255,255,.06)"}"
-                      stroke="${f < 2 ? "var(--green)" : f === 2 ? "var(--amber)" : "rgba(255,255,255,.2)"}" stroke-width="1"/></g>`).join("")}
+                      fill="${f < 2 ? "rgba(23,122,69,.28)" : f === 2 ? "rgba(168,91,11,.28)" : "rgba(24,26,32,.05)"}"
+                      stroke="${f < 2 ? "var(--green)" : f === 2 ? "var(--amber)" : "rgba(24,26,32,.25)"}" stroke-width="1"/></g>`).join("")}
                 </svg>
                 <p style="font-size:8.5px;color:var(--faint);font-family:var(--f-mono);text-align:center;margin-top:4px">verde: ejecutado · ámbar: en curso</p>
               </div>

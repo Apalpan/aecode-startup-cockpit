@@ -2,7 +2,9 @@
 
 Cada dato externo usado en la presentación, con su fuente, slide y nivel de
 confiabilidad. Los dashboards de los slides 46–49 usan **datos ficticios** y están
-rotulados como "mockup ilustrativo" en pantalla.
+rotulados como "mockup ilustrativo" en pantalla. La calculadora del slide 42 es
+**ilustrativa**: sus parámetros (personas, horas, costo HH) los fija el presentador
+en vivo y así está rotulada.
 
 Niveles: **Alta** (fuente primaria reconocida, cifra verificada) · **Media**
 (informe sectorial/secundario o cifra redondeada) · **Baja / pendiente** (marcado
@@ -15,8 +17,10 @@ en pantalla o usado solo cualitativamente).
 | McKinsey Global Institute — *Reinventing Construction: A Route to Higher Productivity* (2017) | https://www.mckinsey.com/capabilities/operations/our-insights/reinventing-construction-through-a-productivity-revolution | Productividad construcción ~1%/año vs 2,8% economía mundial y 3,6% manufactura (1995–2015); oportunidad de US$1,6 billones (trillions); grandes proyectos ~20% más plazo y hasta 80% sobrecosto | 08 | Alta |
 | MGI — *Industry Digitization Index* (2015–2016, EE.UU./Europa) | https://www.mckinsey.com/industries/technology-media-and-telecommunications/our-insights/digital-america-a-tale-of-the-haves-and-have-mores | La construcción entre los sectores menos digitalizados | 08 | Alta |
 | Bent Flyvbjerg & Dan Gardner — *How Big Things Get Done* (2023, base de datos de +16.000 proyectos, Univ. de Oxford) | https://sites.prod.sbs.ox.ac.uk/bigprojects | ~92% de megaproyectos fuera de plazo y/o presupuesto (91,5% en la base) | 08 | Alta |
-| FMI / Autodesk — *Construction Disconnected* (2018) | https://construction.autodesk.com/resources/construction-disconnected-report/ | ~52% del retrabajo global atribuible a datos y comunicación deficientes | 07 | Alta |
+| FMI / Autodesk — *Construction Disconnected* (2018) | https://construction.autodesk.com/resources/construction-disconnected-report/ | ~52% del retrabajo global atribuible a datos y comunicación deficientes; US$ 31.300 M/año de retrabajo por mala data/comunicación (solo EE.UU.); retrabajo directo ≈5% del costo de proyecto | 07 | Alta |
+| FMI / PlanGrid — *Construction Disconnected* (2018) | https://construction.autodesk.com/resources/construction-disconnected-report/ | ~35% del tiempo del profesional (≈14 h/sem) en actividades no óptimas (buscar información, conflictos, retrabajo) ≈ US$ 177.500 M/año en costo laboral (EE.UU.) | 07 | Alta |
 | FMI / Autodesk — *Harnessing the Data Advantage in Construction* (2021) | https://construction.autodesk.com/resources/harnessing-data-advantage-construction/ | ~96% de los datos capturados en construcción no se utiliza | 07 | Media-alta (cifra de encuesta sectorial, ampliamente citada) |
+| PMI — *Practice Standard for Earned Value Management* | https://www.pmi.org | Definiciones CPI = EV/AC y SPI = EV/PV (uso conceptual, sin cifras) | 45, 46 | Alta |
 
 ## Adopción BIM y regulación
 

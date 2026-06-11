@@ -22,9 +22,9 @@
           { icon: "check", t: "Decisión", d: "El comité decide con datos del día, no del mes pasado." },
         ])}
         <div class="fr" style="--d:300ms;position:relative;height:34px">
-          <div style="position:absolute;left:3%;right:3%;top:14px;height:3px;border-radius:99px;background:rgba(255,255,255,.08)"></div>
+          <div style="position:absolute;left:3%;right:3%;top:14px;height:3px;border-radius:99px;background:var(--track)"></div>
           ${[0, 1, 2].map((i) => `<span class="simdot" data-sd="${i}" style="position:absolute;top:10px;left:3%;width:11px;height:11px;border-radius:50%;
-             background:var(--gold);box-shadow:0 0 14px rgba(217,164,91,.9);opacity:0"></span>`).join("")}
+             background:var(--gold);box-shadow:0 0 14px rgba(154,99,18,.6);opacity:0"></span>`).join("")}
         </div>
         <div class="center fr" style="--d:360ms">
           <button class="playbtn" id="simplay">▶ &nbsp;Simular flujo de información</button>
@@ -129,14 +129,14 @@
       ${head("El cimiento", "Control documental: <em>la versión correcta, en la mano correcta</em>")}
       <div class="s-body">
         <div class="grid g2">
-          ${fr(`<div class="card" style="border-color:rgba(242,97,122,.4)"><span class="tag t-risk">El problema</span>
+          ${fr(`<div class="card" style="border-color:rgba(192,40,90,.35)"><span class="tag t-risk">El problema</span>
             <ul class="klist mt-m" style="gap:10px">
               <li>Planos impresos <b>sin control de revisión</b> circulando en campo</li>
               <li>Carpetas paralelas: la del proyectista, la de OT, la del residente</li>
               <li>“Superseded” que nadie retiró del frente</li>
               <li>Nadie puede afirmar <b>cuál es la versión vigente</b></li>
             </ul></div>`, 1)}
-          ${fr(`<div class="card" style="border-color:rgba(71,207,120,.4)"><span class="tag t-green">La solución (CDE + disciplina)</span>
+          ${fr(`<div class="card" style="border-color:rgba(23,122,69,.35)"><span class="tag t-green">La solución (CDE + disciplina)</span>
             <ul class="klist check mt-m" style="gap:10px">
               <li><b>Estados:</b> WIP / Compartido / Publicado / Archivado</li>
               <li><b>Flujos de aprobación</b> con responsables nombrados</li>
@@ -165,10 +165,10 @@
           { icon: "money", t: "Viernes", d: "Demolición, RFI, no conformidad, y la pregunta del millón: ¿quién paga?" },
         ])}
         <div class="grid g2 mt-s">
-          ${fr(`<div class="card" style="border-color:rgba(242,97,122,.4)"><h4 style="color:#FF94A8">El costo real</h4>
+          ${fr(`<div class="card" style="border-color:rgba(192,40,90,.35)"><h4 style="color:var(--risk)">El costo real</h4>
             <p>Demolición + re-ejecución + 3 días de frente parado + horas de gestión del conflicto + desgaste contractual.
             Todo por <b>un correo que no llegó</b>.</p></div>`, 6)}
-          ${fr(`<div class="card" style="border-color:rgba(71,207,120,.4)"><h4 style="color:var(--green)">Con CDE, la historia muere el lunes</h4>
+          ${fr(`<div class="card" style="border-color:rgba(23,122,69,.35)"><h4 style="color:var(--green)">Con CDE, la historia muere el lunes</h4>
             <p>La revisión D entra como Publicado y <b>reemplaza automáticamente</b> a la B; campo consulta del visor, no del papel;
             y la notificación llega a todos los suscritos del frente 2.</p></div>`, 7)}
         </div>

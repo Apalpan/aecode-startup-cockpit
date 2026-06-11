@@ -95,7 +95,7 @@
             <p>Inscripciones abiertas<br><b>aecode.ai</b> · @aecode.ai</p></div>`, 6)}
         </div>
         <div class="center fr" style="--d:640ms">
-          <img src="assets/brand/aecode-logo.svg" alt="AECODE" style="height:24px;opacity:.9;vertical-align:middle">
+          <img src="assets/brand/aecode-logo-ink.svg" alt="AECODE" style="height:24px;opacity:.9;vertical-align:middle">
           <span class="muted" style="font-size:12px;margin-left:14px;font-family:var(--f-mono)">AECODE · ENJOFRA BIM (ATC) · Colegio de Ingenieros del Perú</span>
         </div>
       </div>

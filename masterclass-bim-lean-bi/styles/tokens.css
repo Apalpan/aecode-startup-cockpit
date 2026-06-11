@@ -1,35 +1,47 @@
 /* ============================================================
-   AECODE · Masterclass BIM + Lean + BI — Design tokens
-   Paleta: fondo grafito premium, dorado/cobre AECODE, acentos tech
+   AECODE · Masterclass BIM + Lean + BI — Design tokens v2
+   "Edición clara": papel cálido + tinta grafito + bronce AECODE.
+   Un solo acento (bronce); apoyos de datos en tonos profundos
+   con contraste AA sobre fondo claro. OKLCH con fallback hex.
    ============================================================ */
 :root{
-  /* Fondos */
-  --bg:        #0A0D18;
-  --bg-2:      #0E1121;
-  --panel:     #121729;
-  --panel-2:   #171D33;
-  --panel-3:   #1D2440;
-  --line:      rgba(255,255,255,.09);
-  --line-soft: rgba(255,255,255,.05);
+  color-scheme: light;
+
+  /* Lienzo */
+  --bg:        #F6F5F1;
+  --bg-2:      #EFEDE6;
+  --panel:     #FFFFFF;
+  --panel-2:   #FAF9F5;
+  --panel-3:   #F0EEE7;
+  --line:      rgba(24,26,32,.12);
+  --line-soft: rgba(24,26,32,.055);
+  --track:     rgba(24,26,32,.08);
 
   /* Tinta */
-  --ink:       #F4F6FB;
-  --ink-2:     #C9D0E4;
-  --mut:       #939CB8;
-  --faint:     #5E6883;
+  --ink:       #181A20;
+  --ink-2:     #3B404E;
+  --mut:       #636A7D;
+  --faint:     #8E95A6;
 
-  /* Marca: dorado / cobre */
-  --gold:      #D9A45B;
-  --gold-2:    #F0C987;
-  --copper:    #B8763A;
+  /* Marca: bronce / cobre AECODE */
+  --gold:      #9A6312;   /* acento base — texto pequeño y kickers */
+  --gold-2:    #7C4F0E;   /* acento de alto contraste — énfasis en titulares */
+  --copper:    #B8763A;   /* tono cálido medio — gradientes */
+  --gold-soft: rgba(154,99,18,.09);
+  --gold-line: rgba(154,99,18,.38);
 
-  /* Acentos tecnológicos (familia AECODE) */
-  --indigo:    #5B4AE0;
-  --violet:    #7C7EDF;
-  --cyan:      #54C8E8;
-  --green:     #47CF78;
-  --amber:     #F0A030;
-  --risk:      #F2617A;
+  /* Acentos de datos (oscurecidos para fondo claro, AA) */
+  --indigo:    #4639C8;
+  --violet:    #6053C9;
+  --cyan:      #0E7490;
+  --green:     #177A45;
+  --amber:     #A85B0B;
+  --risk:      #C0285A;
+  --indigo-soft: rgba(70,57,200,.10);
+  --violet-soft: rgba(96,83,201,.12);
+  --risk-soft:   rgba(192,40,90,.08);
+  --green-soft:  rgba(23,122,69,.08);
+  --cyan-soft:   rgba(14,116,144,.08);
 
   /* Tipografía */
   --f-sans: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -40,8 +52,33 @@
   --r-s: 10px;
   --r-m: 14px;
   --r-l: 20px;
-  --shadow: 0 18px 50px rgba(0,0,0,.45);
+  --shadow:   0 1px 2px rgba(24,26,32,.04), 0 16px 40px rgba(24,26,32,.10);
+  --shadow-s: 0 1px 2px rgba(24,26,32,.05), 0 6px 18px rgba(24,26,32,.07);
 
-  /* Glass */
-  --glass: linear-gradient(160deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
+  /* Superficies suaves */
+  --glass: linear-gradient(165deg, #FFFFFF, #FBFAF6);
+}
+
+/* Refinamiento perceptual cuando el navegador soporta OKLCH:
+   misma identidad, ramps más uniformes (hue bronce ≈ 75). */
+@supports (color: oklch(0% 0 0)){
+  :root{
+    --bg:     oklch(0.967 0.005 95);
+    --bg-2:   oklch(0.943 0.007 95);
+    --panel-2:oklch(0.985 0.003 95);
+    --panel-3:oklch(0.951 0.006 95);
+    --ink:    oklch(0.225 0.012 270);
+    --ink-2:  oklch(0.38 0.018 270);
+    --mut:    oklch(0.53 0.02 265);
+    --faint:  oklch(0.67 0.018 265);
+    --gold:   oklch(0.52 0.115 75);
+    --gold-2: oklch(0.445 0.105 75);
+    --copper: oklch(0.61 0.115 62);
+    --indigo: oklch(0.46 0.19 282);
+    --violet: oklch(0.51 0.15 286);
+    --cyan:   oklch(0.51 0.09 215);
+    --green:  oklch(0.50 0.13 155);
+    --amber:  oklch(0.53 0.13 65);
+    --risk:   oklch(0.52 0.18 360);
+  }
 }

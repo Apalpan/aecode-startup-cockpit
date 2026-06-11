@@ -15,7 +15,7 @@
       ${isoBuilding()}
       <div class="s-body">
         <div class="hbrand fr" style="--d:60ms">
-          <img src="assets/brand/aecode-logo.svg" alt="AECODE">
+          <img src="assets/brand/aecode-logo-ink.svg" alt="AECODE">
           <span class="tag">Diplomado Internacional</span>
         </div>
         <h1 class="htitle fr" style="--d:160ms">BIM, Lean y BI aplicado al <em>Seguimiento y Control de Obra</em></h1>
@@ -89,10 +89,10 @@
       // vínculos punteados (débiles) entre algunos pares no contiguos
       [[0, 3], [1, 3], [2, 6], [4, 7], [5, 3], [8, 3], [9, 1], [7, 3], [6, 9], [2, 1]].forEach(([a, b]) => {
         svg += `<line x1="${pos[a][0]}" y1="${pos[a][1]}" x2="${pos[b][0]}" y2="${pos[b][1]}"
-          stroke="rgba(242,97,122,.32)" stroke-width="1.1" stroke-dasharray="3 6"/>`;
+          stroke="rgba(192,40,90,.4)" stroke-width="1.1" stroke-dasharray="3 6"/>`;
       });
       pos.forEach((p) => {
-        svg += `<g><circle cx="${p[0]}" cy="${p[1]}" r="33" fill="#161C33" stroke="rgba(255,255,255,.16)"/>
+        svg += `<g><circle cx="${p[0]}" cy="${p[1]}" r="33" fill="var(--panel)" stroke="var(--line)"/>
           <text x="${p[0]}" y="${p[1] + 4}" text-anchor="middle" fill="var(--ink-2)" font-size="10.5" font-family="var(--f-disp)" font-weight="600">${p[2]}</text></g>`;
       });
       svg += `<text x="${cx}" y="${cy - 6}" text-anchor="middle" fill="var(--risk)" font-size="12" font-family="var(--f-mono)" letter-spacing="2">¿INFORMACIÓN</text>
@@ -161,46 +161,90 @@
     notes: `**Idea central:** estos problemas parecen técnicos pero son informacionales: el dato correcto no llegó a la persona correcta a tiempo. **Cómo explicarlo:** recorrer 2-3 tarjetas con ritmo rápido (la audiencia las reconoce solas) y detenerse en la frase final: el patrón común. **Ejemplo:** preguntar "¿quién ha valorizado con un metrado que después no cuadró con campo?" — risas de complicidad garantizadas. **Transición:** "todo esto cuesta dinero. Y lo más caro es lo que no se ve…"`,
   });
 
-  /* ---------- 07 · El costo invisible de la mala información ---------- */
+  /* ---------- 07 · El costo invisible — iceberg interactivo ---------- */
   DECK.add({
     block: 1,
     title: "El costo invisible de la mala información",
-    html: `
+    html: () => {
+      // Iceberg: punta visible + 5 estratos sumergidos clickeables
+      const strata = [
+        ["Esperas y tiempos muertos", "35% del tiempo"],
+        ["Reprocesos de información", "US$ 31.300 M/año"],
+        ["Datos que nadie usa", "96% descartado"],
+        ["Disputas y reclamos", "meses de margen"],
+        ["Improductividad crónica", "1% vs 3,6% anual"],
+      ];
+      let svg = `
+        <g class="ib-layer tip" data-ib="tip" role="button" tabindex="0" aria-label="Retrabajo visible">
+          <polygon points="138,18 242,18 262,86 118,86"/>
+          <text x="190" y="48">Retrabajo visible</text>
+          <text x="190" y="66" class="ib-v">≈ 5% del costo directo</text>
+        </g>
+        <line class="ib-water" x1="16" y1="92" x2="364" y2="92"/>
+        <text class="ib-wlabel" x="360" y="84" text-anchor="end">LÍNEA DE FLOTACIÓN · LO QUE VE EL COMITÉ</text>`;
+      strata.forEach(([t, v], i) => {
+        const y0 = 100 + i * 64, y1 = y0 + 58;
+        const hwT = 66 + i * 22, hwB = 66 + (i + 1) * 22;
+        svg += `
+        <g class="ib-layer" data-ib="${i}" role="button" tabindex="0" aria-label="${t}">
+          <polygon points="${190 - hwT},${y0} ${190 + hwT},${y0} ${190 + hwB},${y1} ${190 - hwB},${y1}"/>
+          <text x="190" y="${y0 + 26}">${t}</text>
+          <text x="190" y="${y0 + 44}" class="ib-v">${v}</text>
+        </g>`;
+      });
+      return `
       ${head("El iceberg del costo", "Lo que pagas y <em>no aparece en ninguna partida</em>",
-        "El retrabajo visible es solo la punta. Debajo hay un océano de esperas, reprocesos y confianza perdida.")}
+        "Haz clic en cada estrato del iceberg: cada uno tiene número, fuente y mecanismo.")}
       <div class="s-body">
         <div class="cols c-46">
-          <div class="fr" style="--d:180ms">
-            <div class="card" style="border-color:rgba(84,200,232,.35);text-align:center;padding:14px">
-              <span class="tag t-cyan">Sobre la línea — se ve</span>
-              <h4 class="mt-s">Retrabajo y demoliciones</h4>
-              <p>Se discute en comité, se cuantifica, duele.</p>
-            </div>
-            <div style="height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);margin:12px 0;opacity:.6"></div>
-            <div class="card" style="border-color:rgba(242,97,122,.35);padding:14px">
-              <span class="tag t-risk">Bajo la línea — no se ve</span>
-              <ul class="klist mt-s" style="gap:8px">
-                <li>Esperas de cuadrillas por definiciones</li>
-                <li>Reprocesos de información en oficina técnica</li>
-                <li>Reclamos y disputas contractuales</li>
-                <li>Improductividad crónica de los frentes</li>
-                <li>Pérdida de confianza entre las partes</li>
-              </ul>
-            </div>
+          <div class="iceberg fr" style="--d:180ms">
+            <svg viewBox="0 0 380 430" style="max-height:418px;margin:0 auto">${svg}</svg>
           </div>
           <div>
-            ${stats([
-              { v: "96%", c: "risk", l: "de los datos que genera una obra <b>nunca se utiliza</b> para decidir.", s: "FMI / Autodesk, Harnessing the Data Advantage" },
-              { v: "+52%", c: "risk", l: "del retrabajo global se atribuye a <b>datos y comunicación deficientes</b>.", s: "FMI / Autodesk Construction Disconnected (2018)" },
-            ])}
-            ${fr(`<div class="card accent mt-m"><h4>La cadena del costo invisible</h4>
+            <div id="ibinfo" class="card accent" style="min-height:168px">
+              <span class="tag t-cyan">Bajo la línea</span>
+              <h4 class="mt-s">Esperas y tiempos muertos</h4>
+              <p>El profesional de construcción dedica <b>~35% de su tiempo (≈14 h/semana)</b> a actividades no óptimas:
+              buscar información, resolver conflictos y gestionar errores. Solo en EE.UU., ese tiempo equivale a
+              <b>US$ 177.500 millones anuales</b> en costo laboral.</p>
+              <p class="mt-s" style="font-size:11px;font-family:var(--f-mono);color:var(--faint)">FMI / PlanGrid — Construction Disconnected (2018)</p>
+            </div>
+            ${fr(`<div class="card mt-m"><h4>La cadena del costo invisible</h4>
             <p>Dato pobre → decisión tardía → espera → retrabajo → reclamo → margen perdido.
             Cada eslabón parece pequeño; la cadena completa se come la utilidad del proyecto.</p></div>`, 4)}
           </div>
         </div>
       </div>
-      ${foot("Bloque 1 · Apertura", "FMI/Autodesk 2018–2021 · ver FUENTES.md")}`,
-    notes: `**Idea central:** el costo de la mala información es estructural y casi nunca se mide. **Cómo explicarlo:** usar el iceberg: arriba lo que se discute en comité (retrabajo), abajo lo que nadie cuantifica (esperas, reprocesos, reclamos, confianza). Citar el 96%: la obra produce datos todos los días y los tira a la basura. **Ejemplo:** una cuadrilla parada media jornada esperando la respuesta de un RFI cuesta más que la licencia anual de cualquier software de la obra. **Transición:** "no es una percepción: los números globales del sector lo confirman".`,
+      ${foot("Bloque 1 · Apertura", "FMI/Autodesk 2018–2021 · MGI 2017 · ver FUENTES.md")}`;
+    },
+    init(el) {
+      const DATA = {
+        tip: ["Sobre la línea", "Retrabajo y demoliciones", "La única porción que se cuantifica y se discute en comité: se demuele, se repara, se registra como no conformidad. El retrabajo directo reportado ronda el <b>5% del costo del proyecto</b> — y es apenas la punta.", "FMI / Autodesk — Construction Disconnected (2018)", "t-gold"],
+        0: ["Bajo la línea", "Esperas y tiempos muertos", "El profesional de construcción dedica <b>~35% de su tiempo (≈14 h/semana)</b> a actividades no óptimas: buscar información, resolver conflictos y gestionar errores. Solo en EE.UU., ese tiempo equivale a <b>US$ 177.500 millones anuales</b> en costo laboral.", "FMI / PlanGrid — Construction Disconnected (2018)"],
+        1: ["Bajo la línea", "Reprocesos de información", "El retrabajo causado por <b>datos y comunicación deficientes</b> costó <b>US$ 31.300 millones en un solo año, solo en EE.UU.</b> A escala global, el 52% de todo el retrabajo comparte esa causa raíz.", "FMI / Autodesk — Construction Disconnected (2018)"],
+        2: ["Bajo la línea", "Datos que nadie usa", "De cada 100 datos que la obra captura — partes diarios, fotos, mediciones, reportes — <b>96 nunca se usan en una decisión</b>. Es el activo más caro que el sector tira a diario.", "FMI / Autodesk — Harnessing the Data Advantage (2021)"],
+        3: ["Bajo la línea", "Disputas y reclamos", "Sin trazabilidad, cada reclamo se litiga <b>memoria contra memoria</b>: la resolución consume meses de gestión, honorarios y relación comercial. El historial del CDE es la primera línea de defensa.", "Mecanismo cualitativo — ver bloque 4"],
+        4: ["Bajo la línea", "Improductividad crónica", "Dos décadas de productividad casi plana: <b>~1% anual vs 3,6% de la manufactura</b> (1995–2015). Es el costo estructural acumulado de producir sin flujo y decidir sin datos.", "McKinsey Global Institute — Reinventing Construction (2017)"],
+      };
+      const info = el.querySelector("#ibinfo");
+      const layers = el.querySelectorAll(".ib-layer");
+      const select = (g) => {
+        layers.forEach((q) => q.classList.remove("sel"));
+        g.classList.add("sel");
+        const d = DATA[g.dataset.ib];
+        info.innerHTML = `<span class="tag ${g.dataset.ib === "tip" ? "" : "t-cyan"}">${d[0]}</span>
+          <h4 class="mt-s">${d[1]}</h4><p>${d[2]}</p>
+          <p class="mt-s" style="font-size:11px;font-family:var(--f-mono);color:var(--faint)">${d[3]}</p>`;
+      };
+      layers.forEach((g) => {
+        g.addEventListener("click", () => select(g));
+        g.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(g); }
+        });
+      });
+      el.querySelector('.ib-layer[data-ib="0"]').classList.add("sel");
+    },
+    notes: `**Idea central:** el costo de la mala información es estructural, medible y casi siempre invisible en el presupuesto. **Cómo explicarlo:** recorrer el iceberg de arriba hacia abajo haciendo clic en cada estrato: la punta (retrabajo, ~5%, lo único que se discute) y debajo los números que nadie consolida — 35% del tiempo profesional en actividades no óptimas (US$ 177.500 M/año en EE.UU.), US$ 31.300 M de retrabajo por datos deficientes, 96% de los datos descartados, disputas que se litigan memoria contra memoria, y dos décadas de productividad plana. **Ejemplo:** una cuadrilla parada media jornada esperando la respuesta de un RFI cuesta más que la licencia anual de cualquier software de la obra. **Transición:** "no es una percepción: los números globales del sector lo confirman".`,
   });
 
   /* ---------- 08 · Datos globales del sector ---------- */

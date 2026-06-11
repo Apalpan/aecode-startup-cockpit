@@ -87,7 +87,9 @@
             </div>`, i)).join("")}
         </div>
         ${fr(`<div class="card accent"><h4>Para esta clase, la clave es 3D + 4D + 5D</h4>
-          <p>Coordinación, tiempo y costo son el triángulo del control de obra. El diplomado los trabaja con Revit, Navisworks y Presto en el Módulo 2.</p></div>`, 5)}
+          <p>Coordinación, tiempo y costo son el triángulo del control de obra. El diplomado los trabaja con Revit, Navisworks y Presto en el Módulo 2.
+          La regla técnica que ordena todo: el <b>nivel de información necesario (LOIN, ISO 19650)</b> — cada uso define cuánta geometría
+          y cuántos datos requiere el modelo. Se modela lo justo para decidir, no lo máximo posible.</p></div>`, 5)}
       </div>
       ${foot("Bloque 3 · Marcos colaborativos")}`,
     notes: `**Idea central:** las "dimensiones" no son marketing: son capas de uso del mismo modelo para control. **Cómo explicarlo:** 3D evita el retrabajo (interferencias), 4D anticipa el cronograma, 5D estabiliza el costo, 6D+ hereda los datos a operación. No enredarse en cuántas dimensiones existen — debate estéril; importan los usos. **Ejemplo:** un clash detectado en modelo cuesta una reunión; el mismo clash en campo cuesta demolición, RFI y reclamo. **Transición:** "para que toda esa información no sea un caos, existe una norma que pone orden: la ISO 19650".`,
@@ -110,7 +112,8 @@
         ${fr(`<div class="card accent mt-m"><h4>Traducción al castellano de obra</h4>
           <p>ISO 19650 responde tres preguntas que hoy generan peleas: <b>¿qué versión vale?</b> (estados),
           <b>¿quién debía entregar esto?</b> (roles y matriz de responsabilidades) y <b>¿dónde está el archivo?</b> (CDE).
-          No es burocracia: es el fin de las discusiones por versiones.</p></div>`, 6)}
+          Los requisitos bajan en cascada — <b>OIR → AIR → PIR → EIR</b>: de los objetivos de la organización y del activo,
+          a lo que el proyecto y cada designado deben entregar. No es burocracia: es el fin de las discusiones por versiones.</p></div>`, 6)}
       </div>
       ${foot("Bloque 3 · Marcos colaborativos", "ISO 19650-1/-2 — Organización y digitalización de la información")}`,
     notes: `**Idea central:** desmitificar la ISO 19650: es sentido común estandarizado sobre quién produce qué información, cuándo y cómo. **Cómo explicarlo:** recorrer el flujo requisitos→roles→BEP→CDE→estados y aterrizar con la "traducción al castellano de obra". Mencionar que Plan BIM Perú adopta este estándar. **Ejemplo:** el estado "Publicado" elimina la pregunta más cara de la obra: "¿este plano vale o hay uno más nuevo?". **Transición:** "BIM ordena la información. Pero la obra además produce. Y de producción sabe otra escuela: Lean".`,
@@ -153,7 +156,7 @@
               </ul></div>`, 1)}
             ${fr(`<div class="card mt-m"><span class="tag t-green">Lo que sí se traslada</span>
               <ul class="klist check mt-s" style="gap:8px">
-                <li><b>Flujo y takt:</b> sectores que avanzan a ritmo constante (tren de trabajo)</li>
+                <li><b>Flujo y takt:</b> sectores a ritmo constante (takt = tiempo disponible ÷ sectores)</li>
                 <li><b>Restricciones:</b> no liberar trabajo que no está listo para ejecutarse</li>
                 <li><b>Buffers:</b> amortiguadores conscientes, no inventarios accidentales</li>
                 <li><b>Estandarización:</b> 5S, A3, trabajo repetible y medible</li>
@@ -182,7 +185,8 @@
     block: 3,
     title: "Last Planner System",
     html: `
-      ${head("La herramienta estrella de Lean", "Last Planner System: <em>de lo que debería hacerse a lo que se hará</em>")}
+      ${head("La herramienta estrella de Lean", "Last Planner System: <em>de lo que debería hacerse a lo que se hará</em>",
+        "PPC = compromisos cumplidos ÷ compromisos planificados × 100 — medido cada semana, sin excepciones.")}
       <div class="s-body">
         <div class="cols c-55">
           ${flow([
@@ -253,18 +257,18 @@
           </div>
           ${fr(`<div class="chart-wrap"><h4>Framework VDC (matriz POP)</h4>
             <svg viewBox="0 0 400 290" style="width:100%">
-              <rect x="110" y="14" width="180" height="44" rx="10" fill="rgba(217,164,91,.12)" stroke="var(--gold)"/>
+              <rect x="110" y="14" width="180" height="44" rx="10" fill="var(--gold-soft)" stroke="var(--gold)"/>
               <text x="200" y="33" text-anchor="middle" fill="var(--gold-2)" font-size="11.5" font-family="var(--f-disp)" font-weight="700">Objetivos del cliente</text>
               <text x="200" y="48" text-anchor="middle" fill="var(--mut)" font-size="9.5">y del proyecto</text>
               ${[["ICE", "personas que deciden", 18], ["BIM", "información confiable", 148], ["PPM", "producción gestionada", 278]].map((b) => `
-                <rect x="${b[2]}" y="120" width="106" height="58" rx="10" fill="#161C33" stroke="rgba(255,255,255,.18)"/>
+                <rect x="${b[2]}" y="120" width="106" height="58" rx="10" fill="var(--panel)" stroke="var(--line)"/>
                 <text x="${b[2] + 53}" y="145" text-anchor="middle" fill="var(--ink)" font-size="13" font-family="var(--f-disp)" font-weight="700">${b[0]}</text>
                 <text x="${b[2] + 53}" y="162" text-anchor="middle" fill="var(--mut)" font-size="8.5">${b[1]}</text>
-                <line x1="${b[2] + 53}" y1="120" x2="200" y2="58" stroke="rgba(217,164,91,.5)" stroke-width="1.3"/>`).join("")}
-              <rect x="92" y="222" width="216" height="44" rx="10" fill="rgba(91,74,224,.14)" stroke="var(--violet)"/>
+                <line x1="${b[2] + 53}" y1="120" x2="200" y2="58" stroke="var(--gold-line)" stroke-width="1.3"/>`).join("")}
+              <rect x="92" y="222" width="216" height="44" rx="10" fill="var(--violet-soft)" stroke="var(--violet)"/>
               <text x="200" y="241" text-anchor="middle" fill="var(--ink-2)" font-size="11" font-family="var(--f-disp)" font-weight="600">Métricas + factores controlables</text>
               <text x="200" y="256" text-anchor="middle" fill="var(--mut)" font-size="9">medir → ajustar → volver a medir</text>
-              ${[71, 201, 331].map((x) => `<line x1="${x}" y1="178" x2="200" y2="222" stroke="rgba(124,126,223,.45)" stroke-width="1.2"/>`).join("")}
+              ${[71, 201, 331].map((x) => `<line x1="${x}" y1="178" x2="200" y2="222" stroke="rgba(96,83,201,.45)" stroke-width="1.2"/>`).join("")}
             </svg>
           </div>`, 6)}
         </div>

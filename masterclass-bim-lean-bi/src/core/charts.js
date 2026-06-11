@@ -25,7 +25,7 @@
   function donut(pct, label, color = "var(--gold)", size = 150) {
     const r = 56, c = 2 * Math.PI * r;
     return `<svg width="${size}" height="${size}" viewBox="0 0 140 140" style="display:block;margin:0 auto">
-      <circle cx="70" cy="70" r="${r}" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="13"/>
+      <circle cx="70" cy="70" r="${r}" fill="none" stroke="var(--track)" stroke-width="13"/>
       <circle cx="70" cy="70" r="${r}" fill="none" stroke="${color}" stroke-width="13" stroke-linecap="round"
         stroke-dasharray="${(pct / 100) * c} ${c}" transform="rotate(-90 70 70)"/>
       <text x="70" y="66" text-anchor="middle" fill="var(--ink)" font-family="var(--f-disp)" font-size="26" font-weight="700">${pct}%</text>
@@ -42,7 +42,7 @@
     const Y = (v) => H - P - (v / 100) * (H - P * 2);
     const path = (arr) => arr.map((v, i) => `${i ? "L" : "M"}${X(i)},${Y(v)}`).join(" ");
     const grid = [0, 25, 50, 75, 100].map((v) =>
-      `<line x1="${P}" y1="${Y(v)}" x2="${W - P}" y2="${Y(v)}" stroke="rgba(255,255,255,.06)"/>
+      `<line x1="${P}" y1="${Y(v)}" x2="${W - P}" y2="${Y(v)}" stroke="var(--line-soft)"/>
        <text x="${P - 7}" y="${Y(v) + 3}" text-anchor="end" fill="var(--faint)" font-size="8.5" font-family="var(--f-mono)">${v}</text>`).join("");
     const gap = real.length - 1;
     return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;display:block">
@@ -63,7 +63,7 @@
   function gauge(pct, label, color = "var(--green)") {
     const r = 58, c = Math.PI * r;
     return `<svg viewBox="0 0 150 92" style="width:170px;display:block;margin:0 auto">
-      <path d="M17 84 A 58 58 0 0 1 133 84" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="12" stroke-linecap="round"/>
+      <path d="M17 84 A 58 58 0 0 1 133 84" fill="none" stroke="var(--track)" stroke-width="12" stroke-linecap="round"/>
       <path d="M17 84 A 58 58 0 0 1 133 84" fill="none" stroke="${color}" stroke-width="12" stroke-linecap="round"
         stroke-dasharray="${(pct / 100) * c} ${c}"/>
       <text x="75" y="68" text-anchor="middle" fill="var(--ink)" font-family="var(--f-disp)" font-size="25" font-weight="700">${pct}%</text>

@@ -37,7 +37,7 @@ Duración objetivo: **90–120 minutos** (≈ 1,5–2 min por slide).
 
 ### Slide 07 — El costo invisible de la mala información
 
-**Idea central:** el costo de la mala información es estructural y casi nunca se mide. **Cómo explicarlo:** usar el iceberg: arriba lo que se discute en comité (retrabajo), abajo lo que nadie cuantifica (esperas, reprocesos, reclamos, confianza). Citar el 96%: la obra produce datos todos los días y los tira a la basura. **Ejemplo:** una cuadrilla parada media jornada esperando la respuesta de un RFI cuesta más que la licencia anual de cualquier software de la obra. **Transición:** "no es una percepción: los números globales del sector lo confirman".
+**Idea central:** el costo de la mala información es estructural, medible y casi siempre invisible en el presupuesto. **Cómo explicarlo:** recorrer el iceberg de arriba hacia abajo haciendo clic en cada estrato: la punta (retrabajo, ~5%, lo único que se discute) y debajo los números que nadie consolida — 35% del tiempo profesional en actividades no óptimas (US$ 177.500 M/año en EE.UU.), US$ 31.300 M de retrabajo por datos deficientes, 96% de los datos descartados, disputas que se litigan memoria contra memoria, y dos décadas de productividad plana. **Ejemplo:** una cuadrilla parada media jornada esperando la respuesta de un RFI cuesta más que la licencia anual de cualquier software de la obra. **Transición:** "no es una percepción: los números globales del sector lo confirman".
 
 ### Slide 08 — Datos globales del sector construcción
 
@@ -71,7 +71,7 @@ Duración objetivo: **90–120 minutos** (≈ 1,5–2 min por slide).
 
 ### Slide 15 — La escalera de madurez digital en obra
 
-**Idea central:** la madurez digital es una escalera, no un interruptor — y saltarse peldaños sale caro. **Cómo explicarlo:** pedir a cada participante que ubique mentalmente su obra actual (la mayoría está entre 0 y 1). Subrayar que el diplomado recorre exactamente esta escalera: M1-M2 construyen niveles 1-2, M2-M3 los niveles 3-4, M4 el nivel 5. **Ejemplo:** "comprar Power BI estando en nivel 0 es ponerle tablero digital a un auto sin motor". **Transición:** "subir la escalera requiere capacidades concretas; este es el mapa de ese perfil".
+**Idea central:** la madurez digital es una escalera, no un interruptor — y saltarse peldaños sale caro. **Cómo explicarlo:** convertirlo en momento participativo: pedir a 2-3 voluntarios que digan su nivel y hacer clic en vivo — la ruta sugerida aparece al instante (la mayoría está entre 0 y 1, y eso es buena noticia: el primer salto es el más rentable). Subrayar que el diplomado recorre exactamente esta escalera: M1-M2 construyen niveles 1-2, M2-M3 los niveles 3-4, M4 el nivel 5. **Ejemplo:** "comprar Power BI estando en nivel 0 es ponerle tablero digital a un auto sin motor". **Transición:** "subir la escalera requiere capacidades concretas; este es el mapa de ese perfil".
 
 ### Slide 16 — Mapa de capacidades del profesional AEC moderno
 
@@ -187,7 +187,7 @@ Duración objetivo: **90–120 minutos** (≈ 1,5–2 min por slide).
 
 ### Slide 42 — Excel no muere, pero ya no basta
 
-**Idea central:** respetar a Excel (la audiencia lo ama) pero delimitar su rol: análisis sí, columna vertebral del control no. **Cómo explicarlo:** dos paneles — dónde brilla y dónde se rompe — y el diagnóstico justo: el problema es el multipropósito. **Ejemplo:** la "sábana" de control de obra de 40 pestañas que solo entiende su creador y que se corrompe cada fin de mes. **Transición:** "lo que necesitamos es una arquitectura donde cada pieza haga su trabajo: eso es Business Intelligence".
+**Idea central:** respetar a Excel (la audiencia lo ama) pero delimitar su rol: análisis sí, columna vertebral del control no — y ponerle precio al statu quo con la calculadora en vivo. **Cómo explicarlo:** dos paneles (dónde brilla / dónde se rompe) y luego la calculadora: pedir a alguien de la audiencia sus números reales (¿cuántas personas arman informes?, ¿cuántas horas?) y mover los sliders en vivo — el costo anual del reporte manual aparece al instante. El diagnóstico justo: el problema no es Excel, es pedirle que sea base de datos, reporte y fuente de verdad al mismo tiempo. **Ejemplo:** la "sábana" de control de obra de 40 pestañas que solo entiende su creador y que se corrompe cada fin de mes. **Transición:** "lo que necesitamos es una arquitectura donde cada pieza haga su trabajo: eso es Business Intelligence".
 
 ### Slide 43 — Business Intelligence en construcción
 
@@ -199,7 +199,7 @@ Duración objetivo: **90–120 minutos** (≈ 1,5–2 min por slide).
 
 ### Slide 45 — KPIs clave de seguimiento de obra
 
-**Idea central:** un buen tablero de obra cabe en ~10 indicadores con dueño y acción asociada. **Cómo explicarlo:** sobrevolar los KPIs en 3 familias: producción (avance, productividad, PPC), información (RFIs, submittals) y mejora (causas de NC). Cerrar con el criterio: si nadie actúa distinto por verlo, sobra. **Ejemplo:** el tiempo medio de respuesta de RFIs como predictor temprano: cuando sube, las esperas de campo llegan 3 semanas después. **Transición:** "estos KPIs se organizan en tableros distintos según la audiencia. Veamos los cuatro clásicos".
+**Idea central:** un buen tablero de obra cabe en ~10 indicadores con dueño y acción asociada. **Cómo explicarlo:** sobrevolar los KPIs en 4 familias: producción (avance, productividad, PPC), información (RFIs, submittals), salud económica (valor ganado: CPI = EV/AC y SPI = EV/PV, el estándar PMI) y mejora (causas de NC). Cerrar con el criterio: si nadie actúa distinto por verlo, sobra. **Ejemplo:** el tiempo medio de respuesta de RFIs como predictor temprano: cuando sube, las esperas de campo llegan 3 semanas después. **Transición:** "estos KPIs se organizan en tableros distintos según la audiencia. Veamos los cuatro clásicos".
 
 ### Slide 46 — Dashboard gerencial
 

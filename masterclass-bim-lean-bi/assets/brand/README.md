@@ -2,7 +2,8 @@
 
 | Archivo | Origen | Uso en el deck |
 |---|---|---|
-| `aecode-logo.svg` | repo `aecode-startup-cockpit` (logo blanco, ideal en fondo oscuro) | Header fijo, portada (S01), cierre (S60) |
+| `aecode-logo-ink.svg` | derivado del logo blanco (relleno tinta `#181A20`) | **Edición clara (actual):** header fijo, portada (S01), cierre (S60) |
+| `aecode-logo.svg` | repo `aecode-startup-cockpit` (logo blanco, ideal en fondo oscuro) | Reserva para fondos oscuros |
 | `aecode-isotipo.png` | repo `state-ai-aec-aecode-light` | Favicon |
 | `aecodito-home.png` | repo `state-ai-aec-aecode-light` (mascota) | Disponible (no usado actualmente) |
 

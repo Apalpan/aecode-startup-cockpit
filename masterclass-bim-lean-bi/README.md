@@ -5,22 +5,27 @@ del Diplomado Internacional *BIM, Lean y BI aplicado al Seguimiento y Control de
 Obra* de **AECODE**. Pensada para una sesión en vivo de 90–120 minutos en laptop,
 proyector o tablet.
 
-> Estética premium oscura AECODE (grafito + dorado/cobre + acentos tech), motor de
-> presentación propio sin dependencias, gráficos SVG a medida, notas de expositor
-> integradas y export a PDF.
+> **Edición clara (v2)** — estética editorial premium AECODE: papel cálido + tinta
+> grafito + bronce, motor de presentación propio sin dependencias, gráficos SVG a
+> medida, notas de expositor integradas y export a PDF.
 
 ## Qué se construyó
 
 - **60 slides en 8 bloques narrativos**: problema de la industria → mapa del
   diplomado → marcos (BIM/Lean/VDC/IPD) → CDE y obra → herramientas → BI →
   IA/emergentes → cierre.
-- **Interactividad**: mapa mundial de adopción BIM (clic en pines), diagrama de
-  ecosistema clickeable, escalera de madurez con tooltips, simulación animada del
-  flujo de información, comparador antes/después con slider, tarjetas expandibles,
-  dashboards simulados, tooltips explicativos en diagramas y KPIs.
-- **Motor del deck**: navegación por teclado y swipe, índice lateral, overview en
-  grilla, barra de progreso, deep-links (`#/n`), notas del expositor, ayuda y
-  export a PDF.
+- **Interactividad de slide**: iceberg del costo invisible con 6 estratos
+  clickeables y datos con fuente (S07), autoevaluación de madurez digital con ruta
+  sugerida por nivel (S15), calculadora en vivo del costo del reporte manual (S42),
+  mapa mundial de adopción BIM (S09), ecosistema clickeable (S11), simulación del
+  flujo de información (S28), comparador antes/después (S59), tarjetas expandibles,
+  dashboards simulados y tooltips en diagramas y KPIs.
+- **Motor del deck (v2)**: paleta de comandos `Ctrl+K` (buscar slide o acción, sin
+  acentos), barra de progreso segmentada por bloques (clic = saltar), saltos por
+  bloque (teclas `1–8`), contadores animados en las cifras, cronómetro de sesión
+  (`T`), pantalla completa (`F`), flechas en pantalla para tablet, navegación por
+  teclado y swipe, índice lateral, overview en grilla, deep-links (`#/n`), notas
+  del expositor, ayuda, export a PDF y soporte de `prefers-reduced-motion`.
 - **Documentación**: `DECISIONES.md` (arquitectura), `FUENTES.md` (trazabilidad de
   datos), `speaker-notes.md` (guion completo del expositor).
 
@@ -42,14 +47,20 @@ python3 -m http.server 8080        # → http://localhost:8080
 | Tecla | Acción |
 |---|---|
 | `→` / `Espacio` / `←` | Avanzar / retroceder |
+| `Ctrl+K` (o `K`) | Paleta de comandos: buscar slide, bloque o acción |
+| `1` … `8` | Saltar al inicio del bloque N |
 | `O` o `Esc` | Vista general (grilla de 60 slides) |
 | `M` | Índice lateral por bloques |
 | `N` o `S` | Notas del expositor de la slide actual |
+| `T` | Cronómetro de sesión (clic sobre él = reiniciar) |
+| `F` | Pantalla completa |
 | `E` o `P` | Exportar a PDF (diálogo de impresión) |
 | `?` | Ayuda |
 
-En tablet: deslizar horizontalmente. La URL guarda la slide (`#/23`) — sirve para
-compartir un enlace a una slide específica o retomar donde quedaste.
+En tablet: deslizar horizontalmente o usar las flechas `‹ ›` del HUD. La barra
+superior muestra los 8 bloques como segmentos clickeables. La URL guarda la slide
+(`#/23`) — sirve para compartir un enlace a una slide específica o retomar donde
+quedaste.
 
 ## Deploy en GitHub Pages
 
@@ -73,7 +84,7 @@ Pages sobre `main` — ver `DECISIONES.md`.)
 | Paleta, tipografías, radios | `styles/tokens.css` |
 | Componentes visuales (cards, tablas, timeline, comparador…) | `styles/components.css` + `src/core/components.js` |
 | Gráficos (barras, curva S, gauge, mapa) | `src/core/charts.js` |
-| Logos / branding | `assets/brand/` (ver su README) — el logo se referencia en `index.html` y slides 01/60 |
+| Logos / branding | `assets/brand/` (ver su README) — la edición clara usa `aecode-logo-ink.svg` (tinta) en `index.html` y slides 01/60; `aecode-logo.svg` (blanco) queda para fondos oscuros |
 | Notas del expositor | Campo `notes` de cada slide; luego regenerar (abajo) |
 | Datos con fuente | Editar la slide **y** actualizar `FUENTES.md` |
 

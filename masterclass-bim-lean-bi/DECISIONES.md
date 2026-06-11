@@ -57,6 +57,40 @@ Se evaluaron las tres opciones planteadas:
 - **Carpeta autocontenida**: todo vive bajo `masterclass-bim-lean-bi/` con rutas
   relativas; se puede mover a su propio repositorio en el futuro sin cambiar una línea.
 
+## v2 — Edición clara e interactividad ampliada (jun-2026)
+
+**Por qué light.** La sesión se proyecta en auditorios con luz ambiental y se
+comparte como PDF impreso/leído en pantalla clara: un lienzo de papel cálido con
+tinta grafito y un solo acento bronce rinde mejor en proyector, imprime fiel y da
+registro más formal/editorial. El sistema de tokens se reescribió en
+`styles/tokens.css` (hex + refinamiento OKLCH bajo `@supports`): cambiar de tema en
+el futuro es tocar un archivo — los componentes no llevan colores propios.
+
+**Decisiones de la v2:**
+
+- **Un solo tema.** Se descartó el toggle dark/light: duplicaría la superficie de
+  CSS a mantener para un artefacto que se presenta en un contexto controlado. La
+  edición oscura queda en el historial de git si se necesitara recuperar.
+- **Paleta de comandos propia (Ctrl+K)** en el engine (~90 líneas): búsqueda de
+  slides y acciones con normalización de acentos, teclado completo (↑↓/Enter/Esc)
+  y mouse. Mismo patrón mental que la paleta del cockpit AECODE.
+- **Progreso segmentado por bloques**: la barra superior pasa de línea continua a
+  8 segmentos proporcionales clickeables — comunica estructura, posición y permite
+  saltar de bloque (también con teclas `1–8`).
+- **Contadores animados declarativos**: los builders de `stats()` marcan los
+  valores numéricos con `data-count/dec/pre/suf`; el engine los anima con
+  easeOutCubic al entrar a la slide (y los fija directo si el usuario tiene
+  `prefers-reduced-motion`). Los strings no numéricos quedan intactos.
+- **Interactividad pedagógica, no decorativa**: las tres piezas nuevas (iceberg de
+  costos S07, autoevaluación de madurez S15, calculadora del reporte manual S42)
+  existen para producir un momento participativo en la sesión en vivo; cada dato
+  del iceberg lleva fuente en pantalla y en `FUENTES.md`.
+- **Accesibilidad**: focus rings visibles (box-shadow), `role="button"` + Enter/
+  Espacio en los SVG clickeables, aria-labels en botones de icono, objetivos
+  táctiles ≥44 px bajo `pointer: coarse`, `prefers-reduced-motion` global.
+- **Logo en tinta** (`aecode-logo-ink.svg`): el SVG original es blanco puro; se
+  generó la variante grafito para fondo claro sin tocar el original.
+
 ## Estructura
 
 ```

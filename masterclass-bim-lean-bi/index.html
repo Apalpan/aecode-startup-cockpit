@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BIM, Lean y BI aplicado al Seguimiento y Control de Obra — Clase magistral · AECODE</title>
   <meta name="description" content="Presentación interactiva de la clase magistral introductoria del Diplomado Internacional BIM, Lean y BI aplicado al Seguimiento y Control de Obra — AECODE.">
+  <meta name="theme-color" content="#F6F5F1">
 
   <!-- Tipografías AECODE -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,20 +19,28 @@
 </head>
 <body>
   <!-- Chrome del deck -->
-  <div id="progress"></div>
-  <div id="brandmark"><img src="assets/brand/aecode-logo.svg" alt="AECODE"></div>
+  <div id="progress" aria-label="Progreso por bloques"></div>
+  <div id="brandmark"><img src="assets/brand/aecode-logo-ink.svg" alt="AECODE"></div>
 
   <div id="viewport"><div id="stage"></div></div>
 
   <div id="hud">
-    <div class="hud-l"><span class="blockname"></span></div>
+    <div class="hud-l">
+      <span class="blockname"></span>
+      <span id="timer" hidden>00:00</span>
+    </div>
     <div class="hud-r">
       <span class="count"></span>
+      <span class="nav-arrows">
+        <button id="b-prev" title="Anterior (←)" aria-label="Slide anterior">‹</button>
+        <button id="b-next" title="Siguiente (→)" aria-label="Slide siguiente">›</button>
+      </span>
+      <button id="b-palette" title="Buscar slide o acción (Ctrl+K)">⌘K Buscar</button>
       <button id="b-menu" title="Índice (M)">☰ Índice</button>
-      <button id="b-grid" title="Vista general (O)">⊞</button>
-      <button id="b-notes" title="Notas del expositor (N)">📝</button>
+      <button id="b-grid" title="Vista general (O)" aria-label="Vista general">⊞</button>
+      <button id="b-notes" title="Notas del expositor (N)" aria-label="Notas del expositor">📝</button>
       <button id="b-pdf" title="Exportar PDF (E)">⤓ PDF</button>
-      <button id="b-help" title="Ayuda (?)">?</button>
+      <button id="b-help" title="Ayuda (?)" aria-label="Ayuda">?</button>
     </div>
   </div>
 
@@ -50,20 +59,34 @@
   <div id="notes"><h4></h4><div class="ntext"></div></div>
   <div id="grid"></div>
 
+  <!-- Paleta de comandos -->
+  <div id="palette" role="dialog" aria-label="Paleta de comandos">
+    <div class="pal-card">
+      <input type="text" placeholder="Buscar slide, bloque o acción… (p. ej. «iceberg», «PPC», «pdf»)"
+        aria-label="Buscar slide o acción" autocomplete="off" spellcheck="false">
+      <div class="pal-list"></div>
+      <footer><span><kbd>↑↓</kbd> navegar</span><span><kbd>Enter</kbd> ir</span><span><kbd>Esc</kbd> cerrar</span></footer>
+    </div>
+  </div>
+
   <div id="help">
     <div class="card">
       <h3>Atajos de teclado</h3>
       <table>
         <tr><td><kbd>→</kbd> <kbd>Espacio</kbd></td><td>Siguiente slide</td></tr>
         <tr><td><kbd>←</kbd></td><td>Slide anterior</td></tr>
+        <tr><td><kbd>Ctrl</kbd>+<kbd>K</kbd></td><td>Paleta: buscar slide o acción</td></tr>
+        <tr><td><kbd>1</kbd>…<kbd>8</kbd></td><td>Saltar al inicio del bloque N</td></tr>
         <tr><td><kbd>O</kbd> / <kbd>Esc</kbd></td><td>Vista general (overview)</td></tr>
         <tr><td><kbd>M</kbd></td><td>Índice de secciones</td></tr>
         <tr><td><kbd>N</kbd> / <kbd>S</kbd></td><td>Notas del expositor</td></tr>
+        <tr><td><kbd>T</kbd></td><td>Cronómetro de sesión (clic = reiniciar)</td></tr>
+        <tr><td><kbd>F</kbd></td><td>Pantalla completa</td></tr>
         <tr><td><kbd>E</kbd> / <kbd>P</kbd></td><td>Exportar a PDF (imprimir)</td></tr>
         <tr><td><kbd>Inicio</kbd> / <kbd>Fin</kbd></td><td>Primera / última slide</td></tr>
         <tr><td><kbd>?</kbd></td><td>Esta ayuda</td></tr>
       </table>
-      <p>En tablet: desliza horizontalmente para navegar. La URL guarda la slide actual (#/n) — puedes compartir el enlace a una slide específica.</p>
+      <p>En tablet: desliza horizontalmente o usa las flechas ‹ › del borde inferior. La barra superior muestra los 8 bloques: haz clic en uno para saltar. La URL guarda la slide actual (#/n) — puedes compartir el enlace a una slide específica.</p>
     </div>
   </div>
 

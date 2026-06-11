@@ -83,10 +83,20 @@
     return `<div class="grid g${cols}">${inner}</div>`;
   }
 
+  /* Valor de stat: si es numérico, se marca para el contador animado
+     del engine ([data-count]); si no (p. ej. "↑"), se deja tal cual. */
+  function statVal(v) {
+    const m = String(v).match(/^([^0-9<]*)(\d{1,3}(?:[.,]\d+)?)([^<]*)$/);
+    if (!m) return v;
+    const dec = /[.,]/.test(m[2]) ? m[2].split(/[.,]/)[1].length : 0;
+    const num = m[2].replace(",", ".");
+    return `<span data-count="${num}" data-dec="${dec}" data-pre="${m[1]}" data-suf="${m[3]}">${v}</span>`;
+  }
+
   function stats(items) {
     const inner = items.map((s, i) => fr(`
       <div class="stat ${s.c ? "c-" + s.c : ""}">
-        <div class="v">${s.v}</div>
+        <div class="v">${statVal(s.v)}</div>
         <div class="l">${s.l}</div>
         ${s.s ? `<div class="s">${s.s}</div>` : ""}
       </div>`, i)).join("");
@@ -126,13 +136,13 @@
       .join("")}</div></div>`;
   }
 
-  /* ---------- Escalera ---------- */
-  function ladder(steps) {
+  /* ---------- Escalera (opts.pick = autoevaluación clickeable) ---------- */
+  function ladder(steps, opts = {}) {
     const n = steps.length;
-    return `<div class="ladder">${steps
+    return `<div class="ladder ${opts.pick ? "pick" : ""}">${steps
       .map((s, i) => {
         const h = 42 + ((100 - 42) * i) / (n - 1);
-        return `<div class="rung fr" style="height:${h}%;--d:${120 + i * 110}ms" ${s.tip ? `data-tip="${s.tip}"` : ""}>
+        return `<div class="rung fr" data-lv="${i}" ${opts.pick ? 'role="button" tabindex="0"' : ""} style="height:${h}%;--d:${120 + i * 110}ms" ${s.tip ? `data-tip="${s.tip}"` : ""}>
           <span class="lv">NIVEL ${i}</span><h5>${s.t}</h5><p>${s.d}</p></div>`;
       })
       .join("")}</div>`;
@@ -190,10 +200,10 @@
     // grúa de datos: línea al "dashboard"
     const top = px(1.6, 0, n * fl);
     out += `<line x1="${top[0]}" y1="${top[1]}" x2="${top[0] + 70}" y2="${top[1] - 46}" class="iso-l" stroke-dasharray="4 5"/>`;
-    out += `<rect x="${top[0] + 58}" y="${top[1] - 86}" width="86" height="50" rx="7" class="iso-l" fill="rgba(217,164,91,.07)"/>`;
-    out += `<line x1="${top[0] + 68}" y1="${top[1] - 52}" x2="${top[0] + 84}" y2="${top[1] - 62}" class="iso-l" stroke="rgba(217,164,91,.8)"/>`;
-    out += `<line x1="${top[0] + 88}" y1="${top[1] - 58}" x2="${top[0] + 104}" y2="${top[1] - 72}" class="iso-l" stroke="rgba(217,164,91,.8)"/>`;
-    out += `<line x1="${top[0] + 108}" y1="${top[1] - 66}" x2="${top[0] + 130}" y2="${top[1] - 56}" class="iso-l" stroke="rgba(217,164,91,.8)"/>`;
+    out += `<rect x="${top[0] + 58}" y="${top[1] - 86}" width="86" height="50" rx="7" class="iso-l" fill="rgba(154,99,18,.06)"/>`;
+    out += `<line x1="${top[0] + 68}" y1="${top[1] - 52}" x2="${top[0] + 84}" y2="${top[1] - 62}" class="iso-l" stroke="rgba(154,99,18,.75)"/>`;
+    out += `<line x1="${top[0] + 88}" y1="${top[1] - 58}" x2="${top[0] + 104}" y2="${top[1] - 72}" class="iso-l" stroke="rgba(154,99,18,.75)"/>`;
+    out += `<line x1="${top[0] + 108}" y1="${top[1] - 66}" x2="${top[0] + 130}" y2="${top[1] - 56}" class="iso-l" stroke="rgba(154,99,18,.75)"/>`;
     return `<div class="isoart"><svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">${out}</svg></div>`;
   }
 

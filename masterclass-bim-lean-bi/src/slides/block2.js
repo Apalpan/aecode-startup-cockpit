@@ -38,7 +38,7 @@
         <div class="cols c-55">
           <div class="eco fr" style="--d:200ms">
             <svg viewBox="0 0 640 436">
-              <defs><radialGradient id="coreGrad"><stop offset="0%" stop-color="#D9A45B"/><stop offset="100%" stop-color="#8A5F28"/></radialGradient></defs>
+              <defs><radialGradient id="coreGrad"><stop offset="0%" stop-color="#B8763A"/><stop offset="100%" stop-color="#7C4F0E"/></radialGradient></defs>
               ${links}
               <g class="ecore"><circle cx="${cx}" cy="${cy}" r="52"/>
                 <text x="${cx}" y="${cy - 4}" font-size="12.5">Obra</text>
@@ -93,7 +93,7 @@
       ${head("El cambio de paradigma", "De <em>documentos aislados</em> a sistemas de información")}
       <div class="s-body">
         <div class="grid g2">
-          ${fr(`<div class="card" style="border-color:rgba(242,97,122,.4)">
+          ${fr(`<div class="card" style="border-color:rgba(192,40,90,.35)">
             <span class="tag t-risk">Antes · artefactos sueltos</span>
             <ul class="klist mt-m" style="gap:10px">
               <li><b>Excel</b> como base de datos, reporte y control documental a la vez</li>
@@ -101,7 +101,7 @@
               <li><b>WhatsApp</b> como canal oficial de decisiones de obra</li>
               <li>El conocimiento vive en <b>personas</b>, no en sistemas</li>
             </ul></div>`, 2)}
-          ${fr(`<div class="card" style="border-color:rgba(71,207,120,.4)">
+          ${fr(`<div class="card" style="border-color:rgba(23,122,69,.35)">
             <span class="tag t-green">Después · sistema integrado</span>
             <ul class="klist check mt-m" style="gap:10px">
               <li><b>CDE</b>: una sola fuente de verdad, con estados y permisos</li>
@@ -169,13 +169,13 @@
     notes: `**Idea central:** traducir el temario a la pregunta que el participante realmente se hace: "¿qué me resuelve esto?". **Cómo explicarlo:** leer la tabla por filas, empezando siempre por el dolor (columna 1) para mantener el anclaje en la obra real. **Ejemplo:** para M3: "el informe del viernes que hoy te toma 4 horas, en el taller lo conviertes en un tablero que se refresca solo". **Transición:** "este viaje también se puede medir como niveles de madurez. ¿En qué nivel está tu obra hoy?"`,
   });
 
-  /* ---------- 15 · Escalera de madurez digital ---------- */
+  /* ---------- 15 · Escalera de madurez digital (autoevaluación) ---------- */
   DECK.add({
     block: 2,
     title: "La escalera de madurez digital en obra",
     html: `
       ${head("¿Dónde está tu obra hoy?", "La <em>escalera de madurez</em> digital en obra",
-        "Pasa el cursor por cada nivel. El diplomado te lleva del nivel donde estés hacia los niveles 4 y 5.")}
+        "Autoevaluación en vivo: haz clic en el nivel donde está tu obra hoy y mira la ruta sugerida.")}
       <div class="s-body">
         ${ladder([
           { t: "Información dispersa", d: "Papel, Excel suelto, WhatsApp. El dato vive en personas.", tip: "Nivel 0: cada dato hay que perseguirlo. La obra funciona por heroísmo individual." },
@@ -184,10 +184,34 @@
           { t: "Dashboards y métricas", d: "Avance, costos y PPC visibles y compartidos.", tip: "Nivel 3: el comité discute sobre datos vivos, no sobre informes vencidos." },
           { t: "Simulación 4D y control", d: "Plan vs real sobre el modelo; el desvío se ve venir.", tip: "Nivel 4: la secuencia constructiva se simula antes de ejecutarse." },
           { t: "IA y decisión predictiva", d: "Asistentes, alertas y automatización de análisis.", tip: "Nivel 5: la IA resume, alerta y prepara la decisión. El equipo decide mejor y más rápido." },
-        ])}
+        ], { pick: true })}
+        <div id="lvlinfo" class="card accent fr" style="--d:760ms"><h4>La regla de la escalera</h4>
+          <p>Se sube peldaño a peldaño: cada nivel se apoya en la disciplina del anterior. Selecciona tu nivel actual
+          para ver la ruta que el programa sugiere desde ahí.</p></div>
       </div>
       ${foot("Bloque 2 · Mapa del diplomado")}`,
-    notes: `**Idea central:** la madurez digital es una escalera, no un interruptor — y saltarse peldaños sale caro. **Cómo explicarlo:** pedir a cada participante que ubique mentalmente su obra actual (la mayoría está entre 0 y 1). Subrayar que el diplomado recorre exactamente esta escalera: M1-M2 construyen niveles 1-2, M2-M3 los niveles 3-4, M4 el nivel 5. **Ejemplo:** "comprar Power BI estando en nivel 0 es ponerle tablero digital a un auto sin motor". **Transición:** "subir la escalera requiere capacidades concretas; este es el mapa de ese perfil".`,
+    init(el) {
+      const ROUTES = [
+        ["Nivel 0 → empieza por el gobierno del dato", "Es el punto de partida más común — y la mejor noticia: el primer salto es el más rentable. <b>M1 (marcos y Last Planner) + la primera mitad del M2 (ISO 19650 y CDE)</b> convierten el caos documental en una sola fuente de verdad en semanas."],
+        ["Nivel 1 → conecta el modelo con el control", "El modelo existe pero no gobierna decisiones. El <b>M2 completo</b> es tu palanca: BEP, sectorización, metrados desde el modelo y control documental en ACC — el modelo deja de ser 'del área BIM' y pasa a ser de la obra."],
+        ["Nivel 2 → haz visible lo que ya gobiernas", "Con CDE y trazabilidad funcionando, el cuello de botella es la visibilidad. <b>M2 (4D, campo) y M3 (arquitectura de datos + Power BI)</b>: tus datos ordenados se convierten en tableros que cambian la reunión semanal."],
+        ["Nivel 3 → del tablero al sistema de producción", "Ya mides; ahora anticipa. <b>M2 (lookahead sobre el modelo, 4D plan vs real) + M3 (dashboards Lean por sector)</b>: el desvío se ve venir con semanas de ventaja, no en el informe mensual."],
+        ["Nivel 4 → automatiza el análisis", "Tu sistema produce datos confiables: es exactamente lo que la IA necesita. <b>M4: asistentes de obra, automatización n8n/APIs y reportes que se redactan solos</b> sobre tu stack ya maduro."],
+        ["Nivel 5 → lidera la transformación", "Estás en la frontera: tu reto ya no es técnico, es organizacional. El programa te aporta el <b>marco completo para estandarizar y escalar</b> tu práctica a otros proyectos y equipos — y certificarla (CIP + Autodesk)."],
+      ];
+      const info = el.querySelector("#lvlinfo");
+      el.querySelectorAll(".ladder .rung").forEach((r) => {
+        const go = () => {
+          el.querySelectorAll(".ladder .rung").forEach((q) => q.classList.remove("sel"));
+          r.classList.add("sel");
+          const d = ROUTES[+r.dataset.lv];
+          info.innerHTML = `<h4>${d[0]}</h4><p>${d[1]}</p>`;
+        };
+        r.addEventListener("click", go);
+        r.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+      });
+    },
+    notes: `**Idea central:** la madurez digital es una escalera, no un interruptor — y saltarse peldaños sale caro. **Cómo explicarlo:** convertirlo en momento participativo: pedir a 2-3 voluntarios que digan su nivel y hacer clic en vivo — la ruta sugerida aparece al instante (la mayoría está entre 0 y 1, y eso es buena noticia: el primer salto es el más rentable). Subrayar que el diplomado recorre exactamente esta escalera: M1-M2 construyen niveles 1-2, M2-M3 los niveles 3-4, M4 el nivel 5. **Ejemplo:** "comprar Power BI estando en nivel 0 es ponerle tablero digital a un auto sin motor". **Transición:** "subir la escalera requiere capacidades concretas; este es el mapa de ese perfil".`,
   });
 
   /* ---------- 16 · Mapa de capacidades del profesional ---------- */
