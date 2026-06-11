@@ -261,8 +261,80 @@ footer{position:relative;z-index:5;border-top:1px solid var(--border);padding:24
 .foot-in{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;max-width:1320px;margin:0 auto;padding:0 22px}
 .foot-brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:14px}.foot-copy{font-size:10px;color:var(--dim);font-family:'JetBrains Mono',monospace}
 .foot-links{display:flex;gap:15px}.foot-links a{font-size:11px;color:var(--muted);text-decoration:none}.foot-links a:hover{color:var(--txt)}
+/* ADOPT 2026 */
+.adopt-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:14px}
+.acard{background:rgba(34,35,65,.55);border:1px solid var(--border);border-radius:14px;padding:14px 15px;display:flex;flex-direction:column;gap:8px;transition:transform .22s ease,border-color .22s ease}
+.acard:hover{transform:translateY(-3px);border-color:rgba(124,126,223,.55)}
+.acard .av{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:23px;line-height:1;font-variant-numeric:tabular-nums}
+.acard .al{font-size:10.5px;color:var(--muted);line-height:1.45;flex:1}
+.acard .src{align-self:flex-start;white-space:normal}
+.adopt-take{margin-top:14px;background:rgba(74,58,193,.08);border:1px solid rgba(74,58,193,.22);border-left:3px solid var(--violet);border-radius:12px;padding:13px 17px;font-size:12.5px;color:var(--muted);line-height:1.6}
+.adopt-take b{color:var(--txt)}
+/* WAR ROOM */
+.war-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px}
+.war-grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;margin-top:14px}
+.wcard.urgent{border-color:rgba(240,160,48,.45)}
+.wcard.urgent2{border-color:rgba(71,207,120,.4)}
+.w-top{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.w-name{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:16.5px;letter-spacing:-.01em}
+.w-chip{font-family:'Space Grotesk',sans-serif;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;border-radius:999px;padding:4px 10px;border:1px solid var(--border);color:var(--muted)}
+.w-chip.hot{color:var(--amber);border-color:rgba(240,160,48,.5);background:rgba(240,160,48,.08)}
+.w-chip.go{color:var(--green);border-color:rgba(71,207,120,.45);background:rgba(71,207,120,.08)}
+.cd{display:flex;gap:18px;margin:14px 0 10px;min-height:52px}
+.cd-u b{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:34px;line-height:1;font-variant-numeric:tabular-nums;display:block}
+.cd-u span{font-family:'Space Grotesk',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);display:block;margin-top:4px}
+.cd-done{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;color:var(--green);display:flex;align-items:center}
+.w-meta{font-size:11.5px;color:var(--muted);line-height:1.6}
+.w-list{margin-top:12px;display:flex;flex-direction:column;gap:7px}
+.w-li{display:flex;gap:9px;font-size:11.5px;color:var(--muted);line-height:1.5}
+.w-li::before{content:'\2192';color:var(--violet);font-weight:700;flex:0 0 auto}
+.wk{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--border);border-radius:10px;cursor:pointer;transition:border-color .2s,background .2s;font-size:12px;color:var(--txt);margin-bottom:7px}
+.wk:hover{border-color:var(--violet);background:rgba(124,126,223,.06)}
+.wk .box{width:17px;height:17px;border-radius:5px;border:1.5px solid var(--dim);display:grid;place-items:center;font-size:10px;color:#fff;flex:0 0 auto;transition:background .2s,border-color .2s}
+.wk.done .box{background:var(--green);border-color:var(--green)}
+.wk.done span:last-child{text-decoration:line-through;color:var(--dim)}
+.wq{display:flex;flex-direction:column;gap:10px}
+.wq-it{border-left:2px solid var(--border);padding-left:12px}
+.wq-q{font-size:12px;font-weight:700;color:var(--txt);line-height:1.45}
+.wq-a{font-size:11px;color:var(--muted);line-height:1.55;margin-top:3px}
+/* PITCH MODE */
+#pitch{position:fixed;inset:0;z-index:700;background:radial-gradient(ellipse 1000px 600px at 82% -10%,rgba(74,58,193,.32),transparent 60%),radial-gradient(ellipse 800px 500px at 8% 112%,rgba(143,96,234,.16),transparent 55%),#090B18;opacity:0;pointer-events:none;transition:opacity .35s ease}
+#pitch.on{opacity:1;pointer-events:auto}
+.pslide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:9vh 8vw 13vh;opacity:0;transform:translateY(26px);transition:opacity .5s ease,transform .5s ease;pointer-events:none;overflow-y:auto}
+.pslide.on{opacity:1;transform:translateY(0);pointer-events:auto}
+.p-eyebrow{font-family:'Space Grotesk',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--violet);margin-bottom:22px}
+.p-big{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:clamp(50px,10vw,140px);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.p-logo{width:64px;height:64px;border-radius:50%;border:2px solid var(--violet);object-fit:cover}
+.p-head{font-family:'Space Grotesk',sans-serif;font-size:clamp(20px,3.4vw,40px);font-weight:700;line-height:1.12;letter-spacing:-.02em;max-width:900px;margin:20px auto 0;text-wrap:balance}
+.p-sub{font-size:clamp(13px,1.7vw,17px);color:var(--muted);max-width:780px;margin:16px auto 0;line-height:1.65;text-wrap:pretty}
+.p-src{margin-top:24px}
+.p-count{position:absolute;top:24px;left:26px;font-size:11px;color:var(--dim);z-index:5}
+.p-x{position:absolute;top:18px;right:22px;width:38px;height:38px;border-radius:50%;border:1px solid var(--border);background:rgba(34,35,65,.6);color:var(--muted);font-size:19px;cursor:pointer;transition:.2s;z-index:6;display:grid;place-items:center}
+.p-x:hover{color:#fff;border-color:var(--violet)}
+.pzone{position:absolute;top:70px;bottom:90px;width:16%;cursor:pointer;z-index:4}
+.pzone.l{left:0}.pzone.r{right:0}
+.pdots{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;gap:9px;z-index:5}
+.pdots button{width:9px;height:9px;border-radius:50%;border:none;background:rgba(197,207,250,.22);cursor:pointer;transition:transform .25s,background .25s;padding:0}
+.pdots button.on{background:var(--violet);transform:scale(1.4)}
+.pkeys{position:absolute;bottom:24px;right:26px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--dim);display:flex;gap:8px;align-items:center;z-index:5}
+.pkeys kbd,.ck-foot kbd{border:1px solid var(--border);border-radius:5px;padding:2px 6px;font-size:9.5px;background:rgba(34,35,65,.6);font-family:'JetBrains Mono',monospace}
+/* CMDK */
+#cmdk{position:fixed;inset:0;z-index:800;background:rgba(8,10,22,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;justify-content:center;align-items:flex-start;padding-top:14vh;opacity:0;pointer-events:none;transition:opacity .22s ease}
+#cmdk.on{opacity:1;pointer-events:auto}
+.ck-panel{width:min(560px,92vw);background:rgba(18,20,42,.97);border:1px solid var(--border);border-radius:16px;box-shadow:0 30px 90px rgba(0,0,0,.55);overflow:hidden;transform:translateY(10px) scale(.98);transition:transform .22s ease}
+#cmdk.on .ck-panel{transform:translateY(0) scale(1)}
+.ck-in{width:100%;background:transparent;border:none;outline:none;color:var(--txt);font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;padding:16px 18px;border-bottom:1px solid var(--border)}
+.ck-in::placeholder{color:var(--dim)}
+.ck-list{max-height:44vh;overflow-y:auto;padding:7px}
+.ck-it{display:flex;align-items:center;gap:11px;padding:10px 12px;border-radius:10px;cursor:pointer;font-size:13px;color:var(--muted)}
+.ck-it .ic{width:22px;text-align:center;flex:0 0 auto}
+.ck-it.on{background:rgba(124,126,223,.14);color:var(--txt)}
+.ck-it kbd{margin-left:auto;border:1px solid var(--border);border-radius:5px;padding:1px 6px;font-size:9.5px;font-family:'JetBrains Mono',monospace;color:var(--dim)}
+.ck-empty{padding:24px;text-align:center;color:var(--dim);font-size:12px}
+.ck-foot{display:flex;gap:14px;padding:9px 14px;border-top:1px solid var(--border);font-size:9.5px;color:var(--dim);font-family:'JetBrains Mono',monospace;align-items:center}
 @media(max-width:1080px){
   .sum-top,.fin-grid,.sim-grid,.ready-grid,.hyb-grid{grid-template-columns:1fr}
+  .adopt-grid{grid-template-columns:repeat(3,1fr)}
   .kstrip{grid-template-columns:repeat(3,1fr)}
   .tesis-grid{grid-template-columns:repeat(2,1fr)}
   .kpi-grid{grid-template-columns:repeat(3,1fr)}
@@ -272,8 +344,13 @@ footer{position:relative;z-index:5;border-top:1px solid var(--border);padding:24
   .pills{display:none}.bar-sub{display:none}.verdict span{display:none}
   .kstrip,.kpi-grid,.tesis-grid{grid-template-columns:repeat(2,1fr)}
   .channel-row{grid-template-columns:100px 1fr 76px}
+  .adopt-grid{grid-template-columns:repeat(2,1fr)}
+  .war-grid,.war-grid2{grid-template-columns:1fr}
+  .tbtn.t-sec{display:none}
+  .cd-u b{font-size:27px}
+  .pzone{display:none}
 }
-@media(max-width:460px){.kstrip,.kpi-grid,.out-grid,.mm-grid,.coh-sum,.tesis-grid{grid-template-columns:1fr}}
+@media(max-width:460px){.kstrip,.kpi-grid,.out-grid,.mm-grid,.coh-sum,.tesis-grid,.adopt-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -283,6 +360,16 @@ footer{position:relative;z-index:5;border-top:1px solid var(--border);padding:24
 <div id="popover"><span class="pop-x" onclick="hidePop()">&times;</span><div class="pop-t" id="pop-t"></div><div id="pop-d"></div></div>
 <div id="toast"></div>
 <div id="tour-box"><div class="tt" id="tour-t"></div><div class="td" id="tour-d"></div><div class="tnav"><span class="tstep" id="tour-step"></span><button class="tbtn-s" id="tour-prev" onclick="tourPrev()">Atrás</button><button class="tbtn-s primary" id="tour-next" onclick="tourNext()">Siguiente</button></div></div>
+<div id="pitch" role="dialog" aria-modal="true" aria-label="Pitch Mode">
+  <div id="p-slides"></div>
+  <div class="pzone l" onclick="pitchPrev()" aria-hidden="true"></div>
+  <div class="pzone r" onclick="pitchNext()" aria-hidden="true"></div>
+  <span class="p-count mono" id="p-count"></span>
+  <button class="p-x" onclick="endPitch()" aria-label="Cerrar pitch">&times;</button>
+  <div class="pdots" id="p-dots"></div>
+  <div class="pkeys"><kbd>&larr;</kbd><kbd>&rarr;</kbd> navegar<kbd>Esc</kbd> salir</div>
+</div>
+<div id="cmdk"><div class="ck-panel"><input id="ck-in" class="ck-in" placeholder="Escribe un comando o sección..." aria-label="Buscar comando"><div class="ck-list" id="ck-list"></div><div class="ck-foot"><span><kbd>&uarr;</kbd><kbd>&darr;</kbd> navegar</span><span><kbd>&crarr;</kbd> ejecutar</span><span><kbd>esc</kbd> cerrar</span><span style="margin-left:auto">Ctrl+K</span></div></div></div>
 <div id="bar"><div class="bar-in">
   <a href="#summary" class="bar-logo"><img src="aecodito.png" class="aecodito" alt="Aecodito"><span><span class="bar-name"><span class="grad">AECODE</span></span><span class="bar-sub">Startup Metrics OS</span></span></a>
   <div class="verdict" id="verdict"></div>
@@ -296,13 +383,16 @@ footer{position:relative;z-index:5;border-top:1px solid var(--border);padding:24
     <a class="pill" data-sec="growth">Growth</a>
     <a class="pill" data-sec="projection">Proyección</a>
     <a class="pill" data-sec="health">Fundabilidad</a>
+    <a class="pill" data-sec="warroom">War Room</a>
     <a class="pill" data-sec="focus">Foco</a>
   </nav>
   <div class="tools">
-    <button class="tbtn primary" onclick="startTour()">&#9737; Tour</button>
-    <button class="tbtn" onclick="doExport()">Exportar</button>
-    <button class="tbtn" onclick="document.getElementById('imp').click()">Importar</button>
-    <button class="tbtn" onclick="doReset()">Reset</button>
+    <button class="tbtn primary" onclick="startPitch()">&#9654; Pitch</button>
+    <button class="tbtn" onclick="startTour()">&#9737; Tour</button>
+    <button class="tbtn" onclick="toggleCmdk()" aria-label="Paleta de comandos (Ctrl+K)">&#8984;K</button>
+    <button class="tbtn t-sec" onclick="doExport()">Exportar</button>
+    <button class="tbtn t-sec" onclick="document.getElementById('imp').click()">Importar</button>
+    <button class="tbtn t-sec" onclick="doReset()">Reset</button>
     <input type="file" id="imp" accept="application/json" hidden>
   </div>
 </div></div>
@@ -331,6 +421,16 @@ footer{position:relative;z-index:5;border-top:1px solid var(--border);padding:24
       <div class="tcard card reveal"><div class="ti">&#127891;</div><span class="tn">~17%</span><h4>Adultos LATAM con superior</h4><p>El título pierde poder de señalización; la skill verificable lo gana. Se migra de "credencial de entrada" a "pasaporte de habilidades actualizable".</p><span class="src">Platzi / Vega</span></div>
       <div class="tcard card reveal"><div class="ti">&#9889;</div><span class="tn">&gt;70%</span><h4>Completion con cohorte</h4><p>Los MOOCs medianos completan 12.6%; los cohort-based &gt;75%; Platzi ~70%. La comunidad y el accountability &mdash; no el contenido &mdash; definen el resultado.</p><span class="src">Katy Jordan / Maven / Harvard</span></div>
     </div>
+    <div class="reveal" style="margin-top:34px"><div class="card-eyebrow"><span class="tick"></span>Radar de adopci&oacute;n IA en AEC &middot; lo m&aacute;s fresco 2025&ndash;2026 &middot; cada dato con fuente</div></div>
+    <div class="adopt-grid">
+      <div class="acard reveal"><span class="av" style="color:var(--violet)">75%</span><div class="al">de firmas AEC ya usa IA &mdash; subi&oacute; ~20 puntos en un solo a&ntilde;o</div><span class="src">Unanet AEC Inspire 2026</span></div>
+      <div class="acard reveal"><span class="av" style="color:var(--risk)">12%</span><div class="al">la usa <b>regularmente</b> en construcci&oacute;n &mdash; adopci&oacute;n profunda, no piloto</div><span class="src">Datagrid AECO 2025</span></div>
+      <div class="acard reveal"><span class="av" style="color:var(--amber)">29%</span><div class="al">conf&iacute;a en la data que alimenta sus herramientas de IA</div><span class="src">Unanet 2026</span></div>
+      <div class="acard reveal"><span class="av" style="color:var(--green)">94%</span><div class="al">de los adoptantes planea <b>aumentar</b> su inversi&oacute;n en IA este a&ntilde;o</div><span class="src">Bluebeam 2025</span></div>
+      <div class="acard reveal"><span class="av" style="color:var(--mint)">68%</span><div class="al">de early adopters ya ahorr&oacute; &ge;$50k; 46% ahorr&oacute; 500&ndash;1,000 horas</div><span class="src">Bluebeam 2025</span></div>
+      <div class="acard reveal"><span class="av" style="color:var(--blue)">47%</span><div class="al">de empresas LATAM implementa IA (&gt; 42% global) &mdash; pero solo ~28% captura valor</div><span class="src">Meta 2025 &middot; reporte regional 2026</span></div>
+    </div>
+    <div class="adopt-take reveal">La brecha <b class="mono">75% &rarr; 12%</b> no se cierra con m&aacute;s software: se cierra con <b>capacidades verificables</b>. Con 84.8% de exposici&oacute;n a IA en arquitectura/ingenier&iacute;a (Anthropic Economic Index 2025), cada rol AEC necesita re-skilling &mdash; ese gap es el mercado de AECODE.</div>
     <div class="tesis-quote reveal">"AECODE está construyendo el <b>Skill Operating System</b> para la fuerza laboral AEC en español: skill graph + evidencias + credenciales verificables + comunidad de gremio + employer loop. <b>El moat no es el contenido</b>."</div>
   </div>
 </section>
@@ -468,6 +568,57 @@ footer{position:relative;z-index:5;border-top:1px solid var(--border);padding:24
     </div>
   </div>
 </section>
+<section id="warroom" class="section">
+  <div class="wrap">
+    <div class="reveal"><div class="eyebrow">War Room &middot; Aceleradoras</div><h2 class="section-h">Ganar Emprelatam y Kaman con los mismos n&uacute;meros.</h2><p class="section-p">El cockpit es el arma: misma data, varias audiencias. <b style="color:var(--lavender)">Emprelatam EPA</b> cierra el <b>17 de junio</b> (equity-free), el <b style="color:var(--lavender)">Demo Day de Kaman</b> es el <b>22 de junio</b> (semilla S/20k), y el pipeline sigue con <b style="color:var(--lavender)">Platanus &rarr; YC</b>. Los relojes corren en vivo.</p></div>
+    <div class="war-grid">
+      <div class="wcard card reveal urgent">
+        <div class="w-top"><span class="w-name">Emprelatam &middot; EPA Aceleraci&oacute;n</span><span class="w-chip hot">cierre postulaci&oacute;n &middot; 17 jun</span></div>
+        <div class="cd" id="cd-emprelatam"></div>
+        <div class="w-meta">Equity-free &middot; pre-seed <b>con ingresos</b> buscando PMF &middot; perks $150k+ &middot; inicia 13-jul. Tambi&eacute;n abiertos: ECL Exploraci&oacute;n (20-jul), EGS Grow &amp; Scale (8-jul, requiere &gt;$20k/mes) y EXP Internacionalizaci&oacute;n (ago).</div>
+        <div class="w-list">
+          <div class="w-li">Eval&uacute;an: equipo full-time, tracci&oacute;n real (&gt;$1k/mes ya califica), claridad del cliente que paga y coachability.</div>
+          <div class="w-li">&Aacute;ngulo AECODE: llegamos con un sistema de m&eacute;tricas operando en vivo + comunidad 65k + NSM anti-vanity.</div>
+        </div>
+      </div>
+      <div class="wcard card reveal urgent2">
+        <div class="w-top"><span class="w-name">Kaman &middot; Demo Day Gen 2026</span><span class="w-chip go">demo day &middot; 22 jun</span></div>
+        <div class="cd" id="cd-kaman"></div>
+        <div class="w-meta">Incubadora UCSP (ProInn&oacute;vate) &middot; semilla <b>S/20,000</b> (1&deg;) / S/10,000 (2&deg;) + perks hasta S/150k &middot; jurado del ecosistema (inversores, corporativos, ProInn&oacute;vate).</div>
+        <div class="w-list">
+          <div class="w-li">El jurado espera dominio del temario del programa: m&eacute;tricas, pricing, ventas, valuaci&oacute;n y expansi&oacute;n.</div>
+          <div class="w-li">Jugada diferencial: cerrar el pitch con este cockpit en <b>Pitch Mode</b> y mover un slider del simulador en vivo.</div>
+        </div>
+      </div>
+      <div class="wcard card reveal">
+        <div class="w-top"><span class="w-name">Platanus</span><span class="w-chip">rolling &middot; post demo day</span></div>
+        <div class="w-meta" style="margin-top:10px">US$200k por ~7% (SAFE post-money) &middot; 12 semanas &middot; hispanohablantes. Requisito duro: <b>&ge;1 founder t&eacute;cnico full-time</b> que construye el producto.</div>
+        <div class="w-list">
+          <div class="w-li">Aplicar con la grabaci&oacute;n del Demo Day + evidencia de producto propio (Evidence Engine).</div>
+        </div>
+      </div>
+      <div class="wcard card reveal">
+        <div class="w-top"><span class="w-name">Y Combinator</span><span class="w-chip">siguiente batch</span></div>
+        <div class="w-meta" style="margin-top:10px">US$500k ($125k por 7% + $375k MFN) &middot; global. Miran: equipo &gt; idea, <b>crecimiento semanal</b>, mercado enorme, "make something people want".</div>
+        <div class="w-list">
+          <div class="w-li">Disparar cuando MRR plataforma &gt;$5k y NSM &gt;0.30 &mdash; con la curva de crecimiento semanal lista.</div>
+        </div>
+      </div>
+    </div>
+    <div class="war-grid2">
+      <div class="card reveal"><div class="card-eyebrow"><span class="tick"></span>Checklist de batalla &middot; pr&oacute;ximos 11 d&iacute;as &middot; click para marcar</div><div id="wcheck"></div></div>
+      <div class="card reveal"><div class="card-eyebrow"><span class="tick"></span>Lo que el jurado va a preguntar &middot; respuesta lista</div>
+        <div class="wq">
+          <div class="wq-it"><div class="wq-q">&iquest;El LTV/CAC de 3.1x es blended o por canal?</div><div class="wq-a">Por canal: comunidad $11 y referidos $8 (73% de la adquisici&oacute;n) vs paid $62. El blended esconde nuestra mejor arma.</div></div>
+          <div class="wq-it"><div class="wq-q">&iquest;Churn 8% mensual no mata el LTV de $215?</div><div class="wq-a">Vida media ~12.5 meses &times; ARPU $24 &times; margen 74% &asymp; $215. Bajar a 5% sube el LTV ~60% &mdash; es el quick win #1 de producto.</div></div>
+          <div class="wq-it"><div class="wq-q">&iquest;Por qu&eacute; solo 420 MAU con una comunidad de 65k?</div><div class="wq-a">El funnel es Live&rarr;Plataforma (18% y subiendo a 45%), no comunidad&rarr;app. La comunidad es CAC bajo y distribuci&oacute;n, no MAU gratis.</div></div>
+          <div class="wq-it"><div class="wq-q">&iquest;Y si Autodesk, Procore o Platzi hacen esto?</div><div class="wq-a">Ellos certifican su herramienta o son horizontales. AECODE es vertical AEC + evidencia real de obra + espa&ntilde;ol: certificaci&oacute;n neutral que ning&uacute;n vendor puede dar.</div></div>
+          <div class="wq-it"><div class="wq-q">&iquest;La IA no har&aacute; esto gratis?</div><div class="wq-a">La IA hace el contenido commodity &mdash; eso juega a favor: lo escaso es <b>verificar evidencia</b> y dar se&ntilde;al confiable al empleador. Ese es el producto.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section id="focus" class="section">
   <div class="wrap">
     <div class="reveal"><div class="eyebrow">Enfoque &middot; Readiness</div><h2 class="section-h">Enfoque del negocio y agenda para ser financiable.</h2><p class="section-p">Secuencia: <b>PMF primero</b> (validar que el AEC paga por outcome), <b>comunidad como moat #1</b>, luego <b>B2C &rarr; B2B</b>, y certificación con evidencia &rarr; empleabilidad. Palanca número uno hoy: subir el Evidence Rate.</p></div>
@@ -479,8 +630,8 @@ footer{position:relative;z-index:5;border-top:1px solid var(--border);padding:24
 </section>
 <footer><div class="foot-in">
   <div class="foot-brand"><span class="grad">AECODE</span> &middot; Startup Metrics OS</div>
-  <div class="foot-links"><a href="#tesis">Tesis</a><a href="#hybrid">Híbrido</a><a href="#map">Mapa</a><a href="#projection">Proyección</a></div>
-  <div class="foot-copy">v4 &middot; 2026 &middot; data editable · supuestos marcados · iteramos</div>
+  <div class="foot-links"><a href="#tesis">Tesis</a><a href="#hybrid">Híbrido</a><a href="#map">Mapa</a><a href="#projection">Proyección</a><a href="#warroom">War Room</a></div>
+  <div class="foot-copy">v5 &middot; jun 2026 &middot; data editable · supuestos marcados · <b>P</b> = pitch · <b>Ctrl+K</b> = comandos</div>
 </div></footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script>
@@ -544,6 +695,16 @@ var SEED={
     {t:"Empaquetar AI Construction Summit en 5 cápsulas",d:false},
     {t:"Piloto B2B 30 días con 1 constructora",d:false},
     {t:"Free diagnostic por rol (coordinador BIM)",d:false}
+  ],
+  pitch:[
+    {t:"Postular a Emprelatam EPA — formulario + video 2 min (cierra 17-jun)",d:false},
+    {t:"Actualizar cockpit con números reales de mayo (ventas, MAU, conversión)",d:false},
+    {t:"Calcular churn y CAC por canal con data real del trimestre",d:false},
+    {t:"Ensayar pitch 3 min ×10 con Q&A hostil (panel de la derecha)",d:false},
+    {t:"Dry-run completo con Pitch Mode en proyector",d:false},
+    {t:"Definir el ask del Demo Day: monto + uso de fondos",d:false},
+    {t:"Exportar JSON de respaldo del cockpit antes del 22-jun",d:false},
+    {t:"Post Demo Day: aplicar a Platanus con la grabación",d:false}
   ]
 };
 var INFO={
@@ -616,6 +777,7 @@ function merge(sv){var b=clone(SEED);try{
   if(sv.health)sv.health.forEach(function(h,i){if(b.health[i])b.health[i].v=num(h.v,b.health[i].v);});
   if(sv.agenda)sv.agenda.forEach(function(a,i){if(b.agenda[i])b.agenda[i].d=!!a.d;});
   if(sv.wins)b.wins=sv.wins.map(function(w){return{t:w.t||"",d:!!w.d};});
+  if(sv.pitch)sv.pitch.forEach(function(p,i){if(b.pitch[i])b.pitch[i].d=!!p.d;});
 }catch(e){}return b;}
 function save(){try{S.meta.updated=Date.now();localStorage.setItem(KEY,JSON.stringify(S));stamp();}catch(e){}}
 function stamp(){var el=document.getElementById("foco-stamp");if(el)el.textContent=S.meta.updated?"guardado "+new Date(S.meta.updated).toLocaleDateString("es-PE",{day:"2-digit",month:"short"}):"";}
@@ -842,9 +1004,15 @@ function bindEdits(){
 }
 function renderAll(){
   var C=compute();
-  renderVerdict(C);renderSummary(C);renderHybrid(curMode);renderModels();renderPrograms();renderFinancials();renderCohorts();renderChannels();renderKPI();renderAgenda();renderWins();
-  bindEdits();bindWins();bindAgenda();bindInfo();animateBars();firstPaint=false;
+  renderVerdict(C);renderSummary(C);renderHybrid(curMode);renderModels();renderPrograms();renderFinancials();renderCohorts();renderChannels();renderKPI();renderAgenda();renderWins();renderWcheck();
+  bindEdits();bindWins();bindAgenda();bindWcheck();bindInfo();animateBars();firstPaint=false;
 }
+/* WAR ROOM: checklist + countdowns */
+function renderWcheck(){var el=document.getElementById("wcheck");if(!el)return;el.innerHTML=S.pitch.map(function(p,i){return '<div class="wk'+(p.d?" done":"")+'" data-wk="'+i+'"><span class="box">'+(p.d?"&#10003;":"")+'</span><span>'+p.t+'</span></div>';}).join("");}
+function bindWcheck(){document.querySelectorAll('[data-wk]').forEach(function(el){el.onclick=function(){var i=+el.dataset.wk;S.pitch[i].d=!S.pitch[i].d;save();renderWcheck();bindWcheck();};});}
+var DEADLINES=[{id:"cd-emprelatam",t:"2026-06-17T23:59:59-05:00",done:"Postulaci&oacute;n cerrada &middot; esperar resultados"},{id:"cd-kaman",t:"2026-06-22T09:00:00-05:00",done:"&#127942; Es hoy. A ganar."}];
+function pad2(n){return n<10?"0"+n:""+n;}
+function renderCd(){DEADLINES.forEach(function(dl){var el=document.getElementById(dl.id);if(!el)return;var ms=new Date(dl.t)-Date.now();if(ms<=0){el.innerHTML='<div class="cd-done">'+dl.done+'</div>';return;}var d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);el.innerHTML='<div class="cd-u"><b>'+d+'</b><span>d&iacute;as</span></div><div class="cd-u"><b>'+pad2(h)+'</b><span>horas</span></div><div class="cd-u"><b>'+pad2(m)+'</b><span>min</span></div>';});}
 function animateBars(){requestAnimationFrame(function(){document.querySelectorAll('.kpi-bar i,.ch-bar,.out-bar i').forEach(function(b){if(b.dataset.w!==undefined)b.style.width=b.dataset.w+"%";});});}
 var curMode="abs";
 function initHybToggle(){document.querySelectorAll(".hyb-toggle button").forEach(function(b){b.onclick=function(){curMode=b.dataset.mode;document.querySelectorAll(".hyb-toggle button").forEach(function(x){x.classList.toggle("active",x===b);});renderHybrid(curMode);};});}
@@ -892,7 +1060,8 @@ var TOUR=[
   {sel:"#financials",t:"Finanzas",d:"Ingresos por modelo, margen combinado y P&L, del pasado a la proyeccion."},
   {sel:"#cohorts",t:"Cohortes Live",d:"Cada programa (AI Construction Summit, AI Talent, BIM...). Ojo a la conversion a Plataforma: el motor de la migracion."},
   {sel:"#projection",t:"Simulador",d:"Mueve las palancas y mira el impacto en vivo sobre NSM, MRR, LTV/CAC, runway y veredicto. Presets Hoy / Beta / Escala."},
-  {sel:"#health",t:"Fundabilidad",d:"Las 8 metricas que mira un fondo, con benchmarks de la investigacion. Edita; el semaforo dice que bloquea tu ronda. Todo se guarda en tu navegador."}
+  {sel:"#health",t:"Fundabilidad",d:"Las 8 metricas que mira un fondo, con benchmarks de la investigacion. Edita; el semaforo dice que bloquea tu ronda. Todo se guarda en tu navegador."},
+  {sel:"#warroom",t:"War Room",d:"Countdown en vivo a Emprelatam (17-jun) y al Demo Day de Kaman (22-jun), que evalua cada aceleradora, el checklist de batalla y las respuestas listas para el jurado. Con P entras al Pitch Mode."}
 ];
 var tourI=0;
 function startTour(){tourI=0;showTourStep();}
@@ -904,12 +1073,81 @@ function endTour(){document.querySelectorAll(".tour-hl").forEach(function(e){e.c
 function doExport(){var b=new Blob([JSON.stringify(S,null,2)],{type:"application/json"}),u=URL.createObjectURL(b),a=document.createElement("a");a.href=u;a.download="aecode-metrics-"+new Date().toISOString().slice(0,10)+".json";a.click();URL.revokeObjectURL(u);toast("Datos exportados");}
 function doReset(){if(confirm("Volver a los valores semilla? Se perderan tus cambios.")){S=clone(SEED);save();firstPaint=true;renderAll();applyPreset("hoy");toast("Restablecido");}}
 var toastT;function toast(m){var el=document.getElementById("toast");el.textContent=m;el.classList.add("show");clearTimeout(toastT);toastT=setTimeout(function(){el.classList.remove("show");},2200);}
+/* PITCH MODE */
+var pitchI=0,pitchOn=false;
+function pitchSlides(){
+  var C=compute(),h=S.health;
+  return [
+    {e:"AECODE &middot; Demo Day &middot; Jun 2026",big:'<img src="aecodito.png" class="p-logo" alt="AECODE">',head:'El <span class="grad">Skill Operating System</span> para la fuerza laboral AEC.',sub:"Skills verificadas con evidencia real de obra. Live Training financia y siembra; el Microlearning Platform OS escala. Esto no es un deck: son nuestras m&eacute;tricas operando en vivo.",src:"apalpan.github.io/aecode-startup-cockpit"},
+    {e:"El problema",big:'<span style="color:var(--risk)">92%</span>',head:"de los proyectos de construcci&oacute;n termina con sobrecostos (+28% promedio).",sub:"La construcci&oacute;n es de los sectores menos digitalizados del planeta: el 96% de la data que genera una obra nunca se usa. El cuello de botella no es el software &mdash; es el talento (~85M de d&eacute;ficit BIM al 2030).",src:"Project Control Academy 2025 &middot; Klutch AI 2025 &middot; Korn Ferry"},
+    {e:"Why now &middot; la brecha 2026",big:'75% <span style="color:var(--dim)">&rarr;</span> <span style="color:var(--risk)">12%</span>',head:"El 75% de firmas AEC ya 'usa' IA. Solo el 12% la usa en serio.",sub:"La adopci&oacute;n superficial explot&oacute; (+20 pts en un a&ntilde;o), solo 29% conf&iacute;a en su data y 94% va a invertir m&aacute;s. Esa brecha de capacidades &mdash; no de herramientas &mdash; es el mercado. Y nadie la est&aacute; cerrando en espa&ntilde;ol.",src:"Unanet AEC Inspire 2026 &middot; Datagrid 2025 &middot; Bluebeam 2025"},
+    {e:"La soluci&oacute;n",big:'80/20 <span style="color:var(--dim)">&rarr;</span> <span style="color:var(--green)">50/50</span>',head:"Modelo h&iacute;brido: Live siembra, la Plataforma escala.",sub:"Cada cohorte Live produce c&aacute;psulas, r&uacute;bricas y casos reales que alimentan el Microlearning Platform OS. Skills verificadas con evidencia, no certificados de asistencia. Mix 80/20 hoy &rarr; 50/50 a diciembre. Conversi&oacute;n Live&rarr;Plataforma: 18%, meta 45%.",src:"el funnel propietario que nadie puede copiar"},
+    {e:"Tracci&oacute;n",big:'<span class="grad">65k</span>',head:"miembros de comunidad. 8,000 activos en WhatsApp.",sub:"Completion de cohortes ~77% (6&times; el benchmark MOOC de 12.6%) &middot; NPS 66&ndash;78 &middot; MAU plataforma "+fmt(S.star.mau)+" &middot; ProInn&oacute;vate Hito 1 aprobado &middot; AI Construction Summit con el CIP.",src:"CAC comunidad $11 vs paid $62 &mdash; el moat es el gremio"},
+    {e:"Unit economics",big:'<span style="color:var(--green)">'+h[0].v.toFixed(1)+'x</span>',head:"LTV/CAC. Payback en "+h[1].v+" meses.",sub:"Margen de plataforma "+h[2].v+"% &middot; free-to-paid "+h[4].v+"% &middot; runway "+h[7].v+" meses. Unit economics de SaaS vertical, no de academia online.",src:"benchmarks: LTV/CAC &gt;3x &middot; payback &lt;12m &middot; margen 75&ndash;90%"},
+    {e:"North Star",big:'<span style="color:var(--violet2)">'+C.nsm.toFixed(2)+'</span>',head:"skills verificadas por usuario activo. Meta: "+S.star.target.toFixed(2)+".",sub:"Nuestro North Star no se puede maquillar: evidencia real aprobada &divide; usuarios activos. La palanca #1 es subir el Evidence Rate de 42% a 55% &mdash; todo este cockpit existe para ejecutar eso.",src:"NSM = Evidence Verification Rate"},
+    {e:"La visi&oacute;n",big:'<span class="grad">$30k</span>',head:"al mes a jun-2027, ~60% recurrente.",sub:"AECODE ser&aacute; el pasaporte de habilidades de la fuerza laboral AEC en espa&ntilde;ol: skill graph + evidencias + credenciales verificables + employer loop. El dinero f&aacute;cil se acab&oacute; &mdash; gana la evidencia. Aud&iacute;tennos: este cockpit est&aacute; en vivo.",src:"presiona Esc y explora cualquier n&uacute;mero"}
+  ];
+}
+function buildPitch(){
+  var sl=pitchSlides();
+  document.getElementById("p-slides").innerHTML=sl.map(function(s,i){return '<div class="pslide" data-ps="'+i+'"><div class="p-eyebrow">'+s.e+'</div><div class="p-big">'+s.big+'</div><h3 class="p-head">'+s.head+'</h3><p class="p-sub">'+s.sub+'</p><span class="src p-src">'+s.src+'</span></div>';}).join("");
+  document.getElementById("p-dots").innerHTML=sl.map(function(_,i){return '<button data-pd="'+i+'" aria-label="Slide '+(i+1)+'"></button>';}).join("");
+  document.querySelectorAll("[data-pd]").forEach(function(b){b.onclick=function(e){e.stopPropagation();pitchI=+b.dataset.pd;showSlide();};});
+}
+function showSlide(){
+  var slides=document.querySelectorAll(".pslide"),n=slides.length;
+  pitchI=Math.max(0,Math.min(n-1,pitchI));
+  slides.forEach(function(s,i){s.classList.toggle("on",i===pitchI);});
+  document.querySelectorAll("[data-pd]").forEach(function(b,i){b.classList.toggle("on",i===pitchI);});
+  document.getElementById("p-count").textContent=(pitchI+1)+" / "+n;
+  if(typeof anime!=="undefined"&&!window.matchMedia("(prefers-reduced-motion:reduce)").matches){var el=document.querySelector('.pslide[data-ps="'+pitchI+'"] .p-big');if(el)anime({targets:el,scale:[.94,1],opacity:[0,1],duration:550,easing:"easeOutCubic"});}
+}
+function startPitch(){pitchI=0;pitchOn=true;buildPitch();document.getElementById("pitch").classList.add("on");document.body.style.overflow="hidden";showSlide();}
+function pitchNext(){if(pitchI<document.querySelectorAll(".pslide").length-1){pitchI++;showSlide();}else endPitch();}
+function pitchPrev(){if(pitchI>0){pitchI--;showSlide();}}
+function endPitch(){if(!pitchOn)return;pitchOn=false;document.getElementById("pitch").classList.remove("on");document.body.style.overflow="";}
+/* COMMAND PALETTE */
+function goSec(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:"smooth"});}
+var CK_ACTS=[
+  {ic:"&#9654;",t:"Iniciar Pitch Mode",k:"P",fn:function(){startPitch();}},
+  {ic:"&#9737;",t:"Tour guiado",fn:function(){startTour();}},
+  {ic:"&#9889;",t:"Simulador: preset Hoy",fn:function(){goSec("projection");applyPreset("hoy");}},
+  {ic:"&#9889;",t:"Simulador: preset Meta Beta",fn:function(){goSec("projection");applyPreset("beta");}},
+  {ic:"&#9889;",t:"Simulador: preset Escala 12m",fn:function(){goSec("projection");applyPreset("escala");}},
+  {ic:"&#128190;",t:"Exportar datos (JSON)",fn:function(){doExport();}},
+  {ic:"&#128229;",t:"Importar datos",fn:function(){document.getElementById("imp").click();}},
+  {ic:"&#8634;",t:"Reset a valores semilla",fn:function(){doReset();}}
+];
+[["summary","Resumen"],["tesis","Tesis & Mercado"],["hybrid","Modelo Híbrido"],["map","Mapa de Métricas"],["financials","Finanzas"],["cohorts","Cohortes"],["growth","Growth"],["projection","Proyección / Simulador"],["health","Fundabilidad"],["warroom","War Room Aceleradoras"],["focus","Foco / Readiness"]].forEach(function(s){CK_ACTS.push({ic:"&#10148;",t:"Ir a: "+s[1],fn:function(){goSec(s[0]);}});});
+var ckI=0,ckFil=CK_ACTS;
+function ckNorm(s){return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"");}
+function openCmdk(){document.getElementById("cmdk").classList.add("on");var inp=document.getElementById("ck-in");inp.value="";ckRender("");setTimeout(function(){inp.focus();},40);}
+function closeCmdk(){document.getElementById("cmdk").classList.remove("on");}
+function toggleCmdk(){if(document.getElementById("cmdk").classList.contains("on"))closeCmdk();else openCmdk();}
+function ckPaint(){document.querySelectorAll(".ck-it").forEach(function(it,i){it.classList.toggle("on",i===ckI);});var on=document.querySelector(".ck-it.on");if(on)on.scrollIntoView({block:"nearest"});}
+function ckRun(i){var a=ckFil[i];if(!a)return;closeCmdk();setTimeout(a.fn,90);}
+function ckRender(q){
+  ckFil=CK_ACTS.filter(function(a){return ckNorm(a.t).indexOf(ckNorm(q))>-1;});ckI=0;
+  var el=document.getElementById("ck-list");
+  el.innerHTML=ckFil.length?ckFil.map(function(a,i){return '<div class="ck-it'+(i===0?" on":"")+'" data-ck="'+i+'"><span class="ic">'+a.ic+'</span><span>'+a.t+'</span>'+(a.k?'<kbd>'+a.k+'</kbd>':'')+'</div>';}).join(""):'<div class="ck-empty">Sin resultados</div>';
+  document.querySelectorAll("[data-ck]").forEach(function(it){it.onclick=function(){ckRun(+it.dataset.ck);};it.onmousemove=function(){if(ckI!==+it.dataset.ck){ckI=+it.dataset.ck;ckPaint();}};});
+}
+function initCmdk(){
+  var inp=document.getElementById("ck-in");
+  inp.addEventListener("input",function(){ckRender(inp.value);});
+  inp.addEventListener("keydown",function(e){
+    if(e.key==="ArrowDown"){e.preventDefault();ckI=Math.min(ckFil.length-1,ckI+1);ckPaint();}
+    else if(e.key==="ArrowUp"){e.preventDefault();ckI=Math.max(0,ckI-1);ckPaint();}
+    else if(e.key==="Enter"){e.preventDefault();ckRun(ckI);}
+  });
+  document.getElementById("cmdk").addEventListener("click",function(e){if(e.target.id==="cmdk")closeCmdk();});
+}
 /* NAV / REVEAL / PARTICLES */
 function initNav(){
   var bar=document.getElementById("bar");
   window.addEventListener("scroll",function(){bar.classList.toggle("scrolled",window.scrollY>40);document.getElementById("scroll-bar").style.width=(window.scrollY/(document.body.scrollHeight-window.innerHeight)*100)+"%";},{passive:true});
   document.querySelectorAll(".pill").forEach(function(p){p.onclick=function(){var t=document.getElementById(p.dataset.sec);if(t)t.scrollIntoView({behavior:"smooth"});};});
-  var ids=["summary","tesis","hybrid","map","financials","cohorts","growth","projection","health","focus"];
+  var ids=["summary","tesis","hybrid","map","financials","cohorts","growth","projection","health","warroom","focus"];
   var so=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting)document.querySelectorAll(".pill").forEach(function(p){p.classList.toggle("active",p.dataset.sec===e.target.id);});});},{rootMargin:"-45% 0px -50% 0px"});
   ids.forEach(function(id){var el=document.getElementById(id);if(el)so.observe(el);});
 }
@@ -927,10 +1165,21 @@ function boot(){
   popEl=document.getElementById("popover");popT=document.getElementById("pop-t");popD=document.getElementById("pop-d");
   S=load();
   var fc=document.getElementById("foco");fc.value=S.meta.foco||"";fc.addEventListener("input",function(e){S.meta.foco=e.target.value;save();});
-  stamp();renderAll();renderMap();initHybToggle();initSim();initNav();initReveal();initParticles();
+  stamp();renderAll();renderMap();initHybToggle();initSim();initNav();initReveal();initParticles();initCmdk();renderCd();setInterval(renderCd,30000);
   var imp=document.getElementById("imp");if(imp)imp.addEventListener("change",function(e){var f=e.target.files[0];if(!f)return;var r=new FileReader();r.onload=function(){try{S=merge(JSON.parse(r.result));save();firstPaint=true;renderAll();toast("Datos importados");}catch(err){toast("Archivo no valido");}};r.readAsText(f);});
   document.addEventListener("click",function(){hidePop();resetMap();});
-  document.addEventListener("keydown",function(e){if(e.key==="Escape"){hidePop();endTour();resetMap();}});
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Escape"){hidePop();endTour();resetMap();endPitch();closeCmdk();return;}
+    if((e.ctrlKey||e.metaKey)&&(e.key==="k"||e.key==="K")){e.preventDefault();toggleCmdk();return;}
+    var tag=(e.target.tagName||"").toLowerCase();
+    if(tag==="input"||tag==="textarea"||e.target.isContentEditable)return;
+    if(pitchOn){
+      if(e.key==="ArrowRight"||e.key===" "||e.key==="PageDown"){e.preventDefault();pitchNext();}
+      else if(e.key==="ArrowLeft"||e.key==="PageUp"){e.preventDefault();pitchPrev();}
+      return;
+    }
+    if(e.key==="p"||e.key==="P"){startPitch();}
+  });
   if(typeof anime!=="undefined")anime({targets:"#bar",translateY:[-20,0],opacity:[0,1],duration:550,easing:"easeOutCubic"});
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",boot);else boot();

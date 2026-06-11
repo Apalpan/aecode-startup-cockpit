@@ -23,6 +23,9 @@ Sistema operativo de **métricas de negocio** de **AECODE** — el *Skill Operat
 
 ## Interactividad
 
+- **Pitch Mode** (tecla `P`): presentación full-screen de 8 slides para Demo Day, generada desde las métricas en vivo del cockpit — si editas un número, el pitch cambia.
+- **Paleta de comandos** (`Ctrl+K`): navegación, presets del simulador y herramientas, estilo ⌘K.
+- **War Room**: countdowns en vivo a Emprelatam (17-jun) y Demo Day Kaman (22-jun), qué evalúa cada aceleradora, checklist de batalla persistente y Q&A de jurado con respuestas listas.
 - **Edita cualquier número** (NSM, KPIs) — se guarda en `localStorage`.
 - **Mapa de métricas interactivo** (click en nodos → resalta conexiones + detalle).
 - **Gráfico híbrido** con toggle Absoluto/Mix.
