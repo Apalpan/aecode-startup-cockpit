@@ -37,11 +37,17 @@
   function mount() {
     const stage = document.getElementById("stage");
 
+    const total = DECK.slides.length;
     DECK.slides.forEach((s, i) => {
       const sec = document.createElement("section");
       sec.className = "slide " + (s.cls || "");
       sec.dataset.idx = i;
       sec.innerHTML = typeof s.html === "function" ? s.html() : s.html;
+      // Número de slide visible al pie de cada lámina (pantalla y PDF)
+      const num = document.createElement("div");
+      num.className = "snum";
+      num.textContent = String(i + 1).padStart(2, "0") + " / " + total;
+      sec.appendChild(num);
       stage.appendChild(sec);
       s.el = sec;
     });
@@ -342,6 +348,14 @@
       if (PAL.open) return;
       if (e.target.matches("input,textarea")) return;
       const k = e.key;
+      // Enter/Espacio sobre un elemento interactivo del slide lo activa (no navega)
+      const act = e.target.closest('[data-flip],[data-x],[role="button"]');
+      if (act && (k === " " || k === "Enter")) {
+        e.preventDefault();
+        if (act.hasAttribute("data-flip")) act.classList.toggle("flip");
+        else if (act.hasAttribute("data-x")) act.classList.toggle("openx");
+        return; // los [role=button] manejan su propio keydown
+      }
       if (k === "ArrowRight" || k === " " || k === "PageDown") { e.preventDefault(); next(); }
       else if (k === "ArrowLeft" || k === "PageUp") { e.preventDefault(); prevS(); }
       else if (k === "ArrowDown") { e.preventDefault(); next(); }
@@ -392,10 +406,12 @@
       if (e.target.id === "help") e.target.classList.remove("open");
     });
 
-    // Delegación: tarjetas expandibles
+    // Delegación: tarjetas expandibles y tarjetas-pregunta (flip)
     document.getElementById("stage").addEventListener("click", (e) => {
       const x = e.target.closest("[data-x]");
       if (x) x.classList.toggle("openx");
+      const f = e.target.closest("[data-flip]");
+      if (f) f.classList.toggle("flip");
     });
 
     // Antes de imprimir: asegurar fuentes/animaciones resueltas

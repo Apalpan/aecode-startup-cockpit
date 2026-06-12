@@ -14,7 +14,7 @@
     hours: { total: 150, live: 90 },
     mix: "70% práctico · 30% estratégico",
     schedule: "Martes, jueves y sábado · 7:30–10:30 p.m. (GMT-5) · En vivo por Zoom",
-    organizers: "AECODE · ENJOFRA BIM (Autodesk Training Center) · Colegio de Ingenieros del Perú",
+    organizers: "AECODE · Colegio de Ingenieros del Perú",
 
     modules: [
       {
@@ -65,8 +65,8 @@
 
     certs: [
       { t: "Diploma CIP", org: "Colegio de Ingenieros del Perú", d: "Especialista en Seguimiento y Control de Obra con Sinergia BIM, Lean y BI. Válido para licitaciones nacionales." },
-      { t: "Certificado Internacional Autodesk (USA)", org: "vía ENJOFRA BIM, Autodesk Training Center", d: "Especialista en Revit, Autodesk Construction Cloud, Navisworks y Power BI para ejecución de proyectos BIM–Lean." },
-      { t: "Certificado AECODE + ENJOFRA", org: "Validez internacional", d: "Especialista en Seguimiento y Control de Obra + insignia digital Acreditta para LinkedIn y CV." },
+      { t: "Certificado Internacional Autodesk (USA)", org: "Autodesk Training Center", d: "Especialista en Revit, Autodesk Construction Cloud, Navisworks y Power BI para ejecución de proyectos BIM–Lean." },
+      { t: "Certificado AECODE", org: "Validez internacional", d: "Especialista en Seguimiento y Control de Obra + insignia digital Acreditta para LinkedIn y CV." },
     ],
 
     audience: [

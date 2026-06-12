@@ -119,6 +119,30 @@
     notes: `**Idea central:** desmitificar la ISO 19650: es sentido común estandarizado sobre quién produce qué información, cuándo y cómo. **Cómo explicarlo:** recorrer el flujo requisitos→roles→BEP→CDE→estados y aterrizar con la "traducción al castellano de obra". Mencionar que Plan BIM Perú adopta este estándar. **Ejemplo:** el estado "Publicado" elimina la pregunta más cara de la obra: "¿este plano vale o hay uno más nuevo?". **Transición:** "BIM ordena la información. Pero la obra además produce. Y de producción sabe otra escuela: Lean".`,
   });
 
+  /* ---------- Checkpoint B3.a — BIM e ISO 19650 ---------- */
+  DECK.add({
+    block: 3,
+    title: "Checkpoint — BIM, dimensiones e ISO 19650",
+    html: `
+      ${head("Checkpoint · participa", "Tres preguntas sobre la capa de información",
+        "Vota por una alternativa y gira cada tarjeta para comprobar.")}
+      <div class="s-body">
+        ${C.quiz([
+          { q: "Según ISO 19650, BIM es esencialmente…",
+            opts: ["Un software de modelado 3D", "Gestión de información del activo", "Render fotorrealista del proyecto"],
+            ok: 1, why: "La definición seria: gestión de la información durante todo el ciclo de vida del activo — el 3D es solo el soporte visible." },
+          { q: "La dimensión BIM que conecta el modelo con el cronograma es…",
+            opts: ["3D — coordinación", "4D — tiempo", "5D — costos"],
+            ok: 1, why: "4D = modelo + tiempo: la secuencia constructiva se simula y se controla. 3D coordina geometría; 5D vincula costos." },
+          { q: "¿Qué estado debe tener la información que consume el frente de obra?",
+            opts: ["WIP (trabajo en curso)", "Compartido", "Publicado"],
+            ok: 2, why: "El frente solo consume información en estado Publicado; todo lo demás es borrador. Es la regla que mata las peleas de versiones." },
+        ])}
+      </div>
+      ${foot("Bloque 3 · Checkpoint")}`,
+    notes: `**Idea central:** consolidar las definiciones técnicas del bloque (BIM como gestión de información, dimensiones, estados ISO) antes de pasar a Lean. **Cómo explicarlo:** votación y giro; en la pregunta 3, recordar el caso que viene ("guarden esta respuesta: la vamos a ver doler en el bloque 4"). **Ejemplo:** la pregunta 1 separa a quien vino por el software de quien ya piensa en sistemas. **Transición:** "BIM ordena la información; ahora veamos quién ordena la producción: Lean".`,
+  });
+
   /* ---------- 22 · Lean Construction ---------- */
   DECK.add({
     block: 3,
@@ -178,6 +202,22 @@
       </div>
       ${foot("Bloque 3 · Marcos colaborativos")}`,
     notes: `**Idea central:** la analogía con la fábrica es útil si es honesta: la obra no es línea de montaje, pero el flujo, el takt y las restricciones sí se trasladan. **Cómo explicarlo:** primero validar las diferencias (gana credibilidad ante la audiencia con experiencia de campo), luego mostrar el tren de trabajo: cuadrillas como "estaciones móviles" avanzando por sectores a ritmo constante. **Ejemplo:** un edificio de vivienda donde cada piso es un vagón: estructuras, albañilería e instalaciones se persiguen sin alcanzarse. **Transición:** "y la herramienta Lean más usada en obra es el Last Planner System".`,
+  });
+
+  /* ---------- Activador B3 — regla 1:10:100 ---------- */
+  DECK.add({
+    block: 3,
+    title: "Dato activador — la regla 1:10:100",
+    cls: "divider",
+    html: `
+      ${C.activator({
+        v: `1:10:100`,
+        line: "la regla clásica del costo del error: lo que cuesta <b>1 corregir en diseño</b> cuesta <b>10 en documentación</b> y <b>100 en obra</b> — demolición, RFI, reclamo y frente parado incluidos.",
+        q: "¿En qué etapa prefieres encontrar tu próximo error?",
+        src: "Regla heurística clásica de gestión de calidad — uso cualitativo",
+      })}
+      ${foot("Bloque 3 · Dato activador")}`,
+    notes: `**Idea central:** anclar con una regla memorable por qué la coordinación temprana (clash detection, ICE, lookahead) es la inversión más rentable del proyecto. **Cómo explicarlo:** leer la escalera 1→10→100 señalando ejemplos: el clash resuelto en pantalla (1), el replanteo de planos emitidos (10), el muro demolido (100). **Ejemplo:** conectar con el caso del bloque 4 que viene: "el muro que se construyó dos veces es un 100 de manual". **Transición:** "y la herramienta Lean que institucionaliza el anticiparse es el Last Planner System".`,
   });
 
   /* ---------- 24 · Last Planner System ---------- */
@@ -297,5 +337,29 @@
       </div>
       ${foot("Bloque 3 · Marcos colaborativos")}`,
     notes: `**Idea central:** cerrar el bloque fijando las diferencias en una sola vista — este slide es la "chuleta" mental del bloque 3. **Cómo explicarlo:** leer por columnas, no por filas: primero "qué es" (naturaleza distinta de cada uno), luego "qué problema resuelve". Reforzar: no compiten, se complementan. **Ejemplo:** pregunta de examen mental: "¿LPS es BIM o Lean?" — Lean. "¿El BEP?" — BIM. "¿La sesión ICE?" — VDC. **Transición:** "bajemos ahora del marco conceptual al lugar donde la información vive o muere: el flujo entre diseño, oficina técnica y obra" → Bloque 4.`,
+  });
+
+  /* ---------- Checkpoint B3.b — Lean, LPS, VDC e IPD ---------- */
+  DECK.add({
+    block: 3,
+    title: "Checkpoint — Lean, LPS, VDC e IPD",
+    html: `
+      ${head("Checkpoint · participa", "Tres preguntas sobre los marcos colaborativos",
+        "Vota por una alternativa y gira cada tarjeta para comprobar.")}
+      <div class="s-body">
+        ${C.quiz([
+          { q: "El PPC del Last Planner System mide…",
+            opts: ["El avance físico acumulado", "El % de compromisos semanales cumplidos", "La productividad de las cuadrillas"],
+            ok: 1, why: "PPC = compromisos cumplidos ÷ planificados × 100. Mide confiabilidad de la planificación, no velocidad de avance." },
+          { q: "¿Qué marco alinea los incentivos contractuales (riesgo y beneficio compartidos)?",
+            opts: ["IPD", "VDC", "Lean Construction"],
+            ok: 0, why: "IPD integra cliente, diseñador y constructor en un acuerdo multiparte: si ganamos o perdemos juntos, colaborar se vuelve racional." },
+          { q: "La sesión ICE (decisión concurrente con el modelo en pantalla) pertenece a…",
+            opts: ["BIM", "VDC", "ISO 19650"],
+            ok: 1, why: "ICE es pieza del framework VDC de Stanford: objetivos → ICE (personas) + BIM (información) + PPM (producción) → métricas." },
+        ])}
+      </div>
+      ${foot("Bloque 3 · Checkpoint")}`,
+    notes: `**Idea central:** el examen mental del bloque 3 hecho juego: distinguir qué artefacto pertenece a qué marco. **Cómo explicarlo:** votar y girar; rematar con la chuleta del slide anterior si alguna pregunta divide a la sala. **Ejemplo:** ampliar con bonus orales rápidos: "¿el BEP?" — BIM; "¿el tren de trabajo?" — Lean. **Transición:** "del marco conceptual al lugar donde la información vive o muere: la obra y su CDE" → Bloque 4.`,
   });
 })();

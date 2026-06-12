@@ -171,6 +171,40 @@
       </div></div>`;
   }
 
+  /* ---------- Checkpoint: tarjetas-pregunta con reverso (flip 3D) ---------- */
+  function quiz(items) {
+    return `<div class="grid g3 qgrid">${items.map((it, i) => fr(`
+      <div class="qcard" data-flip role="button" tabindex="0" aria-label="Pregunta ${i + 1}: clic para revelar la respuesta">
+        <div class="qinner">
+          <div class="qface front">
+            <span class="tag">Pregunta ${i + 1}</span>
+            <h4 class="qq">${it.q}</h4>
+            <div class="qopts">${it.opts.map((o, j) => `<div class="qopt"><b>${"ABC"[j]}</b><span>${o}</span></div>`).join("")}</div>
+            <span class="qhint">Clic para revelar →</span>
+          </div>
+          <div class="qface back">
+            <span class="tag t-green">Respuesta · ${"ABC"[it.ok]}</span>
+            <p class="qq">${it.q}</p>
+            <div class="qopts">${it.opts.map((o, j) => `<div class="qopt ${j === it.ok ? "ok" : "off"}">${j === it.ok ? "✓" : "✕"}<span>${o}</span></div>`).join("")}</div>
+            <p class="qwhy">${it.why}</p>
+          </div>
+        </div>
+      </div>`, i)).join("")}</div>`;
+  }
+
+  /* ---------- Dato activador (slide-gancho con cifra grande) ---------- */
+  function activator(o) {
+    return `<div class="s-body" style="justify-content:center">
+      <div class="act">
+        <div class="act-k fr" style="--d:40ms">Dato activador</div>
+        <div class="act-v fr" style="--d:140ms">${o.v}</div>
+        <p class="act-l fr" style="--d:280ms">${o.line}</p>
+        <p class="act-q fr" style="--d:420ms">${o.q}</p>
+        ${o.src ? `<span class="src fr" style="--d:520ms">Fuente: ${o.src}</span>` : ""}
+      </div>
+    </div>`;
+  }
+
   /* ---------- Dos columnas ---------- */
   const cols2 = (a, b, ratio = "c-55") => `<div class="cols ${ratio}"><div>${a}</div><div>${b}</div></div>`;
 
@@ -207,5 +241,5 @@
     return `<div class="isoart"><svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">${out}</svg></div>`;
   }
 
-  g.C = { ic, head, foot, fr, cards, xcards, stats, klist, quote, flow, timeline, ladder, table, dash, cols2, pills, isoBuilding };
+  g.C = { ic, head, foot, fr, cards, xcards, stats, klist, quote, flow, timeline, ladder, table, dash, cols2, pills, isoBuilding, quiz, activator };
 })(typeof window !== "undefined" ? window : globalThis);

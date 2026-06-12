@@ -169,6 +169,30 @@
     notes: `**Idea central:** traducir el temario a la pregunta que el participante realmente se hace: "¿qué me resuelve esto?". **Cómo explicarlo:** leer la tabla por filas, empezando siempre por el dolor (columna 1) para mantener el anclaje en la obra real. **Ejemplo:** para M3: "el informe del viernes que hoy te toma 4 horas, en el taller lo conviertes en un tablero que se refresca solo". **Transición:** "este viaje también se puede medir como niveles de madurez. ¿En qué nivel está tu obra hoy?"`,
   });
 
+  /* ---------- Checkpoint B2 — el mapa del programa ---------- */
+  DECK.add({
+    block: 2,
+    title: "Checkpoint — el sistema y la ruta",
+    html: `
+      ${head("Checkpoint · participa", "Tres preguntas sobre el mapa del programa",
+        "Vota por una alternativa y gira cada tarjeta para comprobar.")}
+      <div class="s-body">
+        ${C.quiz([
+          { q: "En el sistema del diplomado, BIM, CDE y 4D forman la capa de…",
+            opts: ["Producción", "Información", "Contratos"],
+            ok: 1, why: "Metodologías (Lean/VDC/IPD) organizan personas y procesos; BIM/CDE/4D estructuran y gobiernan los datos; BI/IA los convierten en decisión." },
+          { q: "¿Cuál es el orden correcto de la ruta de aprendizaje?",
+            opts: ["Herramientas → marcos → BI", "Marcos → BIM+Lean → BI → IA", "IA → BIM → Lean"],
+            ok: 1, why: "Primero el pensamiento, luego el control, luego la inteligencia: un dashboard sobre datos caóticos solo decora el caos." },
+          { q: "La 'prueba ácida' de un sistema de información de obra es…",
+            opts: ["Tener licencias al día", "Responder avance y desvío en menos de 5 minutos", "Contar con un BIM manager"],
+            ok: 1, why: "Si la respuesta tarda más de 5 minutos o depende de llamar a alguien, tienes documentos — no un sistema." },
+        ])}
+      </div>
+      ${foot("Bloque 2 · Checkpoint")}`,
+    notes: `**Idea central:** verificar que el mapa mental quedó instalado antes de pasar a la autoevaluación de madurez. **Cómo explicarlo:** votación rápida y giro; en la pregunta 1, conectar con el diagrama de 8 nodos ("¿en qué capa pondrías IA?"). **Ejemplo:** la pregunta 3 invita a aplicar la prueba ácida al proyecto actual de cada participante. **Transición:** "ahora sí: ubiquemos tu obra en la escalera de madurez".`,
+  });
+
   /* ---------- 15 · Escalera de madurez digital (autoevaluación) ---------- */
   DECK.add({
     block: 2,
@@ -234,5 +258,21 @@
       </div>
       ${foot("Bloque 2 · Mapa del diplomado")}`,
     notes: `**Idea central:** el perfil moderno es una combinación — ninguna capacidad aislada basta. **Cómo explicarlo:** recorrer rápido las 8 tarjetas y señalar que las primeras 4 son "gestionar la obra" y las últimas 4 "gestionar la información de la obra"; el mercado paga por quien une ambas. **Ejemplo:** un coordinador BIM que además domina Power BI y automatización pasa de soporte técnico a mano derecha de la gerencia. **Transición:** "entremos al primer pilar: los marcos que hacen posible colaborar de verdad" → Bloque 3.`,
+  });
+
+  /* ---------- Activador B2 — Plan BIM Perú 2030 ---------- */
+  DECK.add({
+    block: 2,
+    title: "Dato activador — Plan BIM Perú 2030",
+    cls: "divider",
+    html: `
+      ${C.activator({
+        v: `2030`,
+        line: "es el horizonte del <b>Plan BIM Perú</b>: adopción progresiva y obligatoria de BIM en la inversión pública (D.S. 289-2019-EF y D.S. 108-2021-EF). La regulación ya tomó la decisión por el sector.",
+        q: "¿Vas a llegar antes que el mandato — o corriendo detrás de él?",
+        src: "MEF — Plan BIM Perú",
+      })}
+      ${foot("Bloque 2 · Dato activador")}`,
+    notes: `**Idea central:** cerrar el bloque del mapa con urgencia regulatoria: esto no es una moda, es un mandato con fecha. **Cómo explicarlo:** señalar que la curva regulatoria ya arrancó (proyectos piloto, requisitos en licitaciones) y que los plazos de aprendizaje serio se miden en meses, no semanas. **Ejemplo:** "quien empezó con ISO 19650 en 2024 hoy lidera equipos; quien empiece en 2029 va a llegar a negociar en desventaja". **Transición:** "entremos entonces al primer pilar del sistema: los marcos colaborativos" → Bloque 3.`,
   });
 })();

@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 /* ============================================================
    Genera speaker-notes.md desde las definiciones de slides y
-   valida el deck: 60 slides, todas con título, notas y HTML
-   renderizable. Uso:  node tools/build-notes.js
+   valida el deck: 80 slides (60 de contenido + 12 checkpoints
+   + 8 activadores), todas con título, notas y HTML renderizable.
+   Uso:  node tools/build-notes.js
    ============================================================ */
 "use strict";
 const fs = require("fs");
@@ -28,7 +29,7 @@ for (let i = 1; i <= 8; i++) require(path.join(root, `src/slides/block${i}.js`))
 
 const S = globalThis.DECK.slides;
 let errors = [];
-if (S.length !== 60) errors.push(`Se esperaban 60 slides, hay ${S.length}`);
+if (S.length !== 80) errors.push(`Se esperaban 80 slides, hay ${S.length}`);
 S.forEach((s, i) => {
   if (!s.title) errors.push(`Slide ${i + 1} sin título`);
   if (!s.notes || s.notes.length < 40) errors.push(`Slide ${i + 1} sin notas suficientes`);

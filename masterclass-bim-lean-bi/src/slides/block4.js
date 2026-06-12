@@ -121,6 +121,30 @@
     notes: `**Idea central:** estos procesos son la circulación sanguínea documental de la obra; digitalizados con flujo y trazabilidad, dejan de ser cuellos de botella. **Cómo explicarlo:** narrar el ciclo del RFI paso a paso enfatizando dos momentos: la asignación con plazo (sin eso no hay gestión) y el registro de impacto (ahí se juega el dinero). **Ejemplo:** un RFI promedio puede tardar 7-10 días en responderse por correo; con flujo digital y alertas, días o horas. **Transición:** "todos estos procesos descansan sobre una base: el control documental. Y ahí hay un caso que se repite en todas las obras…"`,
   });
 
+  /* ---------- Checkpoint B4 — CDE y procesos documentales ---------- */
+  DECK.add({
+    block: 4,
+    title: "Checkpoint — CDE y procesos documentales",
+    html: `
+      ${head("Checkpoint · participa", "Tres preguntas sobre la información en obra",
+        "Vota por una alternativa y gira cada tarjeta para comprobar.")}
+      <div class="s-body">
+        ${C.quiz([
+          { q: "La regla de oro del CDE dice que…",
+            opts: ["Todo se respalda por correo", "Si no está en el CDE, no existe", "Solo oficina técnica sube archivos"],
+            ok: 1, why: "Aplicada con disciplina, esta sola regla elimina la mitad de las discusiones de obra: una única memoria oficial del proyecto." },
+          { q: "Un RFI sin responsable asignado y sin plazo es…",
+            opts: ["Un registro válido", "Un deseo", "Una orden de cambio"],
+            ok: 1, why: "Sin dueño y sin fecha no hay gestión posible: nadie responde por él y nadie lo persigue. La asignación es el momento crítico." },
+          { q: "¿Qué diferencia a un CDE de una carpeta compartida (Drive/Dropbox)?",
+            opts: ["La marca del software", "Estados, flujos de aprobación y trazabilidad", "Mayor espacio de almacenamiento"],
+            ok: 1, why: "En la carpeta todos editan y nadie aprueba; en el CDE cada contenedor sabe su estado (WIP→Compartido→Publicado), su responsable y su historia." },
+        ])}
+      </div>
+      ${foot("Bloque 4 · Checkpoint")}`,
+    notes: `**Idea central:** asegurar los tres conceptos operativos del bloque (regla de oro, RFI gestionado, CDE ≠ carpeta) antes del caso narrativo. **Cómo explicarlo:** votación y giro; la pregunta 3 es la más importante — muchos creen que ya tienen CDE porque tienen Drive. **Ejemplo:** pedir que levanten la mano quienes usan "carpeta compartida + WhatsApp" como CDE de facto. **Transición:** "ahora veamos estos conceptos fallar en cámara lenta: la historia del muro que se construyó dos veces".`,
+  });
+
   /* ---------- 32 · Control documental ---------- */
   DECK.add({
     block: 4,
@@ -175,6 +199,22 @@
       </div>
       ${foot("Bloque 4 · Información en obra")}`,
     notes: `**Idea central:** un caso narrativo fija más que diez estadísticas: el error no fue técnico, fue informacional. **Cómo explicarlo:** contar la semana día a día con ritmo (lunes→viernes), pausa dramática en "¿quién paga?", y cerrar con la versión alternativa: con CDE la historia termina el lunes. **Ejemplo:** invitar a la audiencia: "¿a quién le ha pasado una versión de esta historia?" — todas las manos. **Transición:** "fíjense en algo: en esta disputa, gana quien tiene el dato. Hablemos del dato como evidencia".`,
+  });
+
+  /* ---------- Activador B4 — disputas de más de un año ---------- */
+  DECK.add({
+    block: 4,
+    title: "Dato activador — disputas de más de un año",
+    cls: "divider",
+    html: `
+      ${C.activator({
+        v: `+1 año`,
+        line: "tarda en promedio la resolución de una disputa de construcción a nivel global — meses de gestión, honorarios y relación comercial que no vuelven.",
+        q: "¿Cuánto vale la trazabilidad que evita siquiera una?",
+        src: "Arcadis — Global Construction Disputes Report (serie anual)",
+      })}
+      ${foot("Bloque 4 · Dato activador")}`,
+    notes: `**Idea central:** ponerle horizonte temporal al argumento de la trazabilidad: la disputa promedio se mide en años, no en semanas. **Cómo explicarlo:** conectar con el caso del muro ("¿quién paga?" es la semilla de una disputa) y con la regla de oro del CDE: el historial documental es la primera línea de defensa. **Ejemplo:** en un arbitraje, el registro del CDE contra una carpeta de correos: no hay color. **Transición:** "cerremos el bloque elevando la trazabilidad de trámite a activo estratégico".`,
   });
 
   /* ---------- 34 · El dato como evidencia ---------- */

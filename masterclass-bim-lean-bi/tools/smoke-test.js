@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* Smoke test headless: carga el deck, recorre las 60 slides,
+/* Smoke test headless: carga el deck, recorre las 80 slides,
    verifica cero errores de consola y toma capturas de muestra. */
 "use strict";
 const { chromium } = require("playwright");

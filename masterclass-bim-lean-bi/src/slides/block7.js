@@ -109,6 +109,30 @@
     notes: `**Idea central:** la automatización es la fontanería que hace reales las promesas de los bloques anteriores: el dato nace una vez y viaja solo. **Cómo explicarlo:** narrar el flujo completo formulario→base→tablero→alerta→reporte→reunión, y posicionar las 3 herramientas: Zapier para empezar, n8n para profundizar, APIs para integrar en serio. **Ejemplo:** la incidencia crítica de seguridad registrada a las 10:14 dispara el WhatsApp al prevencionista a las 10:14 — no en el reporte del viernes. **Transición:** "hasta aquí, información que nace digital. ¿Y la realidad física de la obra? También se puede capturar…"`,
   });
 
+  /* ---------- Checkpoint B7.a — IA, asistentes y agentes ---------- */
+  DECK.add({
+    block: 7,
+    title: "Checkpoint — IA, asistentes y agentes",
+    html: `
+      ${head("Checkpoint · participa", "Tres preguntas sobre IA aplicada a obra",
+        "Vota por una alternativa y gira cada tarjeta para comprobar.")}
+      <div class="s-body">
+        ${C.quiz([
+          { q: "¿Qué diferencia a un agente de un asistente de IA?",
+            opts: ["El agente tiene misión, monitorea y actúa", "El agente es más caro", "No hay diferencia real"],
+            ok: 0, why: "El asistente responde cuando le preguntas; el agente opera con una misión, límites definidos y supervisión humana." },
+          { q: "El patrón sano de IA en obra es…",
+            opts: ["La IA decide sola para ganar velocidad", "La IA procesa, el humano decide", "La IA reemplaza la reunión semanal"],
+            ok: 1, why: "Todos los casos reales comparten el patrón datos → análisis → borrador → criterio profesional. La decisión sigue siendo humana." },
+          { q: "¿Qué % del sector construcción usa IA de forma regular (2025)?",
+            opts: ["12%", "45%", "88%"],
+            ok: 0, why: "88% es el promedio global de organizaciones (McKinsey); el sector va años atrás — y esa brecha es exactamente la oportunidad profesional." },
+        ])}
+      </div>
+      ${foot("Bloque 7 · Checkpoint")}`,
+    notes: `**Idea central:** anclar la distinción asistente/agente y la brecha 12 vs 88 antes de pasar a captura de realidad. **Cómo explicarlo:** votación y giro; en la pregunta 2 subrayar que el patrón "IA procesa, humano decide" es el criterio para evaluar cualquier herramienta nueva. **Ejemplo:** la pregunta 3 sorprende a los optimistas — útil para bajar el hype con datos. **Transición:** "hasta aquí, información que nace digital. ¿Y la realidad física de la obra? También se captura…"`,
+  });
+
   /* ---------- 55 · RA, RV y nubes de puntos ---------- */
   DECK.add({
     block: 7,
@@ -128,6 +152,22 @@
       </div>
       ${foot("Bloque 7 · IA y emergentes", "Módulo 4 — taller de nubes de puntos + invitado especialista RV")}`,
     notes: `**Idea central:** estas tecnologías cierran el último gap: el modelo dice lo que debería haber; el escaneo dice lo que hay. **Cómo explicarlo:** RA lleva el modelo a campo, RV trae el campo (futuro) a la oficina, y el escaneo trae la realidad al modelo. El caso estrella: avance verificado geométricamente, sin discusiones de porcentajes. **Ejemplo:** la valorización donde el 'avance del 80%' del subcontratista se contrasta contra el escaneo de la semana: la conversación cambia de tono. **Transición:** "y toda esta información acumulada cobra una segunda vida cuando la obra termina: el gemelo digital".`,
+  });
+
+  /* ---------- Activador B7 — 39% de las emisiones ---------- */
+  DECK.add({
+    block: 7,
+    title: "Dato activador — 39% de las emisiones",
+    cls: "divider",
+    html: `
+      ${C.activator({
+        v: `<span data-count="39" data-suf="%">39%</span>`,
+        line: "de las emisiones globales de CO₂ relacionadas con energía provienen del <b>entorno construido</b> — operación de edificios más materiales y construcción.",
+        q: "La próxima década de la construcción también se mide en datos: ¿qué mide tu obra además del avance?",
+        src: "World Green Building Council / IEA — Global Status Report",
+      })}
+      ${foot("Bloque 7 · Dato activador")}`,
+    notes: `**Idea central:** abrir la dimensión sostenibilidad sin cambiar de tesis: medir y gestionar con datos es también la palanca ambiental del sector. **Cómo explicarlo:** conectar con el gemelo digital que viene: la información estructurada en obra es la que luego optimiza consumo y mantenimiento por décadas. **Ejemplo:** clientes corporativos ya piden huella de carbono por entregable — otro dato que exige sistema, no Excel suelto. **Transición:** "y esa información acumulada cobra una segunda vida cuando la obra termina: el gemelo digital".`,
   });
 
   /* ---------- 56 · Digital twins ---------- */
@@ -176,5 +216,29 @@
       </div>
       ${foot("Bloque 7 · IA y emergentes", "Panorama de mercado 2025-26 — ver FUENTES.md")}`,
     notes: `**Idea central:** el radar es amplio, pero hay un denominador común: todo consume y produce datos estructurados — la base que enseña el diplomado. **Cómo explicarlo:** sobrevolar el radar sin detenerse (30 segundos) y aterrizar en el criterio: no hay que dominar las 8; hay que dominar la base que las habilita. Mencionar 2-3 nombres como referencia de mercado (OpenSpace, ALICE, Dusty), sin promesa de profundizar. **Ejemplo:** la empresa con CDE y datos ordenados adoptó computer vision en 2 meses; su competidor sigue en el piloto eterno. **Transición:** "recapitulemos entonces qué se llevan realmente de este programa" → Bloque 8.`,
+  });
+
+  /* ---------- Checkpoint B7.b — realidad capturada y emergentes ---------- */
+  DECK.add({
+    block: 7,
+    title: "Checkpoint — captura de realidad y emergentes",
+    html: `
+      ${head("Checkpoint · participa", "Tres preguntas sobre la frontera tecnológica",
+        "Vota por una alternativa y gira cada tarjeta para comprobar.")}
+      <div class="s-body">
+        ${C.quiz([
+          { q: "El aporte central del escaneo 3D al control de obra es…",
+            opts: ["Avance verificado con evidencia geométrica", "Renders más vistosos para el cliente", "Reducir RFIs por sí solo"],
+            ok: 0, why: "La nube de puntos alineada al modelo convierte el % de avance de opinión en medición: el as-built deja de ser un PDF de fe." },
+          { q: "El gemelo digital rinde sobre todo en…",
+            opts: ["La etapa de licitación", "La operación del activo", "El marketing del proyecto"],
+            ok: 1, why: "Operar un activo cuesta mucho más que construirlo: la información estructurada en obra rinde por décadas en mantenimiento." },
+          { q: "El denominador común de todas las tecnologías del radar es que…",
+            opts: ["Consumen y producen datos estructurados", "Requieren grandes inversiones", "Dependen de realidad virtual"],
+            ok: 0, why: "Quien domina la base — BIM + CDE + BI — adopta cualquiera cuando madura; quien no, colecciona pilotos eternos." },
+        ])}
+      </div>
+      ${foot("Bloque 7 · Checkpoint")}`,
+    notes: `**Idea central:** cerrar el bloque 7 fijando el criterio anti-mareo: la base de datos estructurados habilita toda la frontera. **Cómo explicarlo:** votación y giro; usar la pregunta 3 como puente directo al cierre — es la tesis de toda la sesión en miniatura. **Ejemplo:** "¿qué tienen en común OpenSpace, ALICE y un agente de IA? Comen datos estructurados". **Transición:** "recapitulemos qué se llevan realmente de este programa" → Bloque 8.`,
   });
 })();

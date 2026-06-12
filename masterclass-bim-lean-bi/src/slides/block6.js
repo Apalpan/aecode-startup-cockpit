@@ -152,6 +152,30 @@
     notes: `**Idea central:** un buen tablero de obra cabe en ~10 indicadores con dueño y acción asociada. **Cómo explicarlo:** sobrevolar los KPIs en 4 familias: producción (avance, productividad, PPC), información (RFIs, submittals), salud económica (valor ganado: CPI = EV/AC y SPI = EV/PV, el estándar PMI) y mejora (causas de NC). Cerrar con el criterio: si nadie actúa distinto por verlo, sobra. **Ejemplo:** el tiempo medio de respuesta de RFIs como predictor temprano: cuando sube, las esperas de campo llegan 3 semanas después. **Transición:** "estos KPIs se organizan en tableros distintos según la audiencia. Veamos los cuatro clásicos".`,
   });
 
+  /* ---------- Checkpoint B6.a — arquitectura BI y KPIs ---------- */
+  DECK.add({
+    block: 6,
+    title: "Checkpoint — arquitectura BI y KPIs",
+    html: `
+      ${head("Checkpoint · participa", "Tres preguntas sobre datos que deciden",
+        "Vota por una alternativa y gira cada tarjeta para comprobar.")}
+      <div class="s-body">
+        ${C.quiz([
+          { q: "¿Dónde está el 80% del trabajo serio de Business Intelligence?",
+            opts: ["En el diseño visual del tablero", "En el procesamiento y la arquitectura de datos", "En comprar las licencias correctas"],
+            ok: 1, why: "Conectar, limpiar, estandarizar códigos y modelar dimensiones: sin ese piso, el dashboard suma peras con manzanas — elegante, pero falso." },
+          { q: "Un CPI de 0,90 en valor ganado significa…",
+            opts: ["Sobrecosto: S/ 0,90 de valor por cada S/ 1 gastado", "Adelanto de cronograma del 10%", "PPC bajo en la semana"],
+            ok: 0, why: "CPI = EV/AC. Bajo 1,0 el proyecto produce menos valor del que gasta. SPI = EV/PV hace lo propio con el plazo." },
+          { q: "Un KPI se gana su lugar en el tablero cuando…",
+            opts: ["Se ve moderno en pantalla", "Alguien actúa distinto por lo que ve", "Lo pide el cliente"],
+            ok: 1, why: "Si nadie cambia una decisión por él, es decoración. Cada KPI necesita dueño, cadencia y acción asociada." },
+        ])}
+      </div>
+      ${foot("Bloque 6 · Checkpoint")}`,
+    notes: `**Idea central:** verificar los tres criterios profesionales del bloque: arquitectura sobre estética, valor ganado como idioma, y KPIs accionables. **Cómo explicarlo:** votación y giro; en la pregunta 2 escribir la fórmula CPI=EV/AC en una frase ("por cada sol gastado, ¿cuánto valor produje?"). **Ejemplo:** la pregunta 3 invita a auditar mentalmente el tablero actual de cada empresa. **Transición:** "veamos esos criterios encarnados en los cuatro tableros clásicos de obra".`,
+  });
+
   /* ---------- 46 · Dashboard gerencial ---------- */
   DECK.add({
     block: 6,
@@ -245,6 +269,22 @@
     notes: `**Idea central:** el dashboard BIM gestiona la salud de la información misma: modelos, interferencias, metrados y avance medido sobre elementos. **Cómo explicarlo:** destacar dos cosas: el avance por estados de elementos (el modelo como registro de ejecución) y la calidad del dato como KPI — el 97% de elementos codificados es lo que hace confiable todo lo demás. Mencionar Speckle: el modelo navegable dentro de Power BI. **Ejemplo:** clic en el sector S4 del modelo embebido → sus metrados, avance e interferencias en la misma pantalla. **Transición:** "y el cuarto tablero es el del sistema Lean: medir la confiabilidad de nuestras promesas".`,
   });
 
+  /* ---------- Activador B6 — 23× ---------- */
+  DECK.add({
+    block: 6,
+    title: "Dato activador — 23 veces",
+    cls: "divider",
+    html: `
+      ${C.activator({
+        v: `<span data-count="23" data-suf="×">23×</span>`,
+        line: "más probabilidades de captar clientes tienen las organizaciones <b>guiadas por datos</b> — y son significativamente más rentables que sus pares.",
+        q: "¿Tu obra decide con datos… o con memoria y PowerPoint?",
+        src: "McKinsey — Five facts: How customer analytics boosts corporate performance",
+      })}
+      ${foot("Bloque 6 · Dato activador")}`,
+    notes: `**Idea central:** elevar el argumento de BI del plano operativo al competitivo: decidir con datos es ventaja de negocio medible, no higiene interna. **Cómo explicarlo:** lanzar la pregunta y dejarla incómoda unos segundos; conectar con el tablero gerencial recién visto. **Ejemplo:** dos constructoras licitando: la que muestra su sistema de control con datos en vivo transmite otra categoría de empresa. **Transición:** "nos queda el cuarto tablero: el del sistema Lean — medir la confiabilidad de nuestras promesas".`,
+  });
+
   /* ---------- 49 · Dashboard Lean ---------- */
   DECK.add({
     block: 6,
@@ -296,5 +336,29 @@
       </div>
       ${foot("Bloque 6 · BI y dashboards")}`,
     notes: `**Idea central:** advertencia anti-hype: el tablero solo crea valor si cambia reuniones, responsables y rituales. **Cómo explicarlo:** leer la tabla fila por fila como un checklist de honestidad para la propia empresa. La frase 30/70 es el mensaje del bloque. **Ejemplo:** la empresa que invirtió en Power BI y a los 6 meses seguía decidiendo con el PPT de siempre: tablero impecable, gestión intacta. **Transición:** "con los datos fluyendo y los rituales funcionando, está listo el terreno para el siguiente salto: la inteligencia artificial" → Bloque 7.`,
+  });
+
+  /* ---------- Checkpoint B6.b — tableros y ritual de gestión ---------- */
+  DECK.add({
+    block: 6,
+    title: "Checkpoint — tableros y ritual de gestión",
+    html: `
+      ${head("Checkpoint · participa", "Tres preguntas sobre tableros que gestionan",
+        "Vota por una alternativa y gira cada tarjeta para comprobar.")}
+      <div class="s-body">
+        ${C.quiz([
+          { q: "El dashboard gerencial responde, ante todo…",
+            opts: ["¿Qué destrabo hoy en el frente?", "¿El proyecto está sano y hacia dónde va?", "¿Quién tuvo la culpa del desvío?"],
+            ok: 1, why: "Pocos números comparados contra plan, con tendencia y proyección. Lo accionable del día a día vive en el tablero operativo." },
+          { q: "¿Qué mata a un sistema de gestión basado en datos?",
+            opts: ["Alimentarlo a mano 'para la reunión'", "Tener pocos indicadores", "Usar software de BI comercial"],
+            ok: 0, why: "Si el dato es manual, el sistema ya murió: el tablero debe alimentarse solo desde las fuentes — modelo, CDE, campo, costos." },
+          { q: "La proporción correcta entre tecnología y ritual de gestión es…",
+            opts: ["70% tecnología / 30% ritual", "30% tecnología / 70% ritual", "50% / 50%"],
+            ok: 1, why: "El tablero solo crea valor si cambia reuniones, responsables y cadencia. La tecnología es la parte fácil." },
+        ])}
+      </div>
+      ${foot("Bloque 6 · Checkpoint")}`,
+    notes: `**Idea central:** sellar el mensaje 30/70 del bloque — es el que más se olvida al volver a la oficina. **Cómo explicarlo:** votación y giro; la pregunta 2 suele dividir a la sala y abre la mejor conversación del bloque. **Ejemplo:** pedir un caso real de tablero abandonado y diagnosticarlo en 30 segundos con estas tres preguntas. **Transición:** "con el sistema de datos sano, llega el invitado que todos esperaban: la inteligencia artificial" → Bloque 7.`,
   });
 })();

@@ -27,7 +27,7 @@
     return `<svg width="${size}" height="${size}" viewBox="0 0 140 140" style="display:block;margin:0 auto">
       <circle cx="70" cy="70" r="${r}" fill="none" stroke="var(--track)" stroke-width="13"/>
       <circle cx="70" cy="70" r="${r}" fill="none" stroke="${color}" stroke-width="13" stroke-linecap="round"
-        stroke-dasharray="${(pct / 100) * c} ${c}" transform="rotate(-90 70 70)"/>
+        pathLength="1" class="arc-anim" stroke-dasharray="${pct / 100} 1" transform="rotate(-90 70 70)"/>
       <text x="70" y="66" text-anchor="middle" fill="var(--ink)" font-family="var(--f-disp)" font-size="26" font-weight="700">${pct}%</text>
       <text x="70" y="86" text-anchor="middle" fill="var(--mut)" font-family="var(--f-sans)" font-size="9.5">${label || ""}</text>
     </svg>`;
@@ -48,7 +48,7 @@
     return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;display:block">
       ${grid}
       <path d="${path(plan)}" fill="none" stroke="var(--violet)" stroke-width="2.2" stroke-dasharray="6 5" opacity=".85"/>
-      <path d="${path(real)}" fill="none" stroke="var(--gold)" stroke-width="2.6"/>
+      <path d="${path(real)}" fill="none" stroke="var(--gold)" stroke-width="2.6" pathLength="1" class="line-draw"/>
       <circle cx="${X(gap)}" cy="${Y(real[gap])}" r="4.5" fill="var(--gold)"/>
       <line x1="${X(gap)}" y1="${Y(real[gap])}" x2="${X(gap)}" y2="${Y(plan[gap])}" stroke="var(--risk)" stroke-width="1.6" stroke-dasharray="3 3"/>
       <text x="${X(gap) + 8}" y="${(Y(real[gap]) + Y(plan[gap])) / 2}" fill="var(--risk)" font-size="9.5" font-family="var(--f-mono)">desviación</text>
@@ -65,7 +65,7 @@
     return `<svg viewBox="0 0 150 92" style="width:170px;display:block;margin:0 auto">
       <path d="M17 84 A 58 58 0 0 1 133 84" fill="none" stroke="var(--track)" stroke-width="12" stroke-linecap="round"/>
       <path d="M17 84 A 58 58 0 0 1 133 84" fill="none" stroke="${color}" stroke-width="12" stroke-linecap="round"
-        stroke-dasharray="${(pct / 100) * c} ${c}"/>
+        pathLength="1" class="arc-anim" stroke-dasharray="${pct / 100} 1"/>
       <text x="75" y="68" text-anchor="middle" fill="var(--ink)" font-family="var(--f-disp)" font-size="25" font-weight="700">${pct}%</text>
       <text x="75" y="86" text-anchor="middle" fill="var(--mut)" font-size="9">${label || ""}</text>
     </svg>`;

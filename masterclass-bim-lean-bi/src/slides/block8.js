@@ -28,6 +28,30 @@
     notes: `**Idea central:** reposicionar el valor del programa: el software es vehículo; el destino es un sistema de pensamiento en tres capas. **Cómo explicarlo:** información (cómo se estructura el dato), producción (cómo fluye el trabajo), decisión (cómo se decide con evidencia). Recordar los entregables por módulo: matriz POP, BEP+ACC, dashboard BIM, asistente IA — el portafolio se construye cursando. **Ejemplo:** "dentro de 5 años habrá otro software de moda; estos tres sistemas seguirán siendo tu ventaja". **Transición:** "esto, en términos personales, se ve así…"`,
   });
 
+  /* ---------- Checkpoint B8 — síntesis de la sesión ---------- */
+  DECK.add({
+    block: 8,
+    title: "Checkpoint final — síntesis de la sesión",
+    html: `
+      ${head("Checkpoint · síntesis", "Tres preguntas para llevarse la sesión completa",
+        "La última votación de la clase: gira cada tarjeta para confirmar.")}
+      <div class="s-body">
+        ${C.quiz([
+          { q: "Los tres sistemas que integra el profesional AEC moderno son…",
+            opts: ["Información, producción y decisión", "Revit, Presto y Power BI", "Diseño, obra y cliente"],
+            ok: 0, why: "Las herramientas cambian de versión cada año; el sistema de pensamiento en tres capas te acompaña toda la carrera." },
+          { q: "La respuesta a la pregunta inicial ('más software, mismos problemas') es…",
+            opts: ["Faltaba aún más software", "Faltaba integración", "Faltaba presupuesto"],
+            ok: 1, why: "La pregunta que abrió la sesión se responde sola al final: el problema nunca fue la falta de herramientas, sino su desconexión." },
+          { q: "¿Qué definirá la ventaja profesional en la próxima década del sector?",
+            opts: ["Dominar un software de moda", "Integrar personas, procesos, modelos y datos", "Acumular certificados"],
+            ok: 1, why: "Es el mensaje final de la clase: la integración es la ventaja — y es exactamente lo que este programa entrena." },
+        ])}
+      </div>
+      ${foot("Bloque 8 · Checkpoint final")}`,
+    notes: `**Idea central:** cierre con recuperación activa: la audiencia formula por sí misma la tesis de la sesión antes de que el expositor la selle. **Cómo explicarlo:** ritmo rápido y celebratorio — a esta altura las respuestas salen solas, y eso es exactamente la sensación de logro que se busca. **Ejemplo:** en la pregunta 2, recordar el silencio del slide 3 ("la pregunta incómoda") y cerrar el círculo narrativo. **Transición:** "esto, en términos personales, se ve así…" → comparador antes/después.`,
+  });
+
   /* ---------- 59 · Ruta de transformación personal ---------- */
   DECK.add({
     block: 8,
@@ -88,7 +112,7 @@
           ${fr(`<div class="card" style="text-align:center"><h4 style="color:var(--gold-2)">4 módulos</h4>
             <p>Marcos → BIM+Lean → BI → Tecnologías<br>${P.hours.total} h certificadas · ${P.hours.live} h en vivo</p></div>`, 3)}
           ${fr(`<div class="card" style="text-align:center"><h4 style="color:var(--gold-2)">3 certificaciones</h4>
-            <p>CIP · Autodesk (USA) · AECODE-ENJOFRA<br>+ insignia digital Acreditta</p></div>`, 4)}
+            <p>CIP · Autodesk (USA) · AECODE<br>+ insignia digital Acreditta</p></div>`, 4)}
           ${fr(`<div class="card" style="text-align:center"><h4 style="color:var(--gold-2)">4 entregables</h4>
             <p>Matriz POP · BEP + control en ACC<br>Dashboard BIM · Asistente de obra con IA</p></div>`, 5)}
           ${fr(`<div class="card accent" style="text-align:center"><h4 style="color:var(--gold-2)">Próximo paso</h4>
@@ -96,7 +120,7 @@
         </div>
         <div class="center fr" style="--d:640ms">
           <img src="assets/brand/aecode-logo-ink.svg" alt="AECODE" style="height:24px;opacity:.9;vertical-align:middle">
-          <span class="muted" style="font-size:12px;margin-left:14px;font-family:var(--f-mono)">AECODE · ENJOFRA BIM (ATC) · Colegio de Ingenieros del Perú</span>
+          <span class="muted" style="font-size:12px;margin-left:14px;font-family:var(--f-mono)">AECODE · Colegio de Ingenieros del Perú</span>
         </div>
       </div>
       ${foot("Gracias — sesión de preguntas")}`,

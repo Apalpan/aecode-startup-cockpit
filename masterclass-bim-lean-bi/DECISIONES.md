@@ -45,7 +45,7 @@ Se evaluaron las tres opciones planteadas:
   `src/slides/block*.js`): el HTML se genera con builders puros de string
   (`src/core/components.js`, `src/core/charts.js`) sin tocar el DOM. Eso permite que
   `tools/build-notes.js` ejecute los mismos archivos en Node para **validar el deck
-  (60 slides, títulos, notas, HTML renderizable) y generar `speaker-notes.md`**
+  (80 slides, títulos, notas, HTML renderizable) y generar `speaker-notes.md`**
   desde una única fuente de verdad.
 - **Gráficos en SVG generado** (barras, donut, curva S, gauge, mapa de puntos,
   diagramas): cero librerías de charts, animaciones vía CSS, estética 100% controlada.
@@ -82,7 +82,7 @@ el futuro es tocar un archivo — los componentes no llevan colores propios.
   easeOutCubic al entrar a la slide (y los fija directo si el usuario tiene
   `prefers-reduced-motion`). Los strings no numéricos quedan intactos.
 - **Interactividad pedagógica, no decorativa**: las tres piezas nuevas (iceberg de
-  costos S07, autoevaluación de madurez S15, calculadora del reporte manual S42)
+  costos S08, autoevaluación de madurez S20, calculadora del reporte manual S55)
   existen para producir un momento participativo en la sesión en vivo; cada dato
   del iceberg lleva fuente en pantalla y en `FUENTES.md`.
 - **Accesibilidad**: focus rings visibles (box-shadow), `role="button"` + Enter/
@@ -90,6 +90,21 @@ el futuro es tocar un archivo — los componentes no llevan colores propios.
   táctiles ≥44 px bajo `pointer: coarse`, `prefers-reduced-motion` global.
 - **Logo en tinta** (`aecode-logo-ink.svg`): el SVG original es blanco puro; se
   generó la variante grafito para fondo claro sin tocar el original.
+
+### v2.1 — Checkpoints, activadores y ritmo de sesión (jun-2026)
+
+- **12 checkpoints de 3 preguntas** intercalados cada ~4-5 slides de contenido:
+  tarjetas con flip 3D (pregunta + alternativas al frente; respuesta correcta y
+  porqué al reverso). En PDF se imprime el reverso. Diseñadas como ritual de
+  votación a mano alzada — recuperación activa, no examen.
+- **8 datos activadores** cada ~7 slides: cifra grande con contador animado,
+  fuente y pregunta provocadora; documentados en `FUENTES.md` (sección propia).
+- **Número de slide al pie** de cada lámina (`NN / 80`), inyectado por el engine —
+  visible en pantalla y en el PDF exportado.
+- **Gráficos que se dibujan**: arcos (gauge/donut) y curva S con animación de
+  trazado vía `pathLength` + CSS, con override de impresión y reduced-motion.
+- El deck pasó de 60 a **80 slides**; el validador (`tools/build-notes.js`) y la
+  numeración de `FUENTES.md` se actualizaron en consecuencia.
 
 ## Estructura
 
@@ -107,7 +122,7 @@ masterclass-bim-lean-bi/
 │   │   ├── components.js   ← builders de HTML (puros, reutilizables en Node)
 │   │   └── charts.js       ← SVG: hbars, donut, curva S, gauge, dotmap, spark
 │   ├── data/program.js     ← datos del diplomado (fuente: brochure oficial)
-│   └── slides/block1..8.js ← las 60 slides, agrupadas por bloque narrativo
+│   └── slides/block1..8.js ← las 80 slides, agrupadas por bloque narrativo
 ├── tools/
 │   ├── build-notes.js      ← valida el deck + genera speaker-notes.md
 │   └── smoke-test.js       ← test headless (Playwright): consola limpia + capturas

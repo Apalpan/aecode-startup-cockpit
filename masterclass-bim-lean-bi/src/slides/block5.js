@@ -104,6 +104,30 @@
     notes: `**Idea central:** ningún dashboard sobrevive sin datos de campo confiables, y el campo solo registra datos si la herramienta le sirve a él primero. **Cómo explicarlo:** las 4 funciones (tareas, avance con evidencia, incidencias, reportes) y el remate cultural: el dato es subproducto del trabajo, no tarea extra. **Ejemplo:** el supervisor que antes llamaba a OT por la última revisión del plano ahora la tiene en el celular — y de paso registra el avance ahí mismo. **Transición:** "con modelo, tiempo, costo y campo conectados, podemos hablar de la planificación 4D en serio".`,
   });
 
+  /* ---------- Checkpoint B5 — herramientas para el control ---------- */
+  DECK.add({
+    block: 5,
+    title: "Checkpoint — herramientas para el control",
+    html: `
+      ${head("Checkpoint · participa", "Tres preguntas sobre el stack de herramientas",
+        "Vota por una alternativa y gira cada tarjeta para comprobar.")}
+      <div class="s-body">
+        ${C.quiz([
+          { q: "En control de obra, el modelo Revit vale principalmente por…",
+            opts: ["La calidad del render", "Los datos que estructura: códigos, sectores, metrados", "El tamaño de la maqueta 3D"],
+            ok: 1, why: "Se modela pensando en el dato que el control necesita: lo que Revit estructura lo consumen Navisworks (4D), Presto (5D) y Power BI." },
+          { q: "El clash detection de Navisworks industrializa…",
+            opts: ["La coordinación entre especialidades", "La valorización mensual", "El reclutamiento de cuadrillas"],
+            ok: 0, why: "Cada interferencia detectada en modelo es una reunión; la misma en obra es demolición, RFI y reclamo — la regla 1:10:100 en acción." },
+          { q: "¿Por qué el dato de avance debe nacer digital en campo (Fieldwire)?",
+            opts: ["Elimina transcripciones y deja evidencia", "Porque lo exige la norma", "Para vigilar a las cuadrillas"],
+            ok: 0, why: "El supervisor usa una herramienta que le sirve a él (tareas, planos al día); el dato del dashboard es el subproducto. Así sobrevive la captura." },
+        ])}
+      </div>
+      ${foot("Bloque 5 · Checkpoint")}`,
+    notes: `**Idea central:** consolidar el criterio del bloque: las herramientas valen por los datos y flujos que habilitan, no por sus marcas. **Cómo explicarlo:** votación y giro; en la pregunta 2 conectar explícitamente con la regla 1:10:100 del activador anterior. **Ejemplo:** la pregunta 3 abre debate sano sobre adopción en campo — dejar que la audiencia cuente sus fracasos con apps que nadie usó. **Transición:** "nos falta ver el cronograma volverse película: la planificación 4D".`,
+  });
+
   /* ---------- 39 · Planificación 4D ---------- */
   DECK.add({
     block: 5,
@@ -191,5 +215,21 @@
       </div>
       ${foot("Bloque 5 · Herramientas BIM", "Flujo del taller integrador del Módulo 2")}`,
     notes: `**Idea central:** sintetizar el bloque 5 mostrando la semana tipo: cada herramienta en su lugar dentro de un solo flujo. **Cómo explicarlo:** narrar lunes a viernes sobre el diagrama: modelo→sectores→plan→campo→tablero→comité. Los tres números de abajo son el "antes y después" operativo: cero armado de reportes, una sola versión, una semana de anticipación. **Ejemplo:** comparar con la semana tradicional: viernes de Excel hasta tarde para un informe que describe lo irreversible. **Transición:** "ese 'dashboard que se arma solo' merece su propio bloque: Business Intelligence" → Bloque 6.`,
+  });
+
+  /* ---------- Activador B5 — 50-60% de productividad posible ---------- */
+  DECK.add({
+    block: 5,
+    title: "Dato activador — 50-60% de productividad posible",
+    cls: "divider",
+    html: `
+      ${C.activator({
+        v: `50–60%`,
+        line: "es el salto de productividad que la construcción puede capturar actuando sobre sus palancas — <b>digitalización y tecnología incluidas</b> — según el análisis global de McKinsey.",
+        q: "¿Qué parte de ese salto depende de tu próxima obra?",
+        src: "McKinsey Global Institute — Reinventing Construction (2017)",
+      })}
+      ${foot("Bloque 5 · Dato activador")}`,
+    notes: `**Idea central:** cerrar el bloque de herramientas mirando el premio: el flujo integrado que acabamos de ver es exactamente la palanca que MGI cuantifica. **Cómo explicarlo:** contrastar con el 1% anual histórico del bloque 1 — la brecha entre lo que el sector hace y lo que puede hacer es el espacio profesional de la audiencia. **Ejemplo:** "la semana tipo que vimos (cero reportes manuales, una sola versión, +1 semana de anticipación) es ese 50% aterrizado". **Transición:** "y la pieza que convierte los datos del flujo en decisiones es el siguiente bloque: BI" → Bloque 6.`,
   });
 })();

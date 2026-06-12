@@ -1,6 +1,6 @@
 # Masterclass — BIM, Lean y BI aplicado al Seguimiento y Control de Obra
 
-Presentación web interactiva (60 slides) para la **clase magistral introductoria**
+Presentación web interactiva (80 slides) para la **clase magistral introductoria**
 del Diplomado Internacional *BIM, Lean y BI aplicado al Seguimiento y Control de
 Obra* de **AECODE**. Pensada para una sesión en vivo de 90–120 minutos en laptop,
 proyector o tablet.
@@ -11,15 +11,22 @@ proyector o tablet.
 
 ## Qué se construyó
 
-- **60 slides en 8 bloques narrativos**: problema de la industria → mapa del
-  diplomado → marcos (BIM/Lean/VDC/IPD) → CDE y obra → herramientas → BI →
-  IA/emergentes → cierre.
+- **80 slides en 8 bloques narrativos** (60 de contenido + 12 checkpoints + 8
+  datos activadores): problema de la industria → mapa del diplomado → marcos
+  (BIM/Lean/VDC/IPD) → CDE y obra → herramientas → BI → IA/emergentes → cierre.
+- **12 checkpoints participativos**: cada ~4-5 slides, 3 preguntas clave del tema
+  con alternativas en tarjetas que giran (flip 3D) para revelar la respuesta
+  correcta y el porqué — pensadas para votación a mano alzada en vivo.
+- **8 datos activadores**: slides-gancho con una cifra grande animada (13% del PBI,
+  85 M de talentos, regla 1:10:100, 23×, 39% CO₂…), su fuente y una pregunta
+  provocadora — cambian el ritmo cada ~7 slides. Fuentes en `FUENTES.md`.
 - **Interactividad de slide**: iceberg del costo invisible con 6 estratos
-  clickeables y datos con fuente (S07), autoevaluación de madurez digital con ruta
-  sugerida por nivel (S15), calculadora en vivo del costo del reporte manual (S42),
-  mapa mundial de adopción BIM (S09), ecosistema clickeable (S11), simulación del
-  flujo de información (S28), comparador antes/después (S59), tarjetas expandibles,
-  dashboards simulados y tooltips en diagramas y KPIs.
+  clickeables y datos con fuente (S08), autoevaluación de madurez digital con ruta
+  sugerida por nivel (S20), calculadora en vivo del costo del reporte manual (S55),
+  mapa mundial de adopción BIM (S12), ecosistema clickeable (S15), simulación del
+  flujo de información (S37), comparador antes/después (S79), tarjetas expandibles,
+  dashboards simulados y tooltips en diagramas y KPIs. Gauges, donuts y curva S
+  se dibujan animados al entrar a la slide; cada lámina muestra su número al pie.
 - **Motor del deck (v2)**: paleta de comandos `Ctrl+K` (buscar slide o acción, sin
   acentos), barra de progreso segmentada por bloques (clic = saltar), saltos por
   bloque (teclas `1–8`), contadores animados en las cifras, cronómetro de sesión
@@ -49,7 +56,7 @@ python3 -m http.server 8080        # → http://localhost:8080
 | `→` / `Espacio` / `←` | Avanzar / retroceder |
 | `Ctrl+K` (o `K`) | Paleta de comandos: buscar slide, bloque o acción |
 | `1` … `8` | Saltar al inicio del bloque N |
-| `O` o `Esc` | Vista general (grilla de 60 slides) |
+| `O` o `Esc` | Vista general (grilla de slides) |
 | `M` | Índice lateral por bloques |
 | `N` o `S` | Notas del expositor de la slide actual |
 | `T` | Cronómetro de sesión (clic sobre él = reiniciar) |
@@ -92,7 +99,7 @@ Pages sobre `main` — ver `DECISIONES.md`.)
 
 ```bash
 node tools/build-notes.js
-# ✓ valida: 60 slides, todas con título, notas y HTML renderizable
+# ✓ valida: 80 slides, todas con título, notas y HTML renderizable
 # ✓ regenera speaker-notes.md
 ```
 
@@ -101,7 +108,7 @@ node tools/build-notes.js
 ```bash
 python3 -m http.server 8742 &     # servir el deck
 NODE_PATH=$(npm root -g) node tools/smoke-test.js
-# recorre las 60 slides en Chromium headless, verifica consola limpia
+# recorre las slides en Chromium headless, verifica consola limpia
 # y toma capturas en /tmp/shots/
 ```
 
@@ -121,7 +128,7 @@ masterclass-bim-lean-bi/
 ├── src/
 │   ├── core/           ← engine, components (builders), charts (SVG)
 │   ├── data/           ← program.js (datos del brochure)
-│   └── slides/         ← block1.js … block8.js (las 60 slides)
+│   └── slides/         ← block1.js … block8.js (las 80 slides)
 ├── tools/              ← build-notes.js (validador), smoke-test.js
 ├── speaker-notes.md    ← generado — guion del expositor
 ├── FUENTES.md          ← trazabilidad de cada dato
@@ -130,6 +137,5 @@ masterclass-bim-lean-bi/
 
 ## Créditos
 
-- **Contenido**: brochure oficial del diplomado y "Sesión 0 — BIM en Obra" (AECODE /
-  ENJOFRA BIM / CIP), más investigación con fuentes en `FUENTES.md`.
+- **Contenido**: brochure oficial del diplomado y "Sesión 0 — BIM en Obra" (AECODE / CIP), más investigación con fuentes en `FUENTES.md`.
 - **Marca**: AECODE — aecode.ai.

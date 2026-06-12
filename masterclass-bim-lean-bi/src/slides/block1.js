@@ -118,6 +118,30 @@
     notes: `**Idea central:** la fragmentación no es un accidente: es la estructura de la industria. **Cómo explicarlo:** señalar el diagrama: cada círculo es un mundo con sus propios archivos e incentivos; las líneas punteadas son llamadas, correos y chats — vínculos que se rompen bajo presión. **Ejemplo:** un RFI que pasa por 4 manos antes de llegar al proyectista, y la respuesta vuelve cuando el elemento ya se vació. **Transición:** "y sobre esta estructura fragmentada, le hemos puesto más herramientas… veamos qué pasó".`,
   });
 
+  /* ---------- Checkpoint B1.a — fragmentación ---------- */
+  DECK.add({
+    block: 1,
+    title: "Checkpoint — fragmentación e información",
+    html: `
+      ${head("Checkpoint · participa", "Tres preguntas antes de seguir",
+        "Piensa tu respuesta (o vota en voz alta) y haz clic en cada tarjeta para revelar la correcta.")}
+      <div class="s-body">
+        ${C.quiz([
+          { q: "¿Cuál es la causa raíz de los problemas crónicos de la obra?",
+            opts: ["Falta de software moderno", "Falta de integración de la información", "Falta de personal capacitado"],
+            ok: 1, why: "Hay más herramientas que nunca y los mismos problemas: lo que falla es que la información no fluye entre los actores." },
+          { q: "En la industria AEC fragmentada, ¿quién es dueño del flujo completo de información?",
+            opts: ["La oficina técnica", "El gerente de proyecto", "Nadie"],
+            ok: 2, why: "Cada actor optimiza su parte; ningún rol gobierna el flujo completo. Esa es la falla estructural del sector." },
+          { q: "Los vínculos de información entre los actores del proyecto suelen ser…",
+            opts: ["Formales y trazables", "Informales y frágiles", "Automatizados de punta a punta"],
+            ok: 1, why: "Correos, llamadas y chats: se rompen bajo presión y no dejan evidencia — las líneas punteadas del diagrama." },
+        ])}
+      </div>
+      ${foot("Bloque 1 · Checkpoint")}`,
+    notes: `**Idea central:** primer momento participativo: consolidar el diagnóstico antes de avanzar. **Cómo explicarlo:** leer cada pregunta, pedir votación a mano alzada por alternativa (A/B/C), y recién entonces girar la tarjeta. Celebrar los aciertos, no corregir en tono de examen. **Ejemplo:** en la pregunta 2 suele ganar "el gerente de proyecto" — el giro a "nadie" produce el insight más fuerte del bloque. **Transición:** "con el diagnóstico claro, veamos la paradoja que lo agrava…"`,
+  });
+
   /* ---------- 05 · La paradoja de la construcción ---------- */
   DECK.add({
     block: 1,
@@ -247,6 +271,22 @@
     notes: `**Idea central:** el costo de la mala información es estructural, medible y casi siempre invisible en el presupuesto. **Cómo explicarlo:** recorrer el iceberg de arriba hacia abajo haciendo clic en cada estrato: la punta (retrabajo, ~5%, lo único que se discute) y debajo los números que nadie consolida — 35% del tiempo profesional en actividades no óptimas (US$ 177.500 M/año en EE.UU.), US$ 31.300 M de retrabajo por datos deficientes, 96% de los datos descartados, disputas que se litigan memoria contra memoria, y dos décadas de productividad plana. **Ejemplo:** una cuadrilla parada media jornada esperando la respuesta de un RFI cuesta más que la licencia anual de cualquier software de la obra. **Transición:** "no es una percepción: los números globales del sector lo confirman".`,
   });
 
+  /* ---------- Activador B1.a — 13% del PBI mundial ---------- */
+  DECK.add({
+    block: 1,
+    title: "Dato activador — 13% del PBI mundial",
+    cls: "divider",
+    html: `
+      ${C.activator({
+        v: `<span data-count="13" data-suf="%">13%</span>`,
+        line: "del PBI mundial corresponde a gasto relacionado con construcción — y el sector emplea al <b>7% de la población activa del planeta</b>.",
+        q: "¿Cuánto vale entonces cada punto de productividad que logremos recuperar?",
+        src: "McKinsey Global Institute — Reinventing Construction (2017)",
+      })}
+      ${foot("Bloque 1 · Dato activador")}`,
+    notes: `**Idea central:** dimensionar el tablero antes de mostrar los números de productividad: la construcción no es un sector más — es la economía física del planeta. **Cómo explicarlo:** dejar que el contador llegue al 13%, hacer una pausa y leer la pregunta en voz alta sin responderla. **Ejemplo:** "si esta industria mejora 1%, el efecto global se mide en cientos de miles de millones". **Transición:** "y justamente la productividad es donde está la herida… miren estos números".`,
+  });
+
   /* ---------- 08 · Datos globales del sector ---------- */
   DECK.add({
     block: 1,
@@ -272,6 +312,30 @@
       </div>
       ${foot("Bloque 1 · Apertura", "McKinsey MGI 2016-2017 · Flyvbjerg 2023 · ver FUENTES.md")}`,
     notes: `**Idea central:** los problemas de la audiencia no son anécdotas locales: son el patrón global del sector. **Cómo explicarlo:** leer el gráfico — mientras la manufactura multiplicó su productividad con automatización y flujo, la construcción quedó casi plana durante 20 años. Luego las cifras: 92% de megaproyectos fallan en plazo o costo. **Ejemplo:** comparar un auto (cada vez más barato por unidad de valor) con un m² construido (cada vez más caro). **Transición:** "¿y cómo estamos en nuestra región y en el Perú?"`,
+  });
+
+  /* ---------- Checkpoint B1.b — el costo de la mala información ---------- */
+  DECK.add({
+    block: 1,
+    title: "Checkpoint — el costo de la mala información",
+    html: `
+      ${head("Checkpoint · participa", "Tres preguntas sobre el costo invisible",
+        "Vota por una alternativa y gira cada tarjeta para comprobar.")}
+      <div class="s-body">
+        ${C.quiz([
+          { q: "¿Qué porcentaje de los datos que captura una obra nunca se usa para decidir?",
+            opts: ["Alrededor del 50%", "Alrededor del 75%", "Alrededor del 96%"],
+            ok: 2, why: "96 de cada 100 datos capturados mueren sin usarse (FMI/Autodesk 2021): el activo más caro que el sector descarta a diario." },
+          { q: "¿Cuánto creció la productividad de la construcción entre 1995 y 2015?",
+            opts: ["~1% anual", "~2,8% anual", "~3,6% anual"],
+            ok: 0, why: "2,8% fue la economía mundial y 3,6% la manufactura (MGI 2017). La construcción quedó casi plana durante dos décadas." },
+          { q: "La mayor parte del costo de la mala información es…",
+            opts: ["Visible en el presupuesto", "Invisible: esperas, reprocesos, disputas", "Cubierta por los seguros"],
+            ok: 1, why: "El retrabajo visible (~5%) es solo la punta del iceberg; debajo están las esperas, los reprocesos y la confianza perdida." },
+        ])}
+      </div>
+      ${foot("Bloque 1 · Checkpoint")}`,
+    notes: `**Idea central:** fijar los tres números ancla del bloque (96%, 1% vs 3,6%, iceberg) mediante recuperación activa. **Cómo explicarlo:** mismo ritual: votar a mano alzada, girar, comentar en una frase. Si el tiempo aprieta, girar solo las que generen división de votos. **Ejemplo:** la pregunta del 96% suele subestimarse — perfecto para reforzar el mensaje del iceberg. **Transición:** "estos son los números del mundo; veamos ahora nuestra cancha: Perú y la región".`,
   });
 
   /* ---------- 09 · Perú / LATAM + mapa BIM ---------- */
@@ -350,5 +414,21 @@
       </div>
       ${foot("Bloque 1 · Apertura")}`,
     notes: `**Idea central:** el diferencial profesional migró del manejo de herramientas a la comprensión de flujos, datos y producción. **Cómo explicarlo:** contrastar columna por columna, sin despreciar el software ("hay que dominarlo, pero es el boleto de entrada, no la ventaja"). **Ejemplo:** dos CVs con Revit; gana el que puede explicar cómo montó el flujo de avance semanal modelo→campo→dashboard y qué decisiones cambió. **Transición:** "veamos entonces el mapa completo del programa que construye ese perfil" → Bloque 2.`,
+  });
+
+  /* ---------- Activador B1.b — 85 millones ---------- */
+  DECK.add({
+    block: 1,
+    title: "Dato activador — 85 millones de talentos",
+    cls: "divider",
+    html: `
+      ${C.activator({
+        v: `<span data-count="85" data-suf=" M">85 M</span>`,
+        line: "de puestos de trabajo calificados podrían quedar <b>sin cubrir en el mundo hacia 2030</b> por escasez de talento — equivalentes a ~US$ 8,5 billones en ingresos no realizados.",
+        q: "¿De qué lado de la brecha de talento vas a estar tú?",
+        src: "Korn Ferry — The Global Talent Crunch (2018)",
+      })}
+      ${foot("Bloque 1 · Dato activador")}`,
+    notes: `**Idea central:** cerrar el bloque 1 convirtiendo el diagnóstico (la industria falla) en oportunidad personal (el talento que sabe integrar escasea). **Cómo explicarlo:** leer la cifra, pausa, y la pregunta directa a la audiencia — es el gancho emocional hacia el mapa del programa. **Ejemplo:** "cada empresa de la región que decide digitalizar su control de obra descubre lo mismo: no encuentra gente que sepa hacerlo". **Transición:** "ese perfil escaso es exactamente el que vamos a mapear ahora" → Bloque 2.`,
   });
 })();
